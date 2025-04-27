@@ -1,6 +1,6 @@
-import SignInForm from "./signin-form";
+import { SignInForm } from "./signin-form";
 
-export default function signIn() {
+export default async function signIn() {
   return (
     <div>
       <SignInForm />

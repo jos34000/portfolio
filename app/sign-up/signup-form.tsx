@@ -9,12 +9,18 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { authClient } from "@/lib/auth/auth-client";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Loader2, X } from "lucide-react";
-import Image from "next/image";
+import { Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -28,6 +34,9 @@ const formSchema = z
       .min(2, "Le prénom doit contenir au moins 2 caractères"),
     lastName: z.string().min(2, "Le nom doit contenir au moins 2 caractères"),
     email: z.string().email("Email invalide"),
+    username: z
+      .string()
+      .min(4, "Le nom d'utilisateur doit contenir au moins 4 caractères"),
     password: z
       .string()
       .min(8, "Le mot de passe doit contenir au moins 8 caractères"),
@@ -41,8 +50,6 @@ const formSchema = z
 type FormValues = z.infer<typeof formSchema>;
 
 export function SignUpForm() {
-  const [image, setImage] = useState<File | null>(null);
-  const [imagePreview, setImagePreview] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
@@ -52,22 +59,11 @@ export function SignUpForm() {
       firstName: "",
       lastName: "",
       email: "",
+      username: "",
       password: "",
       passwordConfirmation: "",
     },
   });
-
-  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      setImage(file);
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setImagePreview(reader.result as string);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
 
   const onSubmit = async (values: FormValues) => {
     try {
@@ -77,7 +73,7 @@ export function SignUpForm() {
         email: values.email,
         password: values.password,
         name: `${values.firstName} ${values.lastName}`,
-        image: image ? await convertImageToBase64(image) : "",
+        username: values.username,
         fetchOptions: {
           onResponse: () => {
             setIsLoading(false);
@@ -86,7 +82,7 @@ export function SignUpForm() {
             setIsLoading(true);
           },
           onError: (ctx: { error: Error }) => {
-            toast.error(ctx.error.message);
+            toast.error(ctx.error.message ?? "Une erreur est survenue");
           },
           onSuccess: async () => {
             toast.success("Compte créé avec succès !");
@@ -94,11 +90,6 @@ export function SignUpForm() {
           },
         },
       });
-
-      if (error) {
-        toast.error(error.message ?? "Une erreur est survenue");
-        return;
-      }
     } catch (err) {
       toast.error("Une erreur est survenue lors de l'inscription");
     } finally {
@@ -107,145 +98,164 @@ export function SignUpForm() {
   };
 
   return (
-    <Card className="z-50 rounded-md rounded-t-none max-w-md">
-      <CardHeader>
-        <CardTitle className="text-lg md:text-xl">Sign Up</CardTitle>
-        <CardDescription className="text-xs md:text-sm">
-          Enter your information to create an account
+    <Card className="w-full min-w-[380px] max-w-md border-border bg-card">
+      <CardHeader className="space-y-1 bg-card">
+        <CardTitle className="text-2xl font-bold text-center text-card-foreground">
+          Créer un compte
+        </CardTitle>
+        <CardDescription className="text-center text-muted-foreground">
+          Entrez vos informations pour créer votre compte
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="grid gap-4">
-          <div className="grid grid-cols-2 gap-4">
-            <div className="grid gap-2">
-              <Label htmlFor="first-name">First name</Label>
-              <Input
-                id="first-name"
-                placeholder="Max"
-                {...form.register("firstName")}
-              />
-              {form.formState.errors.firstName && (
-                <p className="text-sm text-red-500">
-                  {form.formState.errors.firstName.message}
-                </p>
-              )}
-            </div>
-            <div className="grid gap-2">
-              <Label htmlFor="last-name">Last name</Label>
-              <Input
-                id="last-name"
-                placeholder="Robinson"
-                {...form.register("lastName")}
-              />
-              {form.formState.errors.lastName && (
-                <p className="text-sm text-red-500">
-                  {form.formState.errors.lastName.message}
-                </p>
-              )}
-            </div>
-          </div>
-          <div className="grid gap-2">
-            <Label htmlFor="email">Email</Label>
-            <Input
-              id="email"
-              type="email"
-              placeholder="m@example.com"
-              {...form.register("email")}
-            />
-            {form.formState.errors.email && (
-              <p className="text-sm text-red-500">
-                {form.formState.errors.email.message}
-              </p>
-            )}
-          </div>
-          <div className="grid gap-2">
-            <Label htmlFor="password">Password</Label>
-            <Input
-              id="password"
-              type="password"
-              autoComplete="new-password"
-              placeholder="Password"
-              {...form.register("password")}
-            />
-            {form.formState.errors.password && (
-              <p className="text-sm text-red-500">
-                {form.formState.errors.password.message}
-              </p>
-            )}
-          </div>
-          <div className="grid gap-2">
-            <Label htmlFor="password_confirmation">Confirm Password</Label>
-            <Input
-              id="password_confirmation"
-              type="password"
-              autoComplete="new-password"
-              placeholder="Confirm Password"
-              {...form.register("passwordConfirmation")}
-            />
-            {form.formState.errors.passwordConfirmation && (
-              <p className="text-sm text-red-500">
-                {form.formState.errors.passwordConfirmation.message}
-              </p>
-            )}
-          </div>
-          <div className="grid gap-2">
-            <Label htmlFor="image">Profile Image (optional)</Label>
-            <div className="flex items-end gap-4">
-              {imagePreview && (
-                <div className="relative w-16 h-16 rounded-sm overflow-hidden">
-                  <Image
-                    src={imagePreview}
-                    alt="Profile preview"
-                    layout="fill"
-                    objectFit="cover"
-                  />
-                </div>
-              )}
-              <div className="flex items-center gap-2 w-full">
-                <Input
-                  id="image"
-                  type="file"
-                  accept="image/*"
-                  onChange={handleImageChange}
-                  className="w-full"
-                />
-                {imagePreview && (
-                  <X
-                    className="cursor-pointer"
-                    onClick={() => {
-                      setImage(null);
-                      setImagePreview(null);
-                    }}
-                  />
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+            <div className="grid grid-cols-2 gap-4">
+              <FormField
+                control={form.control}
+                name="firstName"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-foreground">Prénom</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="John"
+                        {...field}
+                        className="h-11 bg-background text-foreground placeholder:text-muted-foreground"
+                      />
+                    </FormControl>
+                    <FormMessage className="text-destructive" />
+                  </FormItem>
                 )}
-              </div>
+              />
+              <FormField
+                control={form.control}
+                name="lastName"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-foreground">Nom</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="Doe"
+                        {...field}
+                        className="h-11 bg-background text-foreground placeholder:text-muted-foreground"
+                      />
+                    </FormControl>
+                    <FormMessage className="text-destructive" />
+                  </FormItem>
+                )}
+              />
             </div>
-          </div>
-          <Button type="submit" className="w-full" disabled={isLoading}>
-            {isLoading ? (
-              <Loader2 size={16} className="animate-spin" />
-            ) : (
-              "Create an account"
-            )}
-          </Button>
-        </form>
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-foreground">Email</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="john@exemple.com"
+                      type="email"
+                      {...field}
+                      className="h-11 bg-background text-foreground placeholder:text-muted-foreground"
+                    />
+                  </FormControl>
+                  <FormMessage className="text-destructive" />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="username"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-foreground">Username</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="Johndoe"
+                      type="text"
+                      {...field}
+                      className="h-11 bg-background text-foreground placeholder:text-muted-foreground"
+                    />
+                  </FormControl>
+                  <FormMessage className="text-destructive" />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="password"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-foreground">
+                    Mot de passe
+                  </FormLabel>
+                  <FormControl>
+                    <Input
+                      type="password"
+                      placeholder="********"
+                      {...field}
+                      className="h-11 bg-background text-foreground placeholder:text-muted-foreground"
+                    />
+                  </FormControl>
+                  <FormMessage className="text-destructive" />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="passwordConfirmation"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-foreground">
+                    Confirmer le mot de passe
+                  </FormLabel>
+                  <FormControl>
+                    <Input
+                      type="password"
+                      placeholder="********"
+                      {...field}
+                      className="h-11 bg-background text-foreground placeholder:text-muted-foreground"
+                    />
+                  </FormControl>
+                  <FormMessage className="text-destructive" />
+                </FormItem>
+              )}
+            />
+            <Button
+              type="submit"
+              className="w-full h-11 text-base font-medium bg-primary text-primary-foreground hover:bg-primary/90"
+              disabled={isLoading}
+            >
+              {isLoading ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Création en cours...
+                </>
+              ) : (
+                "Créer mon compte"
+              )}
+            </Button>
+          </form>
+        </Form>
       </CardContent>
-      <CardFooter>
-        <div className="flex justify-center w-full border-t py-4">
-          <p className="text-center text-xs text-neutral-500">
-            Secured by <span className="text-orange-400">better-auth.</span>
-          </p>
+      <CardFooter className="flex flex-col space-y-4">
+        <div className="relative w-full">
+          <div className="absolute inset-0 flex items-center">
+            <div className="w-full border-t border-border" />
+          </div>
+          <div className="relative flex justify-center text-xs uppercase">
+            <span className="bg-card px-2 text-muted-foreground">Ou</span>
+          </div>
         </div>
+        <Button
+          variant="outline"
+          className="w-full h-11 border-border text-foreground hover:bg-accent hover:text-accent-foreground"
+          onClick={() => router.push("/sign-in")}
+        >
+          J'ai déjà un compte
+        </Button>
       </CardFooter>
     </Card>
   );
-}
-
-async function convertImageToBase64(file: File): Promise<string> {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onloadend = () => resolve(reader.result as string);
-    reader.onerror = reject;
-    reader.readAsDataURL(file);
-  });
 }
