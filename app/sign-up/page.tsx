@@ -2,7 +2,7 @@ import { SignUpForm } from "./signup-form";
 
 export default function SignUp() {
   return (
-    <div>
+    <div className="flex flex-col items-center justify-center min-h-screen">
       <SignUpForm />
     </div>
   );

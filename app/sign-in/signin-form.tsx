@@ -67,9 +67,9 @@ export function SignInForm() {
           },
           onSuccess: async () => {
             const { data: session, error } = await authClient.getSession();
-            if (session?.user.name) {
+            if (session) {
               toast.success("Connexion réussie !");
-              router.push(`/dashboard/${session.user.username}`);
+              router.push(`/dashboard/${session?.user.username}`);
             } else {
               toast.error(
                 "Erreur lors de la récupération du nom d'utilisateur"

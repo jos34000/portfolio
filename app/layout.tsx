@@ -16,16 +16,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="min-h-screen flex items-center justify-center bg-background">
+      <body>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <main className="container flex items-center justify-center">
-            {children}
-          </main>
+          <main>{children}</main>
           <Toaster richColors position="top-right" />
         </ThemeProvider>
       </body>
