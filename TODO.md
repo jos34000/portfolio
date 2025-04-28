@@ -5,7 +5,7 @@
 - [ ] Implémenter le loader inter pages
   - **Date de début :** 28/04/2025
   - **Date d'ajout :**
-  - **Commit :** (https://github.com/boilerPlate/commit/abc123)
+  - **Commit :** (https://github.com/jos34000/boilerPlate/commit/abc123)
   - **Priorité :** Haute
   - **Statut :** En cours
   - **Notes :** Considérer l'utilisation de `React.Suspense` pour le chargement.
@@ -16,7 +16,7 @@
 
   - **Date de début :**
   - **Date d'ajout :**
-  - **Commit :** (https://github.com/boilerPlate/commit/def456)
+  - **Commit :** (https://github.com/jos34000/boilerPlate/commit/def456)
   - **Priorité :** Basse
   - **Statut :** À faire
   - **Notes :** Utiliser des graphismes simples pour le jeu.
@@ -24,7 +24,7 @@
 - [ ] ❌ Créer un tic tac toe
   - **Date de début :**
   - **Date d'ajout :**
-  - **Commit :** (https://github.com/boilerPlate/commit/ghi789)
+  - **Commit :** (https://github.com/jos34000/boilerPlate/commit/ghi789)
   - **Priorité :** Basse
   - **Statut :** À faire
   - **Notes :** Ajouter une fonctionnalité de jeu à deux joueurs.
@@ -35,7 +35,7 @@
 
   - **Date de début :**
   - **Date d'ajout :**
-  - **Commit :** (https://github.com/boilerPlate/commit/jkl012)
+  - **Commit :** (https://github.com/jos34000/boilerPlate/commit/jkl012)
   - **Priorité :** Haute
   - **Statut :** À faire
   - **Notes :**
@@ -43,7 +43,7 @@
 - [ ] Ajouter du style à la page de sign-up
   - **Date de début :**
   - **Date d'ajout :**
-  - **Commit :** (https://github.com/boilerPlate/commit/mno345)
+  - **Commit :** (https://github.com/jos34000/boilerPlate/commit/mno345)
   - **Priorité :** Haute
   - **Statut :** À faire
   - **Notes :**
@@ -56,7 +56,7 @@
 
     - **Date de début :**
     - **Date d'ajout :**
-    - **Commit :** (https://github.com/boilerPlate/commit/pqr678)
+    - **Commit :** (https://github.com/jos34000/boilerPlate/commit/pqr678)
     - **Priorité :** Haute
     - **Statut :** À faire
     - **Notes :**
@@ -64,7 +64,7 @@
   - [ ] ✨ Log out joli
     - **Date de début :**
     - **Date d'ajout :**
-    - **Commit :** (https://github.com/boilerPlate/commit/stu901)
+    - **Commit :** (https://github.com/jos34000/boilerPlate/commit/stu901)
     - **Priorité :** Basse
     - **Statut :** À faire
     - **Notes :**
@@ -75,7 +75,7 @@
 
     - **Date de début :**
     - **Date d'ajout :**
-    - **Commit :** (https://github.com/boilerPlate/commit/vwx234)
+    - **Commit :** (https://github.com/jos34000/boilerPlate/commit/vwx234)
     - **Priorité :** Moyenne
     - **Statut :** À faire
     - **Notes :**
@@ -84,7 +84,7 @@
 
     - **Date de début :**
     - **Date d'ajout :**
-    - **Commit :** (https://github.com/boilerPlate/commit/yza567)
+    - **Commit :** (https://github.com/jos34000/boilerPlate/commit/yza567)
     - **Priorité :** Moyenne
     - **Statut :** À faire
     - **Notes :**
@@ -92,7 +92,7 @@
   - [ ] 🔧 Modifier les sous-catégories
     - **Date de début :**
     - **Date d'ajout :**
-    - **Commit :** (https://github.com/boilerPlate/commit/89d9987d1d3cbca49d543e14f4c2c4364101ad96)
+    - **Commit :** (https://github.com/jos34000/boilerPlate/commit/89d9987d1d3cbca49d543e14f4c2c4364101ad96)
     - **Priorité :** Basse
     - **Statut :** À faire
     - **Notes :**
@@ -128,7 +128,7 @@
 
   - **Date de début :**
   - **Date d'ajout :**
-  - **Commit :** (https://github.com/boilerPlate/commit/bcd890)
+  - **Commit :** (https://github.com/jos34000/boilerPlate/commit/bcd890)
   - **Priorité :** Haute
   - **Statut :** À faire
   - **Notes :** Envoyer un email de vérification après l'inscription.
@@ -137,7 +137,7 @@
 
   - **Date de début :**
   - **Date d'ajout :**
-  - **Commit :** (https://github.com/boilerPlate/commit/bcd890)
+  - **Commit :** (https://github.com/jos34000/boilerPlate/commit/bcd890)
   - **Priorité :** Moyenne
   - **Statut :** À faire
   - **Notes :** Utiliser l'API LinkedIn pour l'authentification.
@@ -146,7 +146,7 @@
 
   - **Date de début :** 28/04/2025
   - **Date d'ajout :** 28/04/2025
-  - **Commit :** (https://github.com/boilerPlate/commit/bcd890)
+  - **Commit :** (https://github.com/jos34000/boilerPlate/commit/bcd890)
   - **Priorité :** Moyenne
   - **Statut :** Done.
   - **Notes :** Utiliser l'API GitHub pour l'authentification.
@@ -154,7 +154,7 @@
 - [ ] 🔑 Implémenter la fonctionnalité de réinitialisation de mot de passe
   - **Date de début :**
   - **Date d'ajout :**
-  - **Commit :** (https://github.com/boilerPlate/commit/bcd890)
+  - **Commit :** (https://github.com/jos34000/boilerPlate/commit/bcd890)
   - **Priorité :** Haute
   - **Statut :** À faire
   - **Notes :** Permettre aux utilisateurs de réinitialiser leur mot de passe via un email.
@@ -165,7 +165,7 @@
 
   - **Date de début :**
   - **Date d'ajout :**
-  - **Commit :** (https://github.com/boilerPlate/commit/bcd890)
+  - **Commit :** (https://github.com/jos34000/boilerPlate/commit/bcd890)
   - **Priorité :** Haute
   - **Statut :** À faire
   - **Notes :** Envoyer un email de vérification après l'inscription.
