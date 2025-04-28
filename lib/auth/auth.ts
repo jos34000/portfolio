@@ -13,6 +13,21 @@ export const auth = betterAuth({
         required: true,
         defaultValue: "",
       },
+      firstName: {
+        type: "string",
+        required: true,
+        defaultValue: "",
+      },
+      lastName: {
+        type: "string",
+        required: true,
+        defaultValue: "",
+      },
+      initials: {
+        type: "string",
+        required: true,
+        defaultValue: "",
+      },
     },
   },
   emailAndPassword: {
