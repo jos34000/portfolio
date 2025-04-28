@@ -1,6 +1,6 @@
-"use client";
+"use client"
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/button"
 import {
   Card,
   CardContent,
@@ -8,7 +8,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from "@/components/ui/card"
 import {
   Form,
   FormControl,
@@ -16,16 +16,16 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { authClient } from "@/lib/auth/auth-client";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Loader2 } from "lucide-react";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { toast } from "sonner";
-import { z } from "zod";
+} from "@/components/ui/form"
+import { Input } from "@/components/ui/input"
+import { authClient } from "@/lib/auth/auth-client"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { Loader2 } from "lucide-react"
+import { useRouter } from "next/navigation"
+import { useState } from "react"
+import { useForm } from "react-hook-form"
+import { toast } from "sonner"
+import { z } from "zod"
 
 const formSchema = z
   .object({
@@ -46,13 +46,13 @@ const formSchema = z
   .refine((data) => data.password === data.passwordConfirmation, {
     message: "Les mots de passe ne correspondent pas",
     path: ["passwordConfirmation"],
-  });
+  })
 
-type FormValues = z.infer<typeof formSchema>;
+type FormValues = z.infer<typeof formSchema>
 
 export function SignUpForm() {
-  const [isLoading, setIsLoading] = useState(false);
-  const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false)
+  const router = useRouter()
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -65,11 +65,11 @@ export function SignUpForm() {
       password: "",
       passwordConfirmation: "",
     },
-  });
+  })
 
   const onSubmit = async (values: FormValues) => {
     try {
-      setIsLoading(true);
+      setIsLoading(true)
 
       const { error } = await authClient.signUp.email({
         email: values.email,
@@ -85,26 +85,26 @@ export function SignUpForm() {
           .toLocaleUpperCase()}`,
         fetchOptions: {
           onResponse: () => {
-            setIsLoading(false);
+            setIsLoading(false)
           },
           onRequest: () => {
-            setIsLoading(true);
+            setIsLoading(true)
           },
           onError: (ctx: { error: Error }) => {
-            toast.error(ctx.error.message ?? "Une erreur est survenue");
+            toast.error(ctx.error.message ?? "Une erreur est survenue")
           },
           onSuccess: async () => {
-            toast.success("Compte créé avec succès !");
-            router.push("/sign-in");
+            toast.success("Compte créé avec succès !")
+            router.push("/login")
           },
         },
-      });
+      })
     } catch (err) {
-      toast.error("Une erreur est survenue lors de l'inscription");
+      toast.error("Une erreur est survenue lors de l'inscription")
     } finally {
-      setIsLoading(false);
+      setIsLoading(false)
     }
-  };
+  }
 
   return (
     <Card className="w-full min-w-[380px] max-w-md border-border bg-card">
@@ -260,11 +260,11 @@ export function SignUpForm() {
         <Button
           variant="outline"
           className="w-full h-11 border-border text-foreground hover:bg-accent hover:text-accent-foreground"
-          onClick={() => router.push("/sign-in")}
+          onClick={() => router.push("/login")}
         >
           J'ai déjà un compte
         </Button>
       </CardFooter>
     </Card>
-  );
+  )
 }

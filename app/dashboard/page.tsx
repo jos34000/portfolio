@@ -13,7 +13,7 @@ export default function DashboardPage() {
       setSessions(session)
 
       if (!session) {
-        redirect("/sign-in")
+        redirect("/login")
       }
     }
 

@@ -105,7 +105,7 @@ export function NavUser() {
                   fetchOptions: {
                     onSuccess: () => {
                       toast.success("Vous êtes déconnecté !")
-                      router.push("/sign-in")
+                      router.push("/login")
                     },
                   },
                 })

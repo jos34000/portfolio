@@ -5,7 +5,7 @@
 - [ ] Implémenter le loader inter pages
   - **Date de début :** 28/04/2025
   - **Date d'ajout :**
-  - **Commit :** [Créer un loader inter pages](https://github.com/boilerPlate/commit/abc123)
+  - **Commit :** (https://github.com/boilerPlate/commit/abc123)
   - **Priorité :** Haute
   - **Statut :** En cours
   - **Notes :** Considérer l'utilisation de `React.Suspense` pour le chargement.
@@ -16,7 +16,7 @@
 
   - **Date de début :**
   - **Date d'ajout :**
-  - **Commit :** [Ajouter jeu de snake](https://github.com/boilerPlate/commit/def456)
+  - **Commit :** (https://github.com/boilerPlate/commit/def456)
   - **Priorité :** Basse
   - **Statut :** À faire
   - **Notes :** Utiliser des graphismes simples pour le jeu.
@@ -24,7 +24,7 @@
 - [ ] ❌ Créer un tic tac toe
   - **Date de début :**
   - **Date d'ajout :**
-  - **Commit :** [Ajouter jeu de tic tac toe](https://github.com/boilerPlate/commit/ghi789)
+  - **Commit :** (https://github.com/boilerPlate/commit/ghi789)
   - **Priorité :** Basse
   - **Statut :** À faire
   - **Notes :** Ajouter une fonctionnalité de jeu à deux joueurs.
@@ -35,7 +35,7 @@
 
   - **Date de début :**
   - **Date d'ajout :**
-  - **Commit :** [Style page de sign-in](https://github.com/boilerPlate/commit/jkl012)
+  - **Commit :** (https://github.com/boilerPlate/commit/jkl012)
   - **Priorité :** Haute
   - **Statut :** À faire
   - **Notes :**
@@ -43,7 +43,7 @@
 - [ ] Ajouter du style à la page de sign-up
   - **Date de début :**
   - **Date d'ajout :**
-  - **Commit :** [Style page de sign-up](https://github.com/boilerPlate/commit/mno345)
+  - **Commit :** (https://github.com/boilerPlate/commit/mno345)
   - **Priorité :** Haute
   - **Statut :** À faire
   - **Notes :**
@@ -56,7 +56,7 @@
 
     - **Date de début :**
     - **Date d'ajout :**
-    - **Commit :** [Modifier catégories dropdown](https://github.com/boilerPlate/commit/pqr678)
+    - **Commit :** (https://github.com/boilerPlate/commit/pqr678)
     - **Priorité :** Haute
     - **Statut :** À faire
     - **Notes :**
@@ -64,7 +64,7 @@
   - [ ] ✨ Log out joli
     - **Date de début :**
     - **Date d'ajout :**
-    - **Commit :** [Améliorer log out](https://github.com/boilerPlate/commit/stu901)
+    - **Commit :** (https://github.com/boilerPlate/commit/stu901)
     - **Priorité :** Basse
     - **Statut :** À faire
     - **Notes :**
@@ -75,7 +75,7 @@
 
     - **Date de début :**
     - **Date d'ajout :**
-    - **Commit :** [Ajouter catégorie réalisations](https://github.com/boilerPlate/commit/vwx234)
+    - **Commit :** (https://github.com/boilerPlate/commit/vwx234)
     - **Priorité :** Moyenne
     - **Statut :** À faire
     - **Notes :**
@@ -84,7 +84,7 @@
 
     - **Date de début :**
     - **Date d'ajout :**
-    - **Commit :** [Ajouter catégorie expériences](https://github.com/boilerPlate/commit/yza567)
+    - **Commit :** (https://github.com/boilerPlate/commit/yza567)
     - **Priorité :** Moyenne
     - **Statut :** À faire
     - **Notes :**
@@ -92,7 +92,7 @@
   - [ ] 🔧 Modifier les sous-catégories
     - **Date de début :**
     - **Date d'ajout :**
-    - **Commit :** [Modifier sous-catégories](https://github.com/boilerPlate/commit/bcd890)
+    - **Commit :** (https://github.com/boilerPlate/commit/89d9987d1d3cbca49d543e14f4c2c4364101ad96)
     - **Priorité :** Basse
     - **Statut :** À faire
     - **Notes :**
@@ -121,3 +121,51 @@
   - **Priorité :** Basse
   - **Statut :** À faire
   - **Notes :** Analyser les performances avec Lighthouse et apporter des améliorations.
+
+## 🔒 Améliorer le processus de connexion et d'inscription
+
+- [ ] 📧 Intégrer la vérification par email
+
+  - **Date de début :**
+  - **Date d'ajout :**
+  - **Commit :** (https://github.com/boilerPlate/commit/bcd890)
+  - **Priorité :** Haute
+  - **Statut :** À faire
+  - **Notes :** Envoyer un email de vérification après l'inscription.
+
+- [ ] 🔗 Ajouter la connexion via LinkedIn
+
+  - **Date de début :**
+  - **Date d'ajout :**
+  - **Commit :** (https://github.com/boilerPlate/commit/bcd890)
+  - **Priorité :** Moyenne
+  - **Statut :** À faire
+  - **Notes :** Utiliser l'API LinkedIn pour l'authentification.
+
+- [✅] 🐦 Ajouter la connexion via GitHub
+
+  - **Date de début :** 28/04/2025
+  - **Date d'ajout :** 28/04/2025
+  - **Commit :** (https://github.com/boilerPlate/commit/bcd890)
+  - **Priorité :** Moyenne
+  - **Statut :** Done.
+  - **Notes :** Utiliser l'API GitHub pour l'authentification.
+
+- [ ] 🔑 Implémenter la fonctionnalité de réinitialisation de mot de passe
+  - **Date de début :**
+  - **Date d'ajout :**
+  - **Commit :** (https://github.com/boilerPlate/commit/bcd890)
+  - **Priorité :** Haute
+  - **Statut :** À faire
+  - **Notes :** Permettre aux utilisateurs de réinitialiser leur mot de passe via un email.
+
+## 📃 Ajouter les documents de ToS et RGPD
+
+- [ ] 📧 Ecrire les ToS et les intégrer aux liens
+
+  - **Date de début :**
+  - **Date d'ajout :**
+  - **Commit :** (https://github.com/boilerPlate/commit/bcd890)
+  - **Priorité :** Haute
+  - **Statut :** À faire
+  - **Notes :** Envoyer un email de vérification après l'inscription.
