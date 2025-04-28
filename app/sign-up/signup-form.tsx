@@ -37,6 +37,7 @@ const formSchema = z
     username: z
       .string()
       .min(4, "Le nom d'utilisateur doit contenir au moins 4 caractères"),
+    initials: z.string(),
     password: z
       .string()
       .min(8, "Le mot de passe doit contenir au moins 8 caractères"),
@@ -58,6 +59,7 @@ export function SignUpForm() {
     defaultValues: {
       firstName: "",
       lastName: "",
+      initials: "",
       email: "",
       username: "",
       password: "",
@@ -74,6 +76,13 @@ export function SignUpForm() {
         password: values.password,
         name: `${values.firstName} ${values.lastName}`,
         username: values.username,
+        firstName: values.firstName,
+        lastName: values.lastName,
+        initials: `${values.firstName
+          .charAt(0)
+          .toLocaleUpperCase()}${values.lastName
+          .charAt(0)
+          .toLocaleUpperCase()}`,
         fetchOptions: {
           onResponse: () => {
             setIsLoading(false);
