@@ -1,22 +1,22 @@
-import type { Metadata } from "next";
+import type { Metadata } from "next"
 
-import { ThemeProvider } from "next-themes";
-import { Toaster } from "sonner";
-import "./globals.css";
+import { ThemeProvider } from "next-themes"
+import { Toaster } from "sonner"
+import "./globals.css"
 
 export const metadata: Metadata = {
   title: "Boiler plate de Jos",
   description: "Base de mes futures apps",
-};
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={`antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -28,5 +28,5 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
-  );
+  )
 }
