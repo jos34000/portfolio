@@ -1,12 +1,15 @@
-import { prisma } from "@/lib/db/client";
-import { betterAuth } from "better-auth";
-import { prismaAdapter } from "better-auth/adapters/prisma";
+import { prisma } from "@/lib/db/client"
+import { betterAuth } from "better-auth"
+import { prismaAdapter } from "better-auth/adapters/prisma"
 
 export const auth = betterAuth({
   database: prismaAdapter(prisma, {
     provider: "postgresql",
   }),
   user: {
+    deleteUser: {
+      enabled: true,
+    },
     additionalFields: {
       username: {
         type: "string",
@@ -34,6 +37,12 @@ export const auth = betterAuth({
     enabled: true,
     autoSignIn: false,
   },
-});
+  socialProviders: {
+    github: {
+      clientId: process.env.GITHUB_CLIENT_ID as string,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET as string,
+    },
+  },
+})
 
-type Session = typeof auth.$Infer.Session;
+type Session = typeof auth.$Infer.Session
