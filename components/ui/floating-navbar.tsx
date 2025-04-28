@@ -2,6 +2,7 @@
 import { cn } from "@/lib/utils"
 import { motion } from "motion/react"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 
 type NavItem = {
   id: string
@@ -17,6 +18,7 @@ export const FloatingNav = ({
   navItems: NavItem[]
   className?: string
 }) => {
+  const router = useRouter()
   return (
     <motion.div
       initial={{
@@ -55,7 +57,10 @@ export const FloatingNav = ({
         )
       )}
       <div>
-        <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full">
+        <button
+          className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full"
+          onClick={() => router.push("/sign-in")}
+        >
           <span>Login</span>
           <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent h-px" />
         </button>
