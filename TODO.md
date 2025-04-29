@@ -31,7 +31,7 @@
 
 ## 🎨 Ajouter du style à mes pages de sign-in et sign-up
 
-- [✅] Ajouter du style à la page de login & sign-up
+- [x] Ajouter du style à la page de login & sign-up
 
   - **Date de début :** 28/04/2025
   - **Date d'ajout :** 29/04/2025
