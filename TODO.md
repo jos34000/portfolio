@@ -1,16 +1,18 @@
 # 📝 TODO List
 
-## 🚀 Créer un loader inter pages
+## Tâches à faire
+
+### 🚀 Créer un loader inter pages
 
 - [ ] Implémenter le loader inter pages
   - **Date de début :** 28/04/2025
   - **Date d'ajout :**
   - **Commit :** (https://github.com/jos34000/boilerPlate/commit/abc123)
   - **Priorité :** Haute
-  - **Statut :** En cours
+  - **Statut :** À faire
   - **Notes :** Considérer l'utilisation de `React.Suspense` pour le chargement.
 
-## 🎮 Ajouter une page de games
+### 🎮 Ajouter une page de games
 
 - [ ] 🐍 Créer un jeu de snake
 
@@ -29,18 +31,33 @@
   - **Statut :** À faire
   - **Notes :** Ajouter une fonctionnalité de jeu à deux joueurs.
 
-## 🎨 Ajouter du style aux pages de sign-in et sign-up
+### 🔒 Améliorer le processus de connexion et d'inscription
 
-- [x] Ajouter du style à la page de login & sign-up
+- [ ] 🔗 Ajouter la connexion via Google
 
-  - **Date de début :** 28/04/2025
-  - **Date d'ajout :** 29/04/2025
-  - **Commit :** (https://github.com/jos34000/boilerPlate/commit/21d6dca593c95db077686a23f77879294ec8eac5)
+  - **Date de début :**
+  - **Date d'ajout :**
+  - **Commit :** (https://github.com/jos34000/boilerPlate/commit/bcd890)
+  - **Priorité :** Moyenne
+  - **Statut :** À faire
+  - **Notes :** Utiliser l'API Google pour l'authentification.
+
+- [ ] 📦 Mettre en place un système de gestion des erreurs
+
+  - **Date de début :**
+  - **Date d'ajout :**
   - **Priorité :** Haute
-  - **Statut :** Fait
-  - **Notes :** Manque l'ajout d'un logo
+  - **Statut :** À faire
+  - **Notes :** Utiliser un service comme Sentry pour le suivi des erreurs.
 
-## 🛠️ Modifier la side-bar
+- [ ] 🔍 Ajouter des tests unitaires
+  - **Date de début :**
+  - **Date d'ajout :**
+  - **Priorité :** Moyenne
+  - **Statut :** À faire
+  - **Notes :** Couvrir les composants critiques avec des tests.
+
+### 🛠️ Modifier la side-bar
 
 - 📂 La partie dropdown :
 
@@ -49,7 +66,7 @@
     - **Date de début :**
     - **Date d'ajout :**
     - **Commit :** (https://github.com/jos34000/boilerPlate/commit/pqr678)
-    - **Priorité :** Haute
+    - **Priorité :** Moyenne
     - **Statut :** À faire
     - **Notes :**
 
@@ -61,60 +78,60 @@
     - **Statut :** À faire
     - **Notes :**
 
-- 📋 Modifier les catégories des dropdown :
+## Tâches en cours
 
-  - [ ] 🏆 Mes réalisations
+### 🎨 Ajouter du style aux pages de sign-in et sign-up
 
-    - **Date de début :**
-    - **Date d'ajout :**
-    - **Commit :** (https://github.com/jos34000/boilerPlate/commit/vwx234)
-    - **Priorité :** Moyenne
-    - **Statut :** À faire
-    - **Notes :**
-
-  - [ ] 🌟 Mes expériences
-
-    - **Date de début :**
-    - **Date d'ajout :**
-    - **Commit :** (https://github.com/jos34000/boilerPlate/commit/yza567)
-    - **Priorité :** Moyenne
-    - **Statut :** À faire
-    - **Notes :**
-
-  - [ ] 🔧 Modifier les sous-catégories
-    - **Date de début :**
-    - **Date d'ajout :**
-    - **Commit :** (https://github.com/jos34000/boilerPlate/commit/89d9987d1d3cbca49d543e14f4c2c4364101ad96)
-    - **Priorité :** Basse
-    - **Statut :** À faire
-    - **Notes :**
-
-## 📅 Autres tâches à considérer
-
-- [ ] 📦 Mettre en place un système de gestion des erreurs
-
-  - **Date de début :**
-  - **Date d'ajout :**
+- [x] Ajouter du style à la page de login & sign-up
+  - **Date de début :** 28/04/2025
+  - **Date d'ajout :** 29/04/2025
+  - **Commit :** (https://github.com/jos34000/boilerPlate/commit/21d6dca593c95db077686a23f77879294ec8eac5)
   - **Priorité :** Haute
-  - **Statut :** À faire
-  - **Notes :** Utiliser un service comme Sentry pour le suivi des erreurs.
+  - **Statut :** En cours
+  - **Notes :** Manque l'ajout d'un logo
 
-- [ ] 🔍 Ajouter des tests unitaires
+### 🔒 Améliorer le processus de connexion et d'inscription
 
-  - **Date de début :**
-  - **Date d'ajout :**
+- [x] 📧 Intégrer la vérification par email
+
+  - **Date de début :** 29/04/2025
+  - **Date d'ajout :** 29/04/2025
+  - **Commit :** (https://github.com/jos34000/boilerPlate/commit/8a86d6c8bc41c0ee184660589297dcdfccd6bfff)
+  - **Priorité :** Haute
+  - **Statut :** En cours
+  - **Notes :** Envoyer un email de vérification après l'inscription.
+
+- [x] 🐦 Ajouter la connexion via GitHub
+  - **Date de début :** 28/04/2025
+  - **Date d'ajout :** 28/04/2025
+  - **Commit :** (https://github.com/jos34000/boilerPlate/commit/89d9987d1d3cbca49d543e14f4c2c4364101ad96)
   - **Priorité :** Moyenne
-  - **Statut :** À faire
-  - **Notes :** Couvrir les composants critiques avec des tests.
+  - **Statut :** En cours
+  - **Notes :** Utiliser l'API GitHub pour l'authentification.
 
-- [ ] 📈 Optimiser les performances de l'application
-  - **Date de début :**
+## Tâches terminées
+
+### 🚀 Créer un loader inter pages
+
+- [x] Implémenter le loader inter pages
+  - **Date de début :** 28/04/2025
   - **Date d'ajout :**
-  - **Priorité :** Basse
-  - **Statut :** À faire
-  - **Notes :** Analyser les performances avec Lighthouse et apporter des améliorations.
+  - **Commit :** (https://github.com/jos34000/boilerPlate/commit/abc123)
+  - **Priorité :** Haute
+  - **Statut :** Fait
+  - **Notes :** Considérer l'utilisation de `React.Suspense` pour le chargement.
 
-## 🔒 Améliorer le processus de connexion et d'inscription
+### 🎨 Ajouter du style aux pages de sign-in et sign-up
+
+- [x] Ajouter du style à la page de login & sign-up
+  - **Date de début :** 28/04/2025
+  - **Date d'ajout :** 29/04/2025
+  - **Commit :** (https://github.com/jos34000/boilerPlate/commit/21d6dca593c95db077686a23f77879294ec8eac5)
+  - **Priorité :** Haute
+  - **Statut :** Fait
+  - **Notes :** Manque l'ajout d'un logo
+
+### 🔒 Améliorer le processus de connexion et d'inscription
 
 - [x] 📧 Intégrer la vérification par email
 
@@ -125,59 +142,10 @@
   - **Statut :** Fait
   - **Notes :** Envoyer un email de vérification après l'inscription.
 
-- [ ] 🔗 Ajouter la connexion via Google
-
-  - **Date de début :**
-  - **Date d'ajout :**
-  - **Commit :** (https://github.com/jos34000/boilerPlate/commit/bcd890)
-  - **Priorité :** Moyenne
-  - **Statut :** À faire
-  - **Notes :** Utiliser l'API Google pour l'authentification.
-
 - [x] 🐦 Ajouter la connexion via GitHub
-
   - **Date de début :** 28/04/2025
   - **Date d'ajout :** 28/04/2025
   - **Commit :** (https://github.com/jos34000/boilerPlate/commit/89d9987d1d3cbca49d543e14f4c2c4364101ad96)
   - **Priorité :** Moyenne
   - **Statut :** Fait
   - **Notes :** Utiliser l'API GitHub pour l'authentification.
-
-- [ ] 🔑 Implémenter la fonctionnalité de réinitialisation de mot de passe
-  - **Date de début :**
-  - **Date d'ajout :**
-  - **Commit :** (https://github.com/jos34000/boilerPlate/commit/bcd890)
-  - **Priorité :** Haute
-  - **Statut :** À faire
-  - **Notes :** Permettre aux utilisateurs de réinitialiser leur mot de passe via un email.
-
-## 📃 Ajouter les documents de ToS et RGPD
-
-- [ ] 📧 Ecrire les ToS et les intégrer aux liens
-
-  - **Date de début :**
-  - **Date d'ajout :**
-  - **Commit :** (https://github.com/jos34000/boilerPlate/commit/bcd890)
-  - **Priorité :** Haute
-  - **Statut :** À faire
-  - **Notes :** Envoyer un email de vérification après l'inscription.
-
-## 📃 Mailing
-
-- [x] 📬 Ajouter un courrier de remerciement au contact
-
-  - **Date de début :** 29/04/2025
-  - **Date d'ajout :** 29/04/2025
-  - **Commit :** (https://github.com/jos34000/boilerPlate/commit/bcd890)
-  - **Priorité :** Haute
-  - **Statut :** Fait
-  - **Notes :** Envoi de mail lors de prise de contact avec bouton d'appel / prise de rdv.
-
-- [x] 📬 Envoi d'un mail au propriétaire du serveur récapitulant la demande
-
-  - **Date de début :** 29/04/2025
-  - **Date d'ajout :** 29/04/2025
-  - **Commit :** (https://github.com/jos34000/boilerPlate/commit/bcd890)
-  - **Priorité :** Haute
-  - **Statut :** Fait
-  - **Notes :** Récapitulatif de la demande (raison, message et envoyeur)
