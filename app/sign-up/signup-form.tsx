@@ -1,5 +1,6 @@
 "use client"
 
+import { BackHome } from "@/components/back-home"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -95,6 +96,10 @@ export function SignUpForm({
 
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
+      <BackHome
+        isLoading={isLoading}
+        onFinishLoading={() => setIsLoading(false)}
+      />
       <form
         onSubmit={form.handleSubmit(onSubmit, (errors) => {
           const firstError = Object.values(errors)[0]
@@ -119,7 +124,7 @@ export function SignUpForm({
             <h1 className="text-xl font-bold">Welcome to Exoskel.</h1>
             <div className="text-center text-sm">
               Already have an account ?{" "}
-              <a href="/sign-up" className="underline underline-offset-4">
+              <a href="/login" className="underline underline-offset-4">
                 Sign In
               </a>
             </div>
