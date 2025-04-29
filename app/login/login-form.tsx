@@ -44,6 +44,8 @@ export function LoginForm({
         {
           email: values.email,
           password: values.password,
+          rememberMe: false,
+          callbackURL: "/dashboard",
         },
         {
           onRequest: () => setIsLoading(true),
@@ -55,7 +57,6 @@ export function LoginForm({
             const { data: session } = await authClient.getSession()
             if (session) {
               toast.success("Connexion réussie !")
-              router.push(`/dashboard/${session?.user.username}`)
             } else {
               toast.error("Erreur lors de la récupération du nom d'utilisateur")
             }

@@ -60,6 +60,7 @@ export function SignUpForm({
       setIsLoading(true)
 
       const { error } = await authClient.signUp.email({
+        callbackURL: "/login",
         email: values.email,
         password: values.password,
         name: `${values.firstName} ${values.lastName}`,

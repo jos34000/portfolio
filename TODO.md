@@ -29,7 +29,7 @@
   - **Statut :** À faire
   - **Notes :** Ajouter une fonctionnalité de jeu à deux joueurs.
 
-## 🎨 Ajouter du style à mes pages de sign-in et sign-up
+## 🎨 Ajouter du style aux pages de sign-in et sign-up
 
 - [x] Ajouter du style à la page de login & sign-up
 
@@ -116,23 +116,23 @@
 
 ## 🔒 Améliorer le processus de connexion et d'inscription
 
-- [ ] 📧 Intégrer la vérification par email
+- [x] 📧 Intégrer la vérification par email
 
-  - **Date de début :**
-  - **Date d'ajout :**
+  - **Date de début :** 29/04/2025
+  - **Date d'ajout :** 29/04/2025
   - **Commit :** (https://github.com/jos34000/boilerPlate/commit/bcd890)
   - **Priorité :** Haute
-  - **Statut :** À faire
+  - **Statut :** Fait
   - **Notes :** Envoyer un email de vérification après l'inscription.
 
-- [ ] 🔗 Ajouter la connexion via LinkedIn
+- [ ] 🔗 Ajouter la connexion via Google
 
   - **Date de début :**
   - **Date d'ajout :**
   - **Commit :** (https://github.com/jos34000/boilerPlate/commit/bcd890)
   - **Priorité :** Moyenne
   - **Statut :** À faire
-  - **Notes :** Utiliser l'API LinkedIn pour l'authentification.
+  - **Notes :** Utiliser l'API Google pour l'authentification.
 
 - [x] 🐦 Ajouter la connexion via GitHub
 
