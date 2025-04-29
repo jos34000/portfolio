@@ -125,6 +125,7 @@ export const WavyBackground = ({
 
   return (
     <div
+      id="home"
       className={cn(
         "h-screen flex flex-col items-center justify-center",
         containerClassName

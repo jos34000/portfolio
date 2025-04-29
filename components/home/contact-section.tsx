@@ -40,7 +40,10 @@ export const Contact = () => {
 
   return (
     <>
-      <div className="h-[40rem] w-full rounded-md bg-neutral-950 relative flex items-center justify-center antialiased">
+      <div
+        id="contact"
+        className="h-[40rem] w-full rounded-md bg-neutral-950 relative flex items-center justify-center antialiased"
+      >
         <div className="flex flex-col items-center text-center p-4 space-y-6">
           <h1 className="text-lg md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600">
             Contact me

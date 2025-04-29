@@ -1,17 +1,17 @@
-"use client";
-import { Card, Carousel } from "@/components/ui/cards-carousel";
+"use client"
+import { Card, Carousel } from "@/components/ui/cards-carousel"
 
 export function Carroussel() {
-  const cards = data.map((card) => <Card key={card.src} card={card} />);
+  const cards = data.map((card) => <Card key={card.src} card={card} />)
 
   return (
-    <div className="w-full h-full py-20">
+    <div className="w-full h-full py-20" id="about">
       <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
         Amazing features.
       </h2>
       <Carousel items={cards} />
     </div>
-  );
+  )
 }
 
 const data = [
@@ -45,4 +45,4 @@ const data = [
     title: "Easy to use.",
     src: "https://images.unsplash.com/photo-1692865814917-094cc56c5699?q=80&w=2960&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
-];
+]

@@ -1,5 +1,5 @@
-import { Timeline } from "@/components/ui/timeline";
-import Image from "next/image";
+import { Timeline } from "@/components/ui/timeline"
+import Image from "next/image"
 
 export function Steps() {
   const data = [
@@ -78,10 +78,10 @@ export function Steps() {
         </div>
       ),
     },
-  ];
+  ]
   return (
-    <div className="w-full">
+    <div className="w-full ">
       <Timeline data={data} />
     </div>
-  );
+  )
 }

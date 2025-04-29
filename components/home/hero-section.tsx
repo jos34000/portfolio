@@ -1,4 +1,4 @@
-import { WavyBackground } from "../ui/wavy-background";
+import { WavyBackground } from "../ui/wavy-background"
 
 export const HeroSection = () => {
   return (
@@ -10,5 +10,5 @@ export const HeroSection = () => {
         Just by using this Exo-Skeleton.
       </p>
     </WavyBackground>
-  );
-};
+  )
+}
