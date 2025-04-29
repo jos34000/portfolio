@@ -3,14 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently -n \"next,prisma\" -c \"blue,green\" \"pnpm dev:next\" \"pnpm dev:prisma\"",
+    "dev": "concurrently -n \"next,prisma,email\" -c \"black,magenta,cyan\" \"pnpm dev:next\" \"pnpm dev:prisma\" \"pnpm dev:email\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "generate": "prisma generate && prisma migrate dev",
     "dev:next": "next dev --turbopack --port 3000",
     "dev:prisma": "prisma studio --port 5555 --browser none",
-    "dev:email": "email dev --port 3001",
+    "dev:email": "email dev --port 3001 --dir ./lib/mails",
     "test": "jest"
   },
   "dependencies": {
@@ -43,7 +43,8 @@
     "simplex-noise": "^4.0.3",
     "sonner": "^2.0.3",
     "tailwind-merge": "^3.2.0",
-    "zod": "^3.24.3"
+    "zod": "^3.24.3",
+    "react-email": "^4.0.7"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",

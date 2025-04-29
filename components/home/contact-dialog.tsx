@@ -9,8 +9,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog"
 
-import { sendEmail } from "@/lib/mail/sendEmail"
-
+import { sendContactEmail } from "@/lib/action/send-contact-email"
 import { contactStepSchema } from "@/lib/schemas/contacting.schema"
 import { cn } from "@/lib/utils"
 import { useState } from "react"
@@ -83,7 +82,12 @@ export const ContactDialog = ({
   const handleSubmit = async () => {
     if (validateStep()) {
       onSubmit({ email, message, reason })
-      await sendEmail(email, reason, message)
+      await sendContactEmail({
+        email,
+        reason,
+        message,
+      })
+
       setStep(1)
       setMessage("")
       setReason("")

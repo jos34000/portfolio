@@ -120,7 +120,7 @@
 
   - **Date de début :** 29/04/2025
   - **Date d'ajout :** 29/04/2025
-  - **Commit :** (https://github.com/jos34000/boilerPlate/commit/bcd890)
+  - **Commit :** (https://github.com/jos34000/boilerPlate/commit/8a86d6c8bc41c0ee184660589297dcdfccd6bfff)
   - **Priorité :** Haute
   - **Statut :** Fait
   - **Notes :** Envoyer un email de vérification après l'inscription.
@@ -161,3 +161,23 @@
   - **Priorité :** Haute
   - **Statut :** À faire
   - **Notes :** Envoyer un email de vérification après l'inscription.
+
+## 📃 Mailing
+
+- [x] 📬 Ajouter un courrier de remerciement au contact
+
+  - **Date de début :** 29/04/2025
+  - **Date d'ajout :** 29/04/2025
+  - **Commit :** (https://github.com/jos34000/boilerPlate/commit/bcd890)
+  - **Priorité :** Haute
+  - **Statut :** Fait
+  - **Notes :** Envoi de mail lors de prise de contact avec bouton d'appel / prise de rdv.
+
+- [x] 📬 Envoi d'un mail au propriétaire du serveur récapitulant la demande
+
+  - **Date de début :** 29/04/2025
+  - **Date d'ajout :** 29/04/2025
+  - **Commit :** (https://github.com/jos34000/boilerPlate/commit/bcd890)
+  - **Priorité :** Haute
+  - **Statut :** Fait
+  - **Notes :** Récapitulatif de la demande (raison, message et envoyeur)

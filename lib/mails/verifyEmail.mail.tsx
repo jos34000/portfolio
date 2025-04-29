@@ -13,14 +13,15 @@ interface VerifyEmailProps {
   userFirstname?: string
 }
 
-export const VerifyEmail = ({
+export default function VerifyEmail({
   verificationUrl,
   userFirstname,
-}: VerifyEmailProps) => {
+}: VerifyEmailProps) {
   return (
     <Html>
-      <Head />
-      <Preview>Confirmez votre adresse email pour continuer</Preview>
+      <Head>
+        <Preview>Confirmez votre adresse email pour continuer</Preview>
+      </Head>
       <Body
         style={{ backgroundColor: "#f9fafb", fontFamily: "Arial, sans-serif" }}
       >
