@@ -120,7 +120,7 @@ export const ContactDialog = ({
               <Textarea
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                placeholder="Write your request here..."
+                placeholder="Write your request here & add links if necessary ..."
                 className={`bg-neutral-950 border-neutral-800 text-neutral-200 rounded-lg focus:ring-2 focus:ring-teal-500 min-h-[150px] placeholder:text-neutral-700 ${
                   errors.message ? "border-red-500" : "border-neutral-800"
                 }`}

@@ -31,22 +31,14 @@
 
 ## 🎨 Ajouter du style à mes pages de sign-in et sign-up
 
-- [ ] Ajouter du style à la page de sign-in
+- [✅] Ajouter du style à la page de login & sign-up
 
-  - **Date de début :**
-  - **Date d'ajout :**
-  - **Commit :** (https://github.com/jos34000/boilerPlate/commit/jkl012)
+  - **Date de début :** 28/04/2025
+  - **Date d'ajout :** 29/04/2025
+  - **Commit :** (https://github.com/jos34000/boilerPlate/commit/21d6dca593c95db077686a23f77879294ec8eac5)
   - **Priorité :** Haute
-  - **Statut :** À faire
-  - **Notes :**
-
-- [ ] Ajouter du style à la page de sign-up
-  - **Date de début :**
-  - **Date d'ajout :**
-  - **Commit :** (https://github.com/jos34000/boilerPlate/commit/mno345)
-  - **Priorité :** Haute
-  - **Statut :** À faire
-  - **Notes :**
+  - **Statut :** Fait
+  - **Notes :** Manque l'ajout d'un logo
 
 ## 🛠️ Modifier la side-bar
 
@@ -146,9 +138,9 @@
 
   - **Date de début :** 28/04/2025
   - **Date d'ajout :** 28/04/2025
-  - **Commit :** (https://github.com/jos34000/boilerPlate/commit/bcd890)
+  - **Commit :** (https://github.com/jos34000/boilerPlate/commit/89d9987d1d3cbca49d543e14f4c2c4364101ad96)
   - **Priorité :** Moyenne
-  - **Statut :** Done.
+  - **Statut :** Fait
   - **Notes :** Utiliser l'API GitHub pour l'authentification.
 
 - [ ] 🔑 Implémenter la fonctionnalité de réinitialisation de mot de passe
