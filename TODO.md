@@ -134,7 +134,7 @@
   - **Statut :** À faire
   - **Notes :** Utiliser l'API LinkedIn pour l'authentification.
 
-- [✅] 🐦 Ajouter la connexion via GitHub
+- [x] 🐦 Ajouter la connexion via GitHub
 
   - **Date de début :** 28/04/2025
   - **Date d'ajout :** 28/04/2025
