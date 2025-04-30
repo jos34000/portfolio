@@ -78,7 +78,7 @@
     - **Statut :** À faire
     - **Notes :**
 
-## Tâches en cours
+## Tâches terminées
 
 ### 🎨 Ajouter du style aux pages de sign-in et sign-up
 
@@ -87,7 +87,7 @@
   - **Date d'ajout :** 29/04/2025
   - **Commit :** (https://github.com/jos34000/boilerPlate/commit/21d6dca593c95db077686a23f77879294ec8eac5)
   - **Priorité :** Haute
-  - **Statut :** En cours
+  - **Statut :** Fait
   - **Notes :** Manque l'ajout d'un logo
 
 ### 🔒 Améliorer le processus de connexion et d'inscription
@@ -98,30 +98,19 @@
   - **Date d'ajout :** 29/04/2025
   - **Commit :** (https://github.com/jos34000/boilerPlate/commit/8a86d6c8bc41c0ee184660589297dcdfccd6bfff)
   - **Priorité :** Haute
-  - **Statut :** En cours
+  - **Statut :** Fait
   - **Notes :** Envoyer un email de vérification après l'inscription.
 
 - [x] 🐦 Ajouter la connexion via GitHub
+
   - **Date de début :** 28/04/2025
   - **Date d'ajout :** 28/04/2025
   - **Commit :** (https://github.com/jos34000/boilerPlate/commit/89d9987d1d3cbca49d543e14f4c2c4364101ad96)
   - **Priorité :** Moyenne
-  - **Statut :** En cours
+  - **Statut :** Fait
   - **Notes :** Utiliser l'API GitHub pour l'authentification.
 
-## Tâches terminées
-
-### 🚀 Créer un loader inter pages
-
-- [x] Implémenter le loader inter pages
-  - **Date de début :** 28/04/2025
-  - **Date d'ajout :**
-  - **Commit :** (https://github.com/jos34000/boilerPlate/commit/abc123)
-  - **Priorité :** Haute
-  - **Statut :** Fait
-  - **Notes :** Considérer l'utilisation de `React.Suspense` pour le chargement.
-
-### 🎨 Ajouter du style aux pages de sign-in et sign-up
+  ### 🎨 Ajouter du style aux pages de sign-in et sign-up
 
 - [x] Ajouter du style à la page de login & sign-up
   - **Date de début :** 28/04/2025

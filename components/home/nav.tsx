@@ -1,5 +1,5 @@
 import { FloatingNav } from "@/components/ui/floating-navbar"
-import { IconHome, IconMessage, IconUser } from "@tabler/icons-react"
+import { IconEdit, IconHome, IconMessage, IconUser } from "@tabler/icons-react"
 
 export function Nav() {
   const navItems = [
@@ -14,6 +14,12 @@ export function Nav() {
       name: "About",
       link: "#about",
       icon: <IconUser className="h-4 w-4 text-neutral-500 dark:text-white" />,
+    },
+    {
+      id: "reviews",
+      name: "Reviews",
+      link: "#reviews",
+      icon: <IconEdit className="h-4 w-4 text-neutral-500 dark:text-white" />,
     },
     {
       id: "contact",
