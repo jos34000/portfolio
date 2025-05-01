@@ -24,19 +24,6 @@ export default function ThankYouContactEmail({
   message,
   reason,
 }: Readonly<ThankYouContactEmailProps>) {
-  const theme = {
-    background: "oklch(0 0 0)",
-    foreground: "oklch(1 0 0)",
-    card: "oklch(0.14 0 0)",
-    muted: "oklch(0.72 0 0)",
-    primary: "oklch(1 0 0)",
-    primaryForeground: "oklch(0 0 0)",
-    border: "oklch(0.26 0 0)",
-    accent: "oklch(0.32 0 0)",
-    success: "oklch(0.81 0.17 75.35)",
-    destructive: "oklch(0.69 0.2 23.91)",
-  }
-
   const icons = {
     clock:
       "https://raw.githubusercontent.com/phosphor-icons/core/main/assets/regular/clock.svg",
@@ -65,43 +52,46 @@ export default function ThankYouContactEmail({
       </Head>
       <Body
         style={{
-          backgroundColor: theme.background,
-          fontFamily: "Geist, sans-serif",
-          color: theme.foreground,
           margin: "0",
           padding: "0",
+          backgroundColor: "#000000",
+          color: "#ffffff",
+          fontFamily:
+            "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
+          WebkitTextSizeAdjust: "100%",
+          textSizeAdjust: "100%",
         }}
       >
         <Container
           style={{
-            background: `radial-gradient(circle at 70% 30%, oklch(0.18 0 0) 0%, ${theme.background} 50%),
-               radial-gradient(circle at 30% 70%, oklch(0.14 0 0) 0%, transparent 50%)`,
-            padding: "60px 20px",
             width: "100%",
+            maxWidth: "600px",
+            margin: "0 auto",
+            backgroundColor: "#000000",
+            padding: "40px 20px",
           }}
         >
           <Container
             style={{
+              width: "100%",
               maxWidth: "600px",
               margin: "0 auto",
-              position: "relative",
+              backgroundColor: "#000000",
             }}
           >
             <Section
               style={{
-                textAlign: "center",
+                textAlign: "center" as const,
                 marginBottom: "32px",
-                position: "relative",
-                zIndex: "1",
               }}
             >
               <div
                 style={{
-                  background: `linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05))`,
+                  backgroundColor: "rgba(255,255,255,0.1)",
                   borderRadius: "50%",
                   padding: "16px",
                   display: "inline-block",
-                  boxShadow: `0 0 60px rgba(255,255,255,0.1), inset 0 0 20px rgba(255,255,255,0.1)`,
+                  border: "1px solid rgba(255,255,255,0.2)",
                 }}
               >
                 <Img
@@ -111,8 +101,7 @@ export default function ThankYouContactEmail({
                   alt="Logo"
                   style={{
                     borderRadius: "50%",
-                    border: `2px solid ${theme.border}`,
-                    boxShadow: `0 0 20px rgba(255,255,255,0.2)`,
+                    border: "2px solid rgba(255,255,255,0.2)",
                   }}
                 />
               </div>
@@ -120,48 +109,20 @@ export default function ThankYouContactEmail({
 
             <Section
               style={{
-                backgroundColor: theme.card,
-                borderRadius: "1rem",
+                backgroundColor: "rgba(255,255,255,0.05)",
                 padding: "40px",
-                boxShadow: `0 4px 6px -1px rgba(0, 0, 0, 0.5),
-                   0 2px 4px -1px rgba(0, 0, 0, 0.4),
-                   inset 0 1px 0 rgba(255,255,255,0.05)`,
-                border: `1px solid ${theme.border}`,
-                position: "relative",
-                overflow: "hidden",
-                zIndex: "1",
+                borderRadius: "16px",
+                border: "1px solid rgba(255,255,255,0.1)",
+                marginBottom: "20px",
               }}
             >
-              <div
-                style={{
-                  position: "absolute",
-                  top: "0",
-                  right: "0",
-                  width: "60%",
-                  height: "1px",
-                  background: `linear-gradient(90deg, transparent, rgba(255,255,255,0.3))`,
-                }}
-              />
-
-              <div
-                style={{
-                  position: "absolute",
-                  top: "0",
-                  right: "0",
-                  width: "1px",
-                  height: "40%",
-                  background: `linear-gradient(180deg, rgba(255,255,255,0.3), transparent)`,
-                }}
-              />
-
               <Text
                 style={{
                   fontSize: "28px",
                   fontWeight: "600",
-                  color: theme.foreground,
+                  color: "#ffffff",
                   marginBottom: "24px",
-                  textAlign: "center",
-                  letterSpacing: "-0.025em",
+                  textAlign: "center" as const,
                 }}
               >
                 {userFirstname
@@ -172,11 +133,10 @@ export default function ThankYouContactEmail({
               <Text
                 style={{
                   fontSize: "16px",
-                  lineHeight: "1.6",
-                  color: theme.muted,
+                  lineHeight: "24px",
+                  color: "rgba(255,255,255,0.7)",
                   marginBottom: "32px",
-                  textAlign: "center",
-                  padding: "0 20px",
+                  textAlign: "center" as const,
                 }}
               >
                 I've received your request and will get back to you as soon as
@@ -185,22 +145,20 @@ export default function ThankYouContactEmail({
 
               <Section
                 style={{
-                  margin: "32px 0",
-                  padding: "16px",
-                  borderRadius: "0.5rem",
                   backgroundColor: "rgba(255,255,255,0.03)",
-                  border: `1px solid ${theme.border}`,
+                  padding: "20px",
+                  borderRadius: "8px",
+                  border: "1px solid rgba(255,255,255,0.1)",
+                  marginBottom: "32px",
                 }}
               >
-                <Text
+                <div
                   style={{
-                    fontSize: "14px",
-                    color: theme.muted,
-                    marginBottom: "8px",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     gap: "8px",
+                    marginBottom: "12px",
                   }}
                 >
                   <Img
@@ -210,13 +168,18 @@ export default function ThankYouContactEmail({
                     alt=""
                     style={{ filter: "invert(1)" }}
                   />
-                  Expected response time: within 24-48 hours
-                </Text>
-                <Text
+                  <Text
+                    style={{
+                      fontSize: "14px",
+                      color: "rgba(255,255,255,0.7)",
+                      margin: "0",
+                    }}
+                  >
+                    Expected response time: within 24-48 hours
+                  </Text>
+                </div>
+                <div
                   style={{
-                    fontSize: "14px",
-                    color: theme.muted,
-                    margin: "0",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -230,129 +193,124 @@ export default function ThankYouContactEmail({
                     alt=""
                     style={{ filter: "invert(1)" }}
                   />
-                  Business hours: Monday-Friday, 9AM-6PM (CET)
-                </Text>
+                  <Text
+                    style={{
+                      fontSize: "14px",
+                      color: "rgba(255,255,255,0.7)",
+                      margin: "0",
+                    }}
+                  >
+                    Business hours: Monday-Friday, 9AM-6PM (CET)
+                  </Text>
+                </div>
               </Section>
 
               <Section
                 style={{
-                  margin: "32px 0",
-                  padding: "24px",
-                  borderRadius: "0.75rem",
                   backgroundColor: "rgba(255,255,255,0.03)",
-                  border: `1px solid ${theme.border}`,
-                  position: "relative",
+                  padding: "24px",
+                  borderRadius: "12px",
+                  border: "1px solid rgba(255,255,255,0.1)",
+                  marginBottom: "32px",
                 }}
               >
                 <Text
                   style={{
                     fontSize: "16px",
                     fontWeight: "600",
-                    color: theme.foreground,
+                    color: "#ffffff",
                     marginBottom: "16px",
-                    textAlign: "center",
+                    textAlign: "center" as const,
                   }}
                 >
                   Your Contact Request Summary
                 </Text>
 
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "12px",
-                  }}
-                >
-                  {email && (
-                    <div
+                {email && (
+                  <div
+                    style={{
+                      backgroundColor: "rgba(255,255,255,0.05)",
+                      padding: "12px",
+                      borderRadius: "8px",
+                      marginBottom: "12px",
+                    }}
+                  >
+                    <Text
                       style={{
-                        padding: "12px",
-                        borderRadius: "8px",
-                        backgroundColor: "rgba(255,255,255,0.05)",
+                        fontSize: "14px",
+                        color: "rgba(255,255,255,0.7)",
+                        margin: "0",
                       }}
                     >
-                      <Text
-                        style={{
-                          fontSize: "14px",
-                          color: theme.muted,
-                          margin: "0",
-                        }}
-                      >
-                        <strong style={{ color: theme.foreground }}>
-                          Email:
-                        </strong>{" "}
-                        {email}
-                      </Text>
-                    </div>
-                  )}
+                      <strong style={{ color: "#ffffff" }}>Email:</strong>{" "}
+                      {email}
+                    </Text>
+                  </div>
+                )}
 
-                  {reason && (
-                    <div
+                {reason && (
+                  <div
+                    style={{
+                      backgroundColor: "rgba(255,255,255,0.05)",
+                      padding: "12px",
+                      borderRadius: "8px",
+                      marginBottom: "12px",
+                    }}
+                  >
+                    <Text
                       style={{
-                        padding: "12px",
-                        borderRadius: "8px",
-                        backgroundColor: "rgba(255,255,255,0.05)",
+                        fontSize: "14px",
+                        color: "rgba(255,255,255,0.7)",
+                        margin: "0",
                       }}
                     >
-                      <Text
-                        style={{
-                          fontSize: "14px",
-                          color: theme.muted,
-                          margin: "0",
-                        }}
-                      >
-                        <strong style={{ color: theme.foreground }}>
-                          Reason:
-                        </strong>{" "}
-                        {reason}
-                      </Text>
-                    </div>
-                  )}
+                      <strong style={{ color: "#ffffff" }}>Reason:</strong>{" "}
+                      {reason}
+                    </Text>
+                  </div>
+                )}
 
-                  {message && (
-                    <div
+                {message && (
+                  <div
+                    style={{
+                      backgroundColor: "rgba(255,255,255,0.05)",
+                      padding: "12px",
+                      borderRadius: "8px",
+                    }}
+                  >
+                    <Text
                       style={{
-                        padding: "12px",
-                        borderRadius: "8px",
-                        backgroundColor: "rgba(255,255,255,0.05)",
+                        fontSize: "14px",
+                        color: "rgba(255,255,255,0.7)",
+                        margin: "0 0 8px 0",
                       }}
                     >
-                      <Text
-                        style={{
-                          fontSize: "14px",
-                          color: theme.muted,
-                          margin: "0",
-                        }}
-                      >
-                        <strong style={{ color: theme.foreground }}>
-                          Message:
-                        </strong>
-                      </Text>
-                      <Text
-                        style={{
-                          fontSize: "14px",
-                          color: theme.muted,
-                          margin: "8px 0 0 0",
-                          lineHeight: "1.5",
-                        }}
-                      >
-                        {message}
-                      </Text>
-                    </div>
-                  )}
-                </div>
+                      <strong style={{ color: "#ffffff" }}>Message:</strong>
+                    </Text>
+                    <Text
+                      style={{
+                        fontSize: "14px",
+                        color: "rgba(255,255,255,0.7)",
+                        margin: "0",
+                        lineHeight: "1.5",
+                      }}
+                    >
+                      {message}
+                    </Text>
+                  </div>
+                )}
               </Section>
 
               <Section
                 style={{
+                  textAlign: "center" as const,
                   marginBottom: "32px",
-                  textAlign: "center",
                 }}
               >
                 <Text
                   style={{
                     fontSize: "16px",
-                    color: theme.muted,
+                    color: "rgba(255,255,255,0.7)",
                     marginBottom: "24px",
                   }}
                 >
@@ -363,103 +321,67 @@ export default function ThankYouContactEmail({
                   style={{
                     display: "flex",
                     flexDirection: "column",
-                    gap: "16px",
                     alignItems: "center",
-                    width: "100%",
+                    gap: "12px",
                   }}
                 >
                   <Button
                     href="tel:+33625649572"
                     style={{
-                      backgroundColor: theme.primary,
-                      color: theme.primaryForeground,
-                      padding: "16px 36px",
-                      borderRadius: "0.75rem",
+                      backgroundColor: "#ffffff",
+                      color: "#000000",
+                      padding: "20px",
+                      borderRadius: "12px",
                       textDecoration: "none",
-                      fontSize: "14px",
+                      fontSize: "16px",
                       fontWeight: "500",
-                      textTransform: "uppercase",
-                      letterSpacing: "0.025em",
-                      display: "inline-flex",
+                      display: "flex",
                       alignItems: "center",
-                      gap: "8px",
-                      minWidth: "200px",
                       justifyContent: "center",
-                      position: "relative",
+                      width: "100%",
+                      maxWidth: "320px",
+                      border: "none",
                     }}
                   >
-                    <div
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "8px",
-                      }}
-                    >
-                      <Img
-                        src={icons.phone}
-                        width="20"
-                        height="20"
-                        alt=""
-                        style={{ filter: "invert(0)" }}
-                      />
-                      <span>Call now</span>
-                    </div>
+                    Call now
                   </Button>
 
                   <Button
                     href="https://calendly.com/jocelyn-sainson/30min"
                     style={{
-                      backgroundColor: theme.accent,
-                      color: theme.foreground,
-                      padding: "16px 36px",
-                      borderRadius: "0.75rem",
+                      backgroundColor: "rgba(255,255,255,0.1)",
+                      color: "#ffffff",
+                      padding: "20px",
+                      borderRadius: "12px",
                       textDecoration: "none",
-                      fontSize: "14px",
+                      fontSize: "16px",
                       fontWeight: "500",
-                      textTransform: "uppercase",
-                      letterSpacing: "0.025em",
-                      display: "inline-flex",
+                      display: "flex",
                       alignItems: "center",
-                      gap: "8px",
-                      minWidth: "200px",
                       justifyContent: "center",
-                      position: "relative",
+                      width: "100%",
+                      maxWidth: "320px",
+                      border: "1px solid rgba(255,255,255,0.2)",
                     }}
                   >
-                    <div
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "8px",
-                      }}
-                    >
-                      <Img
-                        src={icons.calendar}
-                        width="20"
-                        height="20"
-                        alt=""
-                        style={{ filter: "invert(1)" }}
-                      />
-                      <span>Schedule a meeting</span>
-                    </div>
+                    Schedule a meeting
                   </Button>
                 </div>
               </Section>
 
               <Section
                 style={{
-                  marginTop: "32px",
-                  padding: "16px",
-                  borderTop: `1px solid ${theme.border}`,
+                  borderTop: "1px solid rgba(255,255,255,0.1)",
+                  paddingTop: "32px",
+                  marginBottom: "32px",
                 }}
               >
                 <Text
                   style={{
                     fontSize: "14px",
-                    color: theme.muted,
+                    color: "rgba(255,255,255,0.7)",
                     marginBottom: "16px",
-                    textAlign: "center",
-                    fontWeight: "500",
+                    textAlign: "center" as const,
                   }}
                 >
                   Common Questions
@@ -474,13 +396,13 @@ export default function ThankYouContactEmail({
                   <Link
                     href="#"
                     style={{
-                      color: theme.muted,
+                      color: "rgba(255,255,255,0.7)",
                       fontSize: "13px",
                       textDecoration: "none",
                       padding: "8px",
                       borderRadius: "4px",
                       backgroundColor: "rgba(255,255,255,0.03)",
-                      textAlign: "center",
+                      textAlign: "center" as const,
                       display: "flex",
                       alignItems: "center",
                       gap: "8px",
@@ -499,13 +421,13 @@ export default function ThankYouContactEmail({
                   <Link
                     href="#"
                     style={{
-                      color: theme.muted,
+                      color: "rgba(255,255,255,0.7)",
                       fontSize: "13px",
                       textDecoration: "none",
                       padding: "8px",
                       borderRadius: "4px",
                       backgroundColor: "rgba(255,255,255,0.03)",
-                      textAlign: "center",
+                      textAlign: "center" as const,
                       display: "flex",
                       alignItems: "center",
                       gap: "8px",
@@ -524,13 +446,13 @@ export default function ThankYouContactEmail({
                   <Link
                     href="#"
                     style={{
-                      color: theme.muted,
+                      color: "rgba(255,255,255,0.7)",
                       fontSize: "13px",
                       textDecoration: "none",
                       padding: "8px",
                       borderRadius: "4px",
                       backgroundColor: "rgba(255,255,255,0.03)",
-                      textAlign: "center",
+                      textAlign: "center" as const,
                       display: "flex",
                       alignItems: "center",
                       gap: "8px",
@@ -551,17 +473,17 @@ export default function ThankYouContactEmail({
 
               <Section
                 style={{
-                  marginTop: "32px",
-                  padding: "16px",
-                  borderTop: `1px solid ${theme.border}`,
-                  textAlign: "center",
+                  borderTop: "1px solid rgba(255,255,255,0.1)",
+                  paddingTop: "32px",
+                  marginBottom: "32px",
                 }}
               >
                 <Text
                   style={{
                     fontSize: "14px",
-                    color: theme.muted,
+                    color: "rgba(255,255,255,0.7)",
                     marginBottom: "16px",
+                    textAlign: "center" as const,
                   }}
                 >
                   Join our growing community
@@ -571,14 +493,20 @@ export default function ThankYouContactEmail({
                     display: "flex",
                     justifyContent: "center",
                     gap: "24px",
+                    flexWrap: "wrap" as const,
                   }}
                 >
-                  <div>
+                  <div
+                    style={{
+                      textAlign: "center" as const,
+                      minWidth: "100px",
+                    }}
+                  >
                     <Text
                       style={{
                         fontSize: "18px",
                         fontWeight: "600",
-                        color: theme.foreground,
+                        color: "#ffffff",
                         margin: "0",
                       }}
                     >
@@ -587,19 +515,24 @@ export default function ThankYouContactEmail({
                     <Text
                       style={{
                         fontSize: "12px",
-                        color: theme.muted,
+                        color: "rgba(255,255,255,0.7)",
                         margin: "4px 0 0 0",
                       }}
                     >
                       Satisfied Clients
                     </Text>
                   </div>
-                  <div>
+                  <div
+                    style={{
+                      textAlign: "center" as const,
+                      minWidth: "100px",
+                    }}
+                  >
                     <Text
                       style={{
                         fontSize: "18px",
                         fontWeight: "600",
-                        color: theme.foreground,
+                        color: "#ffffff",
                         margin: "0",
                       }}
                     >
@@ -608,19 +541,24 @@ export default function ThankYouContactEmail({
                     <Text
                       style={{
                         fontSize: "12px",
-                        color: theme.muted,
+                        color: "rgba(255,255,255,0.7)",
                         margin: "4px 0 0 0",
                       }}
                     >
                       Average Rating
                     </Text>
                   </div>
-                  <div>
+                  <div
+                    style={{
+                      textAlign: "center" as const,
+                      minWidth: "100px",
+                    }}
+                  >
                     <Text
                       style={{
                         fontSize: "18px",
                         fontWeight: "600",
-                        color: theme.foreground,
+                        color: "#ffffff",
                         margin: "0",
                       }}
                     >
@@ -629,7 +567,7 @@ export default function ThankYouContactEmail({
                     <Text
                       style={{
                         fontSize: "12px",
-                        color: theme.muted,
+                        color: "rgba(255,255,255,0.7)",
                         margin: "4px 0 0 0",
                       }}
                     >
@@ -641,17 +579,16 @@ export default function ThankYouContactEmail({
 
               <Section
                 style={{
-                  marginTop: "32px",
-                  padding: "16px",
-                  borderTop: `1px solid ${theme.border}`,
-                  textAlign: "center",
+                  borderTop: "1px solid rgba(255,255,255,0.1)",
+                  paddingTop: "32px",
                 }}
               >
                 <Text
                   style={{
                     fontSize: "14px",
-                    color: theme.muted,
+                    color: "rgba(255,255,255,0.7)",
                     marginBottom: "16px",
+                    textAlign: "center" as const,
                   }}
                 >
                   Connect with us
@@ -666,7 +603,7 @@ export default function ThankYouContactEmail({
                   <Link
                     href="#"
                     style={{
-                      color: theme.muted,
+                      color: "rgba(255,255,255,0.7)",
                       fontSize: "12px",
                       textDecoration: "none",
                       display: "flex",
@@ -679,14 +616,14 @@ export default function ThankYouContactEmail({
                       width="20"
                       height="20"
                       alt=""
-                      style={{ filter: "invert(1)", marginTop: "-2px" }}
+                      style={{ filter: "invert(1)" }}
                     />
                     Twitter
                   </Link>
                   <Link
                     href="#"
                     style={{
-                      color: theme.muted,
+                      color: "rgba(255,255,255,0.7)",
                       fontSize: "12px",
                       textDecoration: "none",
                       display: "flex",
@@ -699,14 +636,14 @@ export default function ThankYouContactEmail({
                       width="20"
                       height="20"
                       alt=""
-                      style={{ filter: "invert(1)", marginTop: "-2px" }}
+                      style={{ filter: "invert(1)" }}
                     />
                     LinkedIn
                   </Link>
                   <Link
                     href="#"
                     style={{
-                      color: theme.muted,
+                      color: "rgba(255,255,255,0.7)",
                       fontSize: "12px",
                       textDecoration: "none",
                       display: "flex",
@@ -719,7 +656,7 @@ export default function ThankYouContactEmail({
                       width="20"
                       height="20"
                       alt=""
-                      style={{ filter: "invert(1)", marginTop: "-2px" }}
+                      style={{ filter: "invert(1)" }}
                     />
                     Instagram
                   </Link>
@@ -727,46 +664,16 @@ export default function ThankYouContactEmail({
               </Section>
             </Section>
 
-            <Section
+            <Text
               style={{
-                textAlign: "center",
-                marginTop: "40px",
-                padding: "24px",
-                backgroundColor: theme.card,
-                borderRadius: "0.75rem",
-                border: `1px solid ${theme.border}`,
-                position: "relative",
-                overflow: "hidden",
-                zIndex: "1",
+                fontSize: "14px",
+                color: "rgba(255,255,255,0.5)",
+                textAlign: "center" as const,
+                margin: "0",
               }}
             >
-              <div
-                style={{
-                  position: "absolute",
-                  top: "0",
-                  left: "0",
-                  right: "0",
-                  height: "2px",
-                  background: `linear-gradient(90deg, 
-                    transparent 0%, 
-                    rgba(255,255,255,0.1) 20%, 
-                    rgba(255,255,255,0.2) 50%,
-                    rgba(255,255,255,0.1) 80%,
-                    transparent 100%)`,
-                }}
-              />
-
-              <Text
-                style={{
-                  fontSize: "14px",
-                  color: theme.muted,
-                  marginBottom: "0",
-                  fontStyle: "italic",
-                }}
-              >
-                Thank you again for your trust. Talk to you soon!
-              </Text>
-            </Section>
+              Thank you again for your trust. Talk to you soon!
+            </Text>
           </Container>
         </Container>
       </Body>

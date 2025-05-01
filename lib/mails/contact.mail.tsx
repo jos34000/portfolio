@@ -1,6 +1,5 @@
 import {
   Body,
-  Button,
   Container,
   Head,
   Html,
@@ -27,55 +26,99 @@ export function ContactRequestEmail({
       </Head>
       <Body
         style={{
-          fontFamily: "Arial, sans-serif",
-          backgroundColor: "#f9f9f9",
-          padding: "20px",
+          margin: "0",
+          padding: "0",
+          backgroundColor: "#f6f6f6",
+          fontFamily:
+            "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
         }}
       >
         <Container
           style={{
-            backgroundColor: "#ffffff",
+            width: "100%",
+            maxWidth: "600px",
+            margin: "0 auto",
             padding: "20px",
-            borderRadius: "8px",
-            boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
           }}
         >
-          <Section style={{ marginBottom: "20px" }}>
-            <Text style={{ fontSize: "18px", fontWeight: "bold" }}>
-              Nouvelle demande de contact !
-            </Text>
-          </Section>
-          <Section style={{ marginBottom: "10px" }}>
-            <Text>
-              <strong>Email :</strong> {senderEmail}
-            </Text>
-          </Section>
-          <Section style={{ marginBottom: "10px" }}>
-            <Text>
-              <strong>Raison du contact :</strong> {reason}
-            </Text>
-          </Section>
-          <Section style={{ marginBottom: "20px" }}>
-            <Text>
-              <strong>Message :</strong>
-            </Text>
-            <Text style={{ whiteSpace: "pre-line" }}>{message}</Text>
-          </Section>
-          <Section>
-            <Button
-              href="/sign-in"
+          <Section
+            style={{
+              backgroundColor: "#ffffff",
+              padding: "30px",
+              borderRadius: "4px",
+              marginBottom: "20px",
+              border: "1px solid #eaeaea",
+            }}
+          >
+            <Text
               style={{
-                backgroundColor: "#6366f1",
-                color: "#ffffff",
-                padding: "12px 24px",
-                borderRadius: "6px",
-                textDecoration: "none",
-                fontWeight: "bold",
+                fontSize: "24px",
+                lineHeight: "24px",
+                margin: "0 0 20px 0",
+                textAlign: "center" as const,
+                color: "#000000",
               }}
             >
-              Vérifier mon adresse
-            </Button>
+              Nouvelle demande de contact !
+            </Text>
+
+            <Text
+              style={{
+                fontSize: "14px",
+                lineHeight: "24px",
+                margin: "0 0 10px 0",
+                color: "#666666",
+              }}
+            >
+              <strong style={{ color: "#000000" }}>Email :</strong>{" "}
+              {senderEmail}
+            </Text>
+
+            <Text
+              style={{
+                fontSize: "14px",
+                lineHeight: "24px",
+                margin: "0 0 10px 0",
+                color: "#666666",
+              }}
+            >
+              <strong style={{ color: "#000000" }}>Raison du contact :</strong>{" "}
+              {reason}
+            </Text>
+
+            <Text
+              style={{
+                fontSize: "14px",
+                lineHeight: "24px",
+                margin: "0 0 10px 0",
+                color: "#666666",
+              }}
+            >
+              <strong style={{ color: "#000000" }}>Message :</strong>
+            </Text>
+
+            <Text
+              style={{
+                fontSize: "14px",
+                lineHeight: "24px",
+                margin: "0",
+                color: "#666666",
+                whiteSpace: "pre-line",
+              }}
+            >
+              {message}
+            </Text>
           </Section>
+
+          <Text
+            style={{
+              textAlign: "center" as const,
+              fontSize: "12px",
+              color: "#666666",
+            }}
+          >
+            © 2024 Jocelyn Sainson. Tous droits réservés.
+          </Text>
         </Container>
       </Body>
     </Html>

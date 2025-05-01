@@ -21,17 +21,6 @@ export default function VerifyEmail({
   verificationUrl,
   userFirstname,
 }: Readonly<VerifyEmailProps>) {
-  const theme = {
-    background: "oklch(0 0 0)",
-    foreground: "oklch(1 0 0)",
-    card: "oklch(0.14 0 0)",
-    muted: "oklch(0.72 0 0)",
-    primary: "oklch(1 0 0)",
-    primaryForeground: "oklch(0 0 0)",
-    border: "oklch(0.26 0 0)",
-    accent: "oklch(0.32 0 0)",
-  }
-
   const icons = {
     lock: "https://raw.githubusercontent.com/phosphor-icons/core/main/assets/regular/lock-simple.svg",
     globe:
@@ -52,59 +41,46 @@ export default function VerifyEmail({
       </Head>
       <Body
         style={{
-          backgroundColor: theme.background,
-          fontFamily: "Geist, sans-serif",
-          color: theme.foreground,
           margin: "0",
           padding: "0",
+          backgroundColor: "#000000",
+          color: "#ffffff",
+          fontFamily:
+            "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
+          WebkitTextSizeAdjust: "100%",
+          textSizeAdjust: "100%",
         }}
       >
         <Container
           style={{
-            background:
-              "radial-gradient(circle at 70% 30%, oklch(0.18 0 0) 0%, " +
-              theme.background +
-              " 50%), radial-gradient(circle at 30% 70%, oklch(0.14 0 0) 0%, transparent 50%)",
-            padding: "60px 20px",
             width: "100%",
+            maxWidth: "600px",
+            margin: "0 auto",
+            backgroundColor: "#000000",
+            padding: "40px 20px",
           }}
         >
           <Container
             style={{
+              width: "100%",
               maxWidth: "600px",
               margin: "0 auto",
-              position: "relative",
+              backgroundColor: "#000000",
             }}
           >
-            <div
-              style={{
-                position: "absolute",
-                top: "-100px",
-                right: "-100px",
-                width: "300px",
-                height: "300px",
-                background:
-                  "radial-gradient(circle at center, rgba(255,255,255,0.03) 0%, transparent 70%)",
-              }}
-            />
-
             <Section
               style={{
-                textAlign: "center",
+                textAlign: "center" as const,
                 marginBottom: "32px",
-                position: "relative",
-                zIndex: "1",
               }}
             >
               <div
                 style={{
-                  background:
-                    "linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05))",
+                  backgroundColor: "rgba(255,255,255,0.1)",
                   borderRadius: "50%",
                   padding: "16px",
                   display: "inline-block",
-                  boxShadow:
-                    "0 0 60px rgba(255,255,255,0.1), inset 0 0 20px rgba(255,255,255,0.1)",
+                  border: "1px solid rgba(255,255,255,0.2)",
                 }}
               >
                 <Img
@@ -114,8 +90,7 @@ export default function VerifyEmail({
                   alt="Logo"
                   style={{
                     borderRadius: "50%",
-                    border: `2px solid ${theme.border}`,
-                    boxShadow: "0 0 20px rgba(255,255,255,0.2)",
+                    border: "2px solid rgba(255,255,255,0.2)",
                   }}
                 />
               </div>
@@ -123,112 +98,20 @@ export default function VerifyEmail({
 
             <Section
               style={{
-                backgroundColor: theme.card,
-                borderRadius: "1rem",
+                backgroundColor: "rgba(255,255,255,0.05)",
                 padding: "40px",
-                boxShadow:
-                  "0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255,255,255,0.9)",
-                border: `1px solid ${theme.border}`,
-                position: "relative",
-                overflow: "hidden",
-                zIndex: "1",
-                backdropFilter: "blur(10px)",
+                borderRadius: "16px",
+                border: "1px solid rgba(255,255,255,0.1)",
+                marginBottom: "20px",
               }}
             >
-              <div
-                style={{
-                  position: "absolute",
-                  top: "0",
-                  right: "0",
-                  width: "60%",
-                  height: "1px",
-                  background:
-                    "linear-gradient(90deg, transparent, rgba(255,255,255,0.8))",
-                }}
-              />
-
-              <div
-                style={{
-                  position: "absolute",
-                  top: "0",
-                  right: "0",
-                  width: "1px",
-                  height: "40%",
-                  background:
-                    "linear-gradient(180deg, rgba(255,255,255,0.8), transparent)",
-                }}
-              />
-
-              <div
-                style={{
-                  position: "absolute",
-                  bottom: "0",
-                  left: "0",
-                  width: "40%",
-                  height: "1px",
-                  background:
-                    "linear-gradient(-90deg, transparent, rgba(255,255,255,0.3))",
-                }}
-              />
-
-              <div
-                style={{
-                  position: "absolute",
-                  bottom: "0",
-                  left: "0",
-                  width: "1px",
-                  height: "30%",
-                  background:
-                    "linear-gradient(0deg, rgba(255,255,255,0.3), transparent)",
-                }}
-              />
-
-              <div
-                style={{
-                  position: "absolute",
-                  top: "0",
-                  right: "0",
-                  width: "100px",
-                  height: "100px",
-                  background:
-                    "radial-gradient(circle at top right, rgba(255,255,255,0.4), transparent 70%)",
-                }}
-              />
-
-              <div
-                style={{
-                  position: "absolute",
-                  bottom: "0",
-                  left: "0",
-                  width: "80px",
-                  height: "80px",
-                  background:
-                    "radial-gradient(circle at bottom left, rgba(255,255,255,0.2), transparent 70%)",
-                }}
-              />
-
-              <div
-                style={{
-                  position: "absolute",
-                  top: "0",
-                  left: "0",
-                  right: "0",
-                  height: "200px",
-                  background:
-                    "linear-gradient(180deg, rgba(255,255,255,0.5) 0%, transparent 100%)",
-                  opacity: "0.5",
-                }}
-              />
-
               <Text
                 style={{
                   fontSize: "28px",
                   fontWeight: "600",
-                  color: theme.foreground,
+                  color: "#ffffff",
                   marginBottom: "24px",
-                  textAlign: "center",
-                  letterSpacing: "-0.025em",
-                  position: "relative",
+                  textAlign: "center" as const,
                 }}
               >
                 {userFirstname ? `Welcome ${userFirstname}!` : "Welcome!"}
@@ -237,12 +120,10 @@ export default function VerifyEmail({
               <Text
                 style={{
                   fontSize: "16px",
-                  lineHeight: "1.6",
-                  color: theme.muted,
+                  lineHeight: "24px",
+                  color: "rgba(255,255,255,0.7)",
                   marginBottom: "32px",
-                  textAlign: "center",
-                  padding: "0 20px",
-                  position: "relative",
+                  textAlign: "center" as const,
                 }}
               >
                 We're excited to have you on board. To start your journey,
@@ -251,22 +132,20 @@ export default function VerifyEmail({
 
               <Section
                 style={{
-                  margin: "32px 0",
-                  padding: "16px",
-                  borderRadius: "0.5rem",
                   backgroundColor: "rgba(255,255,255,0.03)",
-                  border: `1px solid ${theme.border}`,
+                  padding: "20px",
+                  borderRadius: "8px",
+                  border: "1px solid rgba(255,255,255,0.1)",
+                  marginBottom: "32px",
                 }}
               >
-                <Text
+                <div
                   style={{
-                    fontSize: "14px",
-                    color: theme.muted,
-                    marginBottom: "8px",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     gap: "8px",
+                    marginBottom: "12px",
                   }}
                 >
                   <Img
@@ -276,13 +155,18 @@ export default function VerifyEmail({
                     alt=""
                     style={{ filter: "invert(1)" }}
                   />
-                  This verification link will expire in 24 hours
-                </Text>
-                <Text
+                  <Text
+                    style={{
+                      fontSize: "14px",
+                      color: "rgba(255,255,255,0.7)",
+                      margin: "0",
+                    }}
+                  >
+                    This verification link will expire in 24 hours
+                  </Text>
+                </div>
+                <div
                   style={{
-                    fontSize: "14px",
-                    color: theme.muted,
-                    margin: "0",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -296,78 +180,49 @@ export default function VerifyEmail({
                     alt=""
                     style={{ filter: "invert(1)" }}
                   />
-                  Only click links from trusted sources
-                </Text>
+                  <Text
+                    style={{
+                      fontSize: "14px",
+                      color: "rgba(255,255,255,0.7)",
+                      margin: "0",
+                    }}
+                  >
+                    Only click links from trusted sources
+                  </Text>
+                </div>
               </Section>
 
               <Section
                 style={{
-                  textAlign: "center",
-                  margin: "40px 0",
-                  position: "relative",
+                  textAlign: "center" as const,
+                  marginBottom: "32px",
                 }}
               >
-                <div
+                <Button
+                  href={verificationUrl}
                   style={{
-                    position: "relative",
+                    backgroundColor: "#ffffff",
+                    color: "#000000",
+                    padding: "20px",
+                    borderRadius: "12px",
+                    textDecoration: "none",
+                    fontSize: "16px",
+                    fontWeight: "500",
                     display: "inline-block",
+                    minWidth: "200px",
                   }}
                 >
-                  <div
-                    style={{
-                      position: "absolute",
-                      top: "-1px",
-                      left: "20%",
-                      right: "20%",
-                      height: "1px",
-                      background:
-                        "linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent)",
-                    }}
-                  />
-
-                  <Button
-                    href={verificationUrl}
-                    style={{
-                      backgroundColor: theme.primary,
-                      color: theme.primaryForeground,
-                      padding: "16px 36px",
-                      borderRadius: "0.75rem",
-                      textDecoration: "none",
-                      fontSize: "14px",
-                      fontWeight: "500",
-                      textTransform: "uppercase",
-                      letterSpacing: "0.025em",
-                      boxShadow:
-                        "0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255,255,255,0.5)",
-                      border: `1px solid ${theme.border}`,
-                      background: `linear-gradient(180deg, ${theme.primary} 0%, oklch(0.9 0 0) 100%)`,
-                    }}
-                  >
-                    Verify my email
-                  </Button>
-
-                  <div
-                    style={{
-                      position: "absolute",
-                      bottom: "-1px",
-                      left: "30%",
-                      right: "30%",
-                      height: "1px",
-                      background:
-                        "linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent)",
-                    }}
-                  />
-                </div>
+                  Verify my email
+                </Button>
               </Section>
 
               <Text
                 style={{
                   fontSize: "14px",
-                  color: theme.muted,
-                  marginTop: "32px",
-                  textAlign: "center",
+                  color: "rgba(255,255,255,0.7)",
+                  marginBottom: "32px",
+                  textAlign: "center" as const,
                   fontStyle: "italic",
-                  position: "relative",
                 }}
               >
                 If you didn't request this verification, you can safely ignore
@@ -376,21 +231,17 @@ export default function VerifyEmail({
 
               <Section
                 style={{
-                  marginTop: "32px",
-                  padding: "16px",
-                  borderTop: `1px solid ${theme.border}`,
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  width: "100%",
+                  borderTop: "1px solid rgba(255,255,255,0.1)",
+                  paddingTop: "32px",
+                  marginBottom: "32px",
                 }}
               >
                 <Text
                   style={{
                     fontSize: "14px",
-                    color: theme.muted,
-                    marginBottom: "8px",
-                    textAlign: "center",
+                    color: "rgba(255,255,255,0.7)",
+                    marginBottom: "16px",
+                    textAlign: "center" as const,
                   }}
                 >
                   Quick Links
@@ -400,19 +251,17 @@ export default function VerifyEmail({
                     display: "flex",
                     justifyContent: "center",
                     gap: "16px",
-                    flexWrap: "wrap",
-                    width: "100%",
                   }}
                 >
                   <Link
                     href="#"
                     style={{
-                      color: theme.muted,
+                      color: "rgba(255,255,255,0.7)",
                       fontSize: "12px",
                       textDecoration: "none",
                       display: "flex",
                       alignItems: "center",
-                      gap: "4px",
+                      gap: "8px",
                     }}
                   >
                     <Img
@@ -427,12 +276,12 @@ export default function VerifyEmail({
                   <Link
                     href="#"
                     style={{
-                      color: theme.muted,
+                      color: "rgba(255,255,255,0.7)",
                       fontSize: "12px",
                       textDecoration: "none",
                       display: "flex",
                       alignItems: "center",
-                      gap: "4px",
+                      gap: "8px",
                     }}
                   >
                     <Img
@@ -447,12 +296,12 @@ export default function VerifyEmail({
                   <Link
                     href="#"
                     style={{
-                      color: theme.muted,
+                      color: "rgba(255,255,255,0.7)",
                       fontSize: "12px",
                       textDecoration: "none",
                       display: "flex",
                       alignItems: "center",
-                      gap: "4px",
+                      gap: "8px",
                     }}
                   >
                     <Img
@@ -469,17 +318,16 @@ export default function VerifyEmail({
 
               <Section
                 style={{
-                  marginTop: "32px",
-                  padding: "16px",
-                  borderTop: `1px solid ${theme.border}`,
+                  borderTop: "1px solid rgba(255,255,255,0.1)",
+                  paddingTop: "32px",
                 }}
               >
                 <Text
                   style={{
-                    fontSize: "12px",
-                    color: theme.muted,
-                    textAlign: "center",
-                    margin: "0",
+                    fontSize: "14px",
+                    color: "rgba(255,255,255,0.7)",
+                    marginBottom: "8px",
+                    textAlign: "center" as const,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -498,8 +346,8 @@ export default function VerifyEmail({
                 <Text
                   style={{
                     fontSize: "12px",
-                    color: theme.muted,
-                    textAlign: "center",
+                    color: "rgba(255,255,255,0.7)",
+                    textAlign: "center" as const,
                     margin: "4px 0 0 0",
                   }}
                 >
@@ -510,34 +358,14 @@ export default function VerifyEmail({
 
             <Section
               style={{
-                textAlign: "center",
-                marginTop: "40px",
-                padding: "24px",
-                backgroundColor: theme.card,
-                borderRadius: "0.75rem",
-                border: `1px solid ${theme.border}`,
-                position: "relative",
-                overflow: "hidden",
-                zIndex: "1",
+                textAlign: "center" as const,
+                marginTop: "20px",
               }}
             >
-              {/* Enhanced Gradient Border */}
-              <div
-                style={{
-                  position: "absolute",
-                  top: "0",
-                  left: "0",
-                  right: "0",
-                  height: "2px",
-                  background:
-                    "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.1) 20%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.1) 80%, transparent 100%)",
-                }}
-              />
-
               <Text
                 style={{
                   fontSize: "12px",
-                  color: theme.muted,
+                  color: "rgba(255,255,255,0.5)",
                   marginBottom: "16px",
                 }}
               >
@@ -547,7 +375,7 @@ export default function VerifyEmail({
               <Hr
                 style={{
                   border: "none",
-                  borderBottom: `1px solid ${theme.border}`,
+                  borderBottom: "1px solid rgba(255,255,255,0.1)",
                   margin: "16px 0",
                 }}
               />
@@ -562,14 +390,13 @@ export default function VerifyEmail({
                 <Link
                   href="#"
                   style={{
-                    color: theme.foreground,
+                    color: "#ffffff",
                     textDecoration: "none",
                     fontSize: "12px",
                     padding: "4px 12px",
                     borderRadius: "4px",
                     backgroundColor: "rgba(255,255,255,0.05)",
-                    border: `1px solid ${theme.border}`,
-                    boxShadow: "inset 0 1px 0 rgba(255,255,255,0.9)",
+                    border: "1px solid rgba(255,255,255,0.1)",
                   }}
                 >
                   Privacy Policy
@@ -577,14 +404,13 @@ export default function VerifyEmail({
                 <Link
                   href="#"
                   style={{
-                    color: theme.foreground,
+                    color: "#ffffff",
                     textDecoration: "none",
                     fontSize: "12px",
                     padding: "4px 12px",
                     borderRadius: "4px",
                     backgroundColor: "rgba(255,255,255,0.05)",
-                    border: `1px solid ${theme.border}`,
-                    boxShadow: "inset 0 1px 0 rgba(255,255,255,0.9)",
+                    border: "1px solid rgba(255,255,255,0.1)",
                   }}
                 >
                   Unsubscribe
