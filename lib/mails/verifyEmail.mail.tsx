@@ -15,11 +15,17 @@ import {
 interface VerifyEmailProps {
   verificationUrl: string
   userFirstname?: string
+  deviceInfo?: {
+    device: string
+    browser: string
+    ip: string
+  }
 }
 
 export default function VerifyEmail({
   verificationUrl,
   userFirstname,
+  deviceInfo,
 }: Readonly<VerifyEmailProps>) {
   const icons = {
     lock: "https://raw.githubusercontent.com/phosphor-icons/core/main/assets/regular/lock-simple.svg",
@@ -351,7 +357,7 @@ export default function VerifyEmail({
                     margin: "4px 0 0 0",
                   }}
                 >
-                  {`{Device} • {Browser} • {Location}`}
+                  {`${deviceInfo?.device ?? "Unknown"} • ${deviceInfo?.browser ?? "Unknown"} • ${deviceInfo?.ip ?? "Unknown"}`}
                 </Text>
               </Section>
             </Section>

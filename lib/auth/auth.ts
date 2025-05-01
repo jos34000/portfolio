@@ -1,6 +1,6 @@
-import VerifyEmail from "@/lib/mails/verifyEmail.mail"
 import { prisma } from "@/lib/db/client"
 import { sendEmail } from "@/lib/mails/sendEmail"
+import VerifyEmail from "@/lib/mails/verifyEmail.mail"
 import { betterAuth } from "better-auth"
 import { prismaAdapter } from "better-auth/adapters/prisma"
 
@@ -42,12 +42,35 @@ export const auth = betterAuth({
   },
   emailVerification: {
     sendVerificationEmail: async ({ user, url, token }, request) => {
+      const userAgent = request?.headers.get("user-agent")
+
+      const ip =
+        request?.headers.get("x-real-ip") ??
+        request?.headers.get("x-forwarded-for")?.split(",")[0] ??
+        request?.headers.get("x-client-ip") ??
+        "Unknown"
+
+      const UAParser = require("ua-parser-js")
+      const parser = new UAParser(userAgent)
+
+      const device = `${parser.getOS().name} ${parser.getOS().version}`
+      const browser = `${parser.getBrowser().name} ${parser.getBrowser().version}`
+
       await sendEmail(
         user.email,
         "Vérifiez votre email",
-        VerifyEmail({ verificationUrl: url, userFirstname: user.name })
+        VerifyEmail({
+          verificationUrl: url,
+          userFirstname: user.name,
+          deviceInfo: {
+            device,
+            browser,
+            ip: ip ?? "Unknown",
+          },
+        })
       )
     },
+    autoSignInAfterVerification: true,
   },
   socialProviders: {
     github: {

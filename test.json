@@ -1,0 +1,395 @@
+ NextRequest {
+     [Symbol(dispatcher)]: undefined,
+     [Symbol(state)]: {
+       method: 'POST',
+       localURLsOnly: false,
+       unsafeRequest: false,
+       body: {
+         stream: <ref *1> ReadableStream {
+           [Symbol(kType)]: 'ReadableStream',
+           [Symbol(kState)]: [Object: null prototype] {
+             disturbed: true,
+             reader: ReadableStreamDefaultReader {
+               [Symbol(kType)]: 'ReadableStreamDefaultReader',
+               [Symbol(kState)]: {
+                 readRequests: [],
+                 stream: [Circular *1],
+                 close: {
+                   promise: Promise {
+                     undefined,
+                     [Symbol(async_id_symbol)]: 10692,
+                     [Symbol(trigger_async_id_symbol)]: 10681,
+                     [Symbol(kResourceStore)]: {
+                       isStaticGeneration: false,
+                       page: '/api/auth/[...all]/route',
+                       fallbackRouteParams: null,
+                       route: '/api/auth/[...all]',
+                       incrementalCache: IncrementalCache {
+                         locks: Map(0) {},
+                         hasCustomCacheHandler: false,
+                         dev: true,
+                         disableForTestmode: false,
+                         minimalMode: false,
+                         requestHeaders: {
+                           host: 'localhost:3000',
+                           accept: '*/*',
+                           'content-type': 'application/json',
+                           origin: 'http://localhost:3000',
+                           'sec-fetch-site': 'same-origin',
+                           'sec-fetch-mode': 'cors',
+                           'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.4 Safari/605.1.15',
+                           referer: 'http://localhost:3000/sign-up',
+                           'sec-fetch-dest': 'empty',
+                           'content-length': '170',
+                           'accept-language': 'fr-FR,fr;q=0.9',
+                           priority: 'u=3, i',
+                           'accept-encoding': 'gzip, deflate',
+                           cookie: '__next_hmr_refresh_hash__=151; sidebar_state=false',
+                           connection: 'keep-alive',
+                           'x-forwarded-host': 'localhost:3000',
+                           'x-forwarded-port': '3000',
+                           'x-forwarded-proto': 'http',
+                           'x-forwarded-for': '::1'
+                         },
+                         requestProtocol: 'http',
+                         allowedRevalidateHeaderKeys: undefined,
+                         prerenderManifest: {
+                           version: 4,
+                           routes: {},
+                           dynamicRoutes: {},
+                           notFoundRoutes: [],
+                           preview: {
+                             previewModeId: '75e0c50307df3b365d8a10d9fb7729fd',
+                             previewModeSigningKey: '4bd41a7c44a156d87e5eab82d8f96332bde6bf744d19de3c24fac168f9b9ccb8',
+                             previewModeEncryptionKey: 'e3ac36e76dd7ec9ab1c29acd55370c201224f9ec0693fd2155c849e89747bec4'
+                           }
+                         },
+                         cacheControls: SharedCacheControls {
+                           prerenderManifest: {
+                             version: 4,
+                             routes: {},
+                             dynamicRoutes: {},
+                             notFoundRoutes: [],
+                             preview: {
+                               previewModeId: '75e0c50307df3b365d8a10d9fb7729fd',
+                               previewModeSigningKey: '4bd41a7c44a156d87e5eab82d8f96332bde6bf744d19de3c24fac168f9b9ccb8',
+                               previewModeEncryptionKey: 'e3ac36e76dd7ec9ab1c29acd55370c201224f9ec0693fd2155c849e89747bec4'
+                             }
+                           }
+                         },
+                         fetchCacheKeyPrefix: '',
+                         cacheHandler: FileSystemCache {
+                           fs: {
+                             existsSync: [Function: existsSync],
+                             readFile: [AsyncFunction: readFile],
+                             readFileSync: [Function: readFileSync],
+                             writeFile: [Function: writeFile],
+                             mkdir: [Function: mkdir],
+                             stat: [Function: stat]
+                           },
+                           flushToDisk: true,
+                           serverDistDir: '/Users/jocelynsainson/Code/boiler-plate/.next/server',
+                           revalidatedTags: [],
+                           debug: false
+                         }
+                       },
+                       cacheLifeProfiles: {
+                         default: {
+                           stale: 300,
+                           revalidate: 900,
+                           expire: 4294967294
+                         },
+                         seconds: { stale: 0, revalidate: 1, expire: 60 },
+                         minutes: { stale: 300, revalidate: 60, expire: 3600 },
+                         hours: { stale: 300, revalidate: 3600, expire: 86400 },
+                         days: { stale: 300, revalidate: 86400, expire: 604800 },
+                         weeks: {
+                           stale: 300,
+                           revalidate: 604800,
+                           expire: 2592000
+                         },
+                         max: {
+                           stale: 300,
+                           revalidate: 2592000,
+                           expire: 4294967294
+                         }
+                       },
+                       isRevalidate: false,
+                       isPrerendering: undefined,
+                       fetchCache: undefined,
+                       isOnDemandRevalidate: undefined,
+                       isDraftMode: undefined,
+                       requestEndedState: undefined,
+                       isPrefetchRequest: undefined,
+                       buildId: 'development',
+                       reactLoadableManifest: {},
+                       assetPrefix: '',
+                       afterContext: AfterContext {
+                         workUnitStores: Set(0) {},
+                         waitUntil: [Function (anonymous)],
+                         onClose: [Function: bound onClose],
+                         onTaskError: undefined,
+                         callbackQueue: EventEmitter {
+                           _events: Events <[Object: null prototype] {}> {},
+                           _eventsCount: 0,
+                           _intervalCount: 0,
+                           _intervalEnd: 0,
+                           _pendingCount: 0,
+                           _resolveEmpty: [Function: empty],
+                           _resolveIdle: [Function: empty],
+                           _carryoverConcurrencyCount: false,
+                           _isIntervalIgnored: true,
+                           _intervalCap: Infinity,
+                           _interval: 0,
+                           _queue: { _queue: [] },
+                           _queueClass: [class (anonymous)],
+                           _concurrency: Infinity,
+                           _intervalId: undefined,
+                           _timeout: undefined,
+                           _throwOnTimeout: false,
+                           _isPaused: true
+                         }
+                       },
+                       dynamicIOEnabled: false,
+                       dev: false,
+                       previouslyRevalidatedTags: [],
+                       refreshTagsByCacheKind: Map(2) {
+                         'default' => { then: [Function: then] },
+                         'remote' => { then: [Function: then] }
+                       }
+                     },
+                     [Symbol(kResourceStore)]: {
+                       type: 'request',
+                       phase: 'action',
+                       implicitTags: {
+                         tags: [
+                           '_N_T_/layout',
+                           '_N_T_/api/layout',
+                           '_N_T_/api/auth/layout',
+                           '_N_T_/api/auth/[...all]/layout',
+                           '_N_T_/api/auth/[...all]/route',
+                           '_N_T_/api/auth/sign-up/email'
+                         ],
+                         expirationsByCacheKind: Map(2) {
+                           'default' => { then: [Function: then] },
+                           'remote' => { then: [Function: then] }
+                         }
+                       },
+                       url: { pathname: '/api/auth/sign-up/email', search: '' },
+                       rootParams: {},
+                       headers: [Getter],
+                       cookies: [Getter/Setter],
+                       mutableCookies: [Getter],
+                       userspaceMutableCookies: [Getter],
+                       draftMode: [Getter],
+                       renderResumeDataCache: null,
+                       isHmrRefresh: false,
+                       serverComponentsHmrCache: undefined,
+                       usedDynamic: true
+                     },
+                     [Symbol(kResourceStore)]: undefined,
+                     [Symbol(kResourceStore)]: undefined,
+                     [Symbol(kResourceStore)]: undefined,
+                     [Symbol(kResourceStore)]: { isAppRoute: true, isAction: false }
+                   },
+                   resolve: [Function (anonymous)],
+                   reject: [Function (anonymous)]
+                 }
+               }
+             },
+             state: 'closed',
+             storedError: undefined,
+             transfer: [Object: null prototype] {
+               writable: undefined,
+               port1: undefined,
+               port2: undefined,
+               promise: undefined
+             },
+             controller: ReadableByteStreamController {
+               [Symbol(kType)]: 'ReadableByteStreamController',
+               [Symbol(kState)]: {
+                 byobRequest: null,
+                 closeRequested: false,
+                 pullAgain: false,
+                 pulling: false,
+                 started: true,
+                 stream: [Circular *1],
+                 queue: [],
+                 queueTotalSize: 0,
+                 highWaterMark: 0,
+                 pullAlgorithm: undefined,
+                 cancelAlgorithm: undefined,
+                 autoAllocateChunkSize: undefined,
+                 pendingPullIntos: []
+               }
+             }
+           },
+           [Symbol(nodejs.webstream.isClosedPromise)]: {
+             promise: Promise {
+               undefined,
+               [Symbol(async_id_symbol)]: 10653,
+               [Symbol(trigger_async_id_symbol)]: 10621,
+               [Symbol(kResourceStore)]: undefined,
+               [Symbol(kResourceStore)]: undefined,
+               [Symbol(kResourceStore)]: undefined,
+               [Symbol(kResourceStore)]: undefined,
+               [Symbol(kResourceStore)]: undefined
+             },
+             resolve: [Function (anonymous)],
+             reject: [Function (anonymous)]
+           },
+           [Symbol(nodejs.webstream.controllerErrorFunction)]: [Function (anonymous)]
+         },
+         source: null,
+         length: null
+       },
+       client: EnvironmentSettingsObjectBase {
+         policyContainer: { referrerPolicy: 'strict-origin-when-cross-origin' }
+       },
+       reservedClient: null,
+       replacesClientId: '',
+       window: 'client',
+       keepalive: false,
+       serviceWorkers: 'all',
+       initiator: '',
+       destination: '',
+       priority: null,
+       origin: 'client',
+       policyContainer: 'client',
+       referrer: 'client',
+       referrerPolicy: '',
+       mode: 'cors',
+       useCORSPreflightFlag: true,
+       credentials: 'same-origin',
+       useCredentials: false,
+       cache: 'default',
+       redirect: 'follow',
+       integrity: '',
+       cryptoGraphicsNonceMetadata: '',
+       parserMetadata: '',
+       reloadNavigation: false,
+       historyNavigation: false,
+       userActivation: false,
+       taintedOrigin: false,
+       redirectCount: 0,
+       responseTainting: 'basic',
+       preventNoCacheCacheControlHeaderModification: false,
+       done: false,
+       timingAllowFailed: false,
+       urlList: [ http://localhost:3000/api/auth/sign-up/email ],
+       url: http://localhost:3000/api/auth/sign-up/email,
+       headersList: HeadersList {
+         cookies: null,
+         [Symbol(headers map)]: Map(19) {
+           'host' => { name: 'host', value: 'localhost:3000' },
+           'accept' => { name: 'accept', value: '*/*' },
+           'content-type' => { name: 'content-type', value: 'application/json' },
+           'origin' => { name: 'origin', value: 'http://localhost:3000' },
+           'sec-fetch-site' => { name: 'sec-fetch-site', value: 'same-origin' },
+           'sec-fetch-mode' => { name: 'sec-fetch-mode', value: 'cors' },
+           'user-agent' => {
+             name: 'user-agent',
+             value: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.4 Safari/605.1.15'
+           },
+           'referer' => { name: 'referer', value: 'http://localhost:3000/sign-up' },
+           'sec-fetch-dest' => { name: 'sec-fetch-dest', value: 'empty' },
+           'content-length' => { name: 'content-length', value: '170' },
+           'accept-language' => { name: 'accept-language', value: 'fr-FR,fr;q=0.9' },
+           'priority' => { name: 'priority', value: 'u=3, i' },
+           'accept-encoding' => { name: 'accept-encoding', value: 'gzip, deflate' },
+           'cookie' => {
+             name: 'cookie',
+             value: '__next_hmr_refresh_hash__=151; sidebar_state=false'
+           },
+           'connection' => { name: 'connection', value: 'keep-alive' },
+           'x-forwarded-host' => { name: 'x-forwarded-host', value: 'localhost:3000' },
+           'x-forwarded-port' => { name: 'x-forwarded-port', value: '3000' },
+           'x-forwarded-proto' => { name: 'x-forwarded-proto', value: 'http' },
+           'x-forwarded-for' => { name: 'x-forwarded-for', value: '::1' }
+         },
+         [Symbol(headers map sorted)]: [
+           [ 'accept', '*/*' ],
+           [ 'accept-encoding', 'gzip, deflate' ],
+           [ 'accept-language', 'fr-FR,fr;q=0.9' ],
+           [ 'connection', 'keep-alive' ],
+           [ 'content-length', '170' ],
+           [ 'content-type', 'application/json' ],
+           [
+             'cookie',
+             '__next_hmr_refresh_hash__=151; sidebar_state=false'
+           ],
+           [ 'host', 'localhost:3000' ],
+           [ 'origin', 'http://localhost:3000' ],
+           [ 'priority', 'u=3, i' ],
+           [ 'referer', 'http://localhost:3000/sign-up' ],
+           [ 'sec-fetch-dest', 'empty' ],
+           [ 'sec-fetch-mode', 'cors' ],
+           [ 'sec-fetch-site', 'same-origin' ],
+           [
+             'user-agent',
+             'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.4 Safari/605.1.15'
+           ],
+           [ 'x-forwarded-for', '::1' ],
+           [ 'x-forwarded-host', 'localhost:3000' ],
+           [ 'x-forwarded-port', '3000' ],
+           [ 'x-forwarded-proto', 'http' ]
+         ]
+       }
+     },
+     [Symbol(signal)]: AbortSignal {
+       [Symbol(kEvents)]: SafeMap(0) [Map] {},
+       [Symbol(events.maxEventTargetListeners)]: 0,
+       [Symbol(events.maxEventTargetListenersWarned)]: false,
+       [Symbol(kHandlers)]: SafeMap(0) [Map] {},
+       [Symbol(kAborted)]: false,
+       [Symbol(kReason)]: undefined,
+       [Symbol(kComposite)]: false
+     },
+     [Symbol(abortController)]: AbortController {},
+     [Symbol(headers)]: Headers {},
+     [Symbol(internal request)]: {
+       cookies: RequestCookies {
+         _parsed: Map(2) {
+           '__next_hmr_refresh_hash__' => { name: '__next_hmr_refresh_hash__', value: '151' },
+           'sidebar_state' => { name: 'sidebar_state', value: 'false' }
+         },
+         _headers: Headers {}
+       },
+       nextUrl: NextURL {
+         [Symbol(NextURLInternal)]: {
+           url: http://localhost:3000/api/auth/sign-up/email,
+           options: {
+             headers: {
+               accept: '*/*',
+               'accept-encoding': 'gzip, deflate',
+               'accept-language': 'fr-FR,fr;q=0.9',
+               connection: 'keep-alive',
+               'content-length': '170',
+               'content-type': 'application/json',
+               cookie: '__next_hmr_refresh_hash__=151; sidebar_state=false',
+               host: 'localhost:3000',
+               origin: 'http://localhost:3000',
+               priority: 'u=3, i',
+               referer: 'http://localhost:3000/sign-up',
+               'sec-fetch-dest': 'empty',
+               'sec-fetch-mode': 'cors',
+               'sec-fetch-site': 'same-origin',
+               'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.4 Safari/605.1.15',
+               'x-forwarded-for': '::1',
+               'x-forwarded-host': 'localhost:3000',
+               'x-forwarded-port': '3000',
+               'x-forwarded-proto': 'http'
+             },
+             nextConfig: undefined
+           },
+           basePath: '',
+           domainLocale: undefined,
+           defaultLocale: undefined,
+           buildId: undefined,
+           locale: undefined,
+           trailingSlash: false
+         }
+       },
+       url: 'http://localhost:3000/api/auth/sign-up/email'
+     }
+   }
