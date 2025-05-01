@@ -26,7 +26,7 @@ export async function sendContactEmail({
     await sendEmail(
       email,
       "Merci pour votre message — je vous réponds très vite !",
-      ThankYouContactEmail({})
+      ThankYouContactEmail({ email, message, reason })
     )
     return { success: true }
   } catch (error) {

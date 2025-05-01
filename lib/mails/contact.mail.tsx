@@ -19,7 +19,7 @@ export function ContactRequestEmail({
   senderEmail,
   reason,
   message,
-}: ContactRequestEmailProps) {
+}: Readonly<ContactRequestEmailProps>) {
   return (
     <Html>
       <Head>
