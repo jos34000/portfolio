@@ -1,5 +1,6 @@
-import { authClient } from "@/lib/auth/auth-client"
 import { useEffect, useState } from "react"
+
+import { authClient } from "@/lib/auth/auth-client"
 
 export const useUser = () => {
   const [user, setUser] = useState<{

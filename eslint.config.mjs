@@ -1,16 +1,61 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
+import path from "path"
+import { fileURLToPath } from "url"
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+import { FlatCompat } from "@eslint/eslintrc"
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 const compat = new FlatCompat({
   baseDirectory: __dirname,
-});
+  recommendedConfig: true,
+})
 
-const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
-];
+const nextConfig = await compat.config({
+  extends: ["next/core-web-vitals"],
+})
 
-export default eslintConfig;
+const importConfig = await compat.config({
+  settings: {
+    "import/resolver": {
+      typescript: true,
+    },
+  },
+  rules: {
+    "import/no-relative-parent-imports": "error",
+    "import/no-relative-packages": "error",
+    "import/order": [
+      "error",
+      {
+        groups: [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index",
+        ],
+        pathGroups: [
+          {
+            pattern: "@/**",
+            group: "internal",
+            position: "before",
+          },
+        ],
+        "newlines-between": "always",
+        alphabetize: {
+          order: "asc",
+          caseInsensitive: true,
+        },
+      },
+    ],
+  },
+})
+
+export default [
+  {
+    ignores: [".next/*", "node_modules/*"],
+  },
+  ...nextConfig,
+  ...importConfig,
+]

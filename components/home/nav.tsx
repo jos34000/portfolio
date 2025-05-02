@@ -1,5 +1,6 @@
-import { FloatingNav } from "@/components/ui/floating-navbar"
 import { IconEdit, IconHome, IconMessage, IconUser } from "@tabler/icons-react"
+
+import { FloatingNav } from "@/components/ui/floating-navbar"
 
 export function Nav() {
   const navItems = [

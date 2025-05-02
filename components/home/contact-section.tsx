@@ -1,10 +1,13 @@
 "use client"
 
-import { contactSchema } from "@/lib/schemas/contacting.schema"
 import { useState } from "react"
 import { z } from "zod"
+
+import { contactSchema } from "@/lib/schemas/contacting.schema"
+
 import { BackgroundBeams } from "../ui/background-beams"
 import { PlaceholdersAndVanishInput } from "../ui/placeholders-and-vanish-input"
+
 import { ContactDialog } from "./contact-dialog"
 
 export const Contact = () => {

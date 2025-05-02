@@ -1,7 +1,8 @@
 "use client"
-import { authClient } from "@/lib/auth/auth-client"
 import { redirect } from "next/navigation"
 import { useEffect, useState } from "react"
+
+import { authClient } from "@/lib/auth/auth-client"
 
 export default function DashboardPage() {
   const [sessions, setSessions] = useState<any>(null)

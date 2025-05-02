@@ -2,7 +2,6 @@
 
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react"
 import { AnimatePresence, motion } from "motion/react"
-
 import { useEffect, useState } from "react"
 
 type Testimonial = {

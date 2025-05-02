@@ -1,9 +1,10 @@
 "use client"
-import { cn } from "@/lib/utils"
 import { IconArrowNarrowLeft, IconArrowNarrowRight } from "@tabler/icons-react"
 import { motion } from "motion/react"
 import Image, { ImageProps } from "next/image"
 import React, { useEffect, useState } from "react"
+
+import { cn } from "@/lib/utils"
 
 interface CarouselProps {
   items: React.ReactNode[]

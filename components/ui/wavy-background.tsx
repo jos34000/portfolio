@@ -1,5 +1,4 @@
 "use client"
-import { cn } from "@/lib/utils"
 import {
   ReactNode,
   useCallback,
@@ -9,6 +8,8 @@ import {
   useState,
 } from "react"
 import { createNoise3D } from "simplex-noise"
+
+import { cn } from "@/lib/utils"
 
 export const WavyBackground = ({
   children,

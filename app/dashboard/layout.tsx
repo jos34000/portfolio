@@ -1,11 +1,12 @@
+import { Separator } from "@radix-ui/react-separator";
+import { cookies } from "next/headers";
+
 import { AppSidebar } from "@/components/app-sidebar";
 import {
   SidebarInset,
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
-import { Separator } from "@radix-ui/react-separator";
-import { cookies } from "next/headers";
 
 export default async function DashboardLayout({
   children,

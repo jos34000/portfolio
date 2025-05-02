@@ -2,9 +2,34 @@
 
 ## Tâches à faire
 
-### 🚀 Créer un loader inter pages
+### 🎨 Améliorer l'expérience utilisateur
+
+- [ ] 🌓 Intégrer un thème switcher
+
+  - **Date de début :**
+  - **Date d'ajout :**
+  - **Priorité :** Haute
+  - **Statut :** À faire
+  - **Notes :**
+    - Implémenter un toggle dark/light mode
+    - Persister le choix dans le localStorage
+    - Ajouter une transition fluide entre les thèmes
+
+- [ ] 🌍 Intégrer un sélecteur de langue
+
+  - **Date de début :**
+  - **Date d'ajout :**
+  - **Priorité :** Haute
+  - **Statut :** À faire
+  - **Notes :**
+    - Supporter Français, Anglais et Espagnol
+    - Utiliser next-intl pour la gestion des traductions
+    - Créer les fichiers de traduction pour tous les textes
+    - Persister le choix de la langue
+    - Ajouter un sélecteur de langue dans la navigation
 
 - [ ] Implémenter le loader inter pages
+
   - **Date de début :** 28/04/2025
   - **Date d'ajout :**
   - **Commit :** (https://github.com/jos34000/boilerPlate/commit/abc123)

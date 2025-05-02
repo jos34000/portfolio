@@ -8,6 +8,8 @@ import {
   LogOut,
   Sparkles,
 } from "lucide-react"
+import { useRouter } from "next/navigation"
+import { toast } from "sonner"
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import {
@@ -27,8 +29,6 @@ import {
 } from "@/components/ui/sidebar"
 import { useUser } from "@/hooks/use-user"
 import { authClient } from "@/lib/auth/auth-client"
-import { useRouter } from "next/navigation"
-import { toast } from "sonner"
 
 export function NavUser() {
   const { user, loading } = useUser()
