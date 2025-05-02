@@ -2,6 +2,7 @@ import { Separator } from "@radix-ui/react-separator"
 import { cookies } from "next/headers"
 
 import { AppSidebar } from "@/components/app-sidebar"
+import { BreadcrumbNav } from "@/components/breadcrumb-nav"
 import {
   SidebarInset,
   SidebarProvider,
@@ -26,6 +27,7 @@ export default async function DashboardLayout({
           <div className="flex items-center gap-2 px-4">
             <SidebarTrigger className="-ml-1" />
             <Separator orientation="vertical" className="mr-2 h-4" />
+            <BreadcrumbNav />
           </div>
         </header>
         {children}
