@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Boiler Plate Next.js
 
-## Getting Started
+Ce projet est un starter Next.js moderne, prêt à l'emploi avec :
 
-First, run the development server:
+- Authentification avancée (Better Auth, providers sociaux, validation email)
+- Prisma ORM (PostgreSQL, MySQL, MongoDB, etc.)
+- UI moderne avec Shadcn UI, Radix UI et Tailwind CSS
+- Gestion d'état URL avec nuqs
+- Optimisation Web Vitals (LCP, CLS, FID)
+- TypeScript strict et bonnes pratiques
+- pnpm pour la gestion des dépendances
+
+## Démarrage rapide
+
+1. Installe les dépendances :
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Configure ton fichier `.env` (voir `.env.example` si présent) :
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Variables d'authentification (providers, clés, etc.)
+- `DATABASE_URL` pour Prisma
+- `NEXT_PUBLIC_AUTH_BASE_URL` pour l'auth côté client
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. Lance le serveur de développement :
 
-## Learn More
+```bash
+pnpm dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Ouvre [http://localhost:3000](http://localhost:3000) pour voir l'application.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Structure du projet
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `app/` : Pages et routes Next.js (App Router)
+- `components/` : Composants UI réutilisables (Shadcn, Radix, Tailwind)
+- `lib/` : Auth, mails, helpers, Prisma client
+- `prisma/` : Modèles de données Prisma
 
-## Deploy on Vercel
+## Fonctionnalités principales
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Auth.js (Better Auth) avec validation email, providers sociaux (GitHub, Google)
+- Prisma ORM, migrations automatiques
+- UI accessible et moderne (Shadcn, Radix, Tailwind)
+- Emails transactionnels (Resend)
+- Sécurité et bonnes pratiques TypeScript
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Déploiement
+
+Déploie facilement sur [Vercel](https://vercel.com/) ou toute plateforme compatible Node.js.
+
+## Ressources utiles
+
+- [Next.js Docs](https://nextjs.org/docs)
+- [Prisma Docs](https://www.prisma.io/docs)
+- [Shadcn UI](https://ui.shadcn.com/)
+- [Radix UI](https://www.radix-ui.com/)
+- [pnpm](https://pnpm.io/)
+
+---
+
+**Auteur :** Jocelyn Sainson

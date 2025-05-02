@@ -10,7 +10,7 @@ export const sendEmail = async (
 ) => {
   const resend = new Resend(process.env.RESEND_API_KEY)
   await resend.emails.send({
-    from: "exoskel@marcelyn.fr",
+    from: process.env.RESEND_FROM_EMAIL!,
     to: email,
     subject: subject,
     react: mail,
