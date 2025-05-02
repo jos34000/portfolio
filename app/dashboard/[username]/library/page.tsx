@@ -1,9 +1,13 @@
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 
+type Props = {
+  params: { username: string }
+}
+
 export const dynamic = "force-dynamic"
 
-export const LibraryPage = () => {
+const LibraryPage = async ({ params }: Props) => {
   return (
     <main className="flex flex-col min-h-screen bg-background px-4 py-8 md:px-12 lg:px-24">
       <header className="mb-8 flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
@@ -23,6 +27,12 @@ export const LibraryPage = () => {
         </div>
       </header>
       <section className="flex-1">
+        <a
+          href={`/dashboard/${params.username}`}
+          className="text-primary underline mb-4 inline-block"
+        >
+          Retour au dashboard
+        </a>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {/* Ajoute ici tes composants, images, templates, etc. */}
         </div>

@@ -27,14 +27,20 @@ import {
 
 export function NavProjects({
   projects,
-}: {
+  username,
+}: Readonly<{
   projects: {
     name: string
     url: string
     icon: LucideIcon
   }[]
-}) {
+  username: string
+}>) {
   const { isMobile } = useSidebar()
+  const getPath = (url: string) =>
+    url.startsWith("/dashboard/")
+      ? url.replace("/dashboard/", `/dashboard/${username}/`)
+      : url
 
   return (
     <SidebarGroup className="group-data-[collapsible=icon]:hidden">
@@ -43,7 +49,7 @@ export function NavProjects({
         {projects.map((item) => (
           <SidebarMenuItem key={item.name}>
             <SidebarMenuButton asChild>
-              <a href={item.url}>
+              <a href={getPath(item.url)}>
                 <item.icon />
                 <span>{item.name}</span>
               </a>
