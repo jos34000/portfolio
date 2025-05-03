@@ -1,61 +1,95 @@
-import {
-  Carroussel,
-  Contact,
-  Footer,
-  HeroSection,
-  Nav,
-  Steps,
-} from "@/components/home"
-import { AnimatedTestimonials } from "@/components/home/animated-testimonials"
+"use client"
 
-export default async function Home() {
+import { motion } from "framer-motion"
+import { ArrowUp } from "lucide-react"
+import { useRouter } from "next/navigation"
+import { useEffect, useState } from "react"
+
+import { ParticleBackground } from "@/components/3d-particle-background"
+import { defaultNavItems } from "@/components/data/nav.data"
+import { Footer } from "@/components/home"
+import { AboutSection } from "@/components/home/about-section"
+import { Carroussel } from "@/components/home/carroussel"
+import { Contact } from "@/components/home/contact-section"
+import { HeroSection } from "@/components/home/hero-section"
+import { ProjectsSection } from "@/components/home/projects-section"
+import { LoadingScreen } from "@/components/loading-screen"
+import { FloatingNav } from "@/components/ui/floating-navbar"
+
+export default function Home() {
+  const [loading, setLoading] = useState(true)
+  const [canRender, setCanRender] = useState(false)
+  const router = useRouter()
+
+  useEffect(() => {
+    if (window.location.pathname === "/onboarding") {
+      setCanRender(true)
+      return
+    }
+    const onboardingComplete = localStorage.getItem("onboarding-completed")
+    if (onboardingComplete !== "true") {
+      router.replace("/onboarding")
+      return
+    }
+    setCanRender(true)
+  }, [router])
+
+  useEffect(() => {
+    if (!canRender) return
+    const timer = setTimeout(() => {
+      setLoading(false)
+    }, 1000)
+    return () => clearTimeout(timer)
+  }, [canRender])
+
+  if (!canRender) return null
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  }
+
   return (
     <>
-      <Nav />
-      <HeroSection />
-      <Carroussel />
-      <Steps />
-      <AnimatedTestimonials testimonials={testimonials} autoplay={true} />
-      <Contact />
-      <Footer />
+      <style jsx global>{`
+        :root {
+          --primary-rgb: 0, 0, 0;
+          --secondary-rgb: 148, 148, 148;
+          --spotlight-color: 0, 0, 0;
+        }
+        .dark {
+          --primary-rgb: 255, 255, 255;
+          --secondary-rgb: 115, 115, 115;
+          --spotlight-color: 255, 255, 255;
+        }
+      `}</style>
+
+      {loading ? (
+        <LoadingScreen message="Preparing portfolio..." />
+      ) : (
+        <main className="min-h-screen bg-background">
+          <ParticleBackground />
+          <FloatingNav navItems={defaultNavItems} />
+
+          <HeroSection />
+          <AboutSection />
+          <Carroussel />
+          <ProjectsSection />
+          <Contact />
+          <Footer />
+
+          <motion.button
+            onClick={scrollToTop}
+            className="fixed bottom-8 right-8 p-3 bg-primary text-primary-foreground rounded-full shadow-lg hover:bg-primary/90 transition-colors z-50"
+            whileHover={{ y: -2 }}
+            whileTap={{ y: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1 }}
+          >
+            <ArrowUp className="h-5 w-5" />
+          </motion.button>
+        </main>
+      )}
     </>
   )
 }
-
-const testimonials = [
-  {
-    quote:
-      "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
-    name: "Maverick",
-    designation: "Product Manager",
-    src: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  {
-    quote:
-      "Implementation was seamless and the results exceeded our expectations. The platform's flexibility is remarkable.",
-    name: "Gabriella Montez",
-    designation: "CEO",
-    src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  {
-    quote:
-      "This solution has significantly improved our team's productivity. The intuitive interface makes complex tasks simple.",
-    name: "Harry potter",
-    designation: "Product Owner ",
-    src: "https://images.unsplash.com/photo-1623582854588-d60de57fa33f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  {
-    quote:
-      "Outstanding support and robust features. It's rare to find a product that delivers on all its promises.",
-    name: "Tony Stark",
-    designation: "Software Engineer",
-    src: "https://images.unsplash.com/photo-1636041293178-808a6762ab39?q=80&w=3464&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  {
-    quote:
-      "The scalability and performance have been game-changing for our organization. Highly recommend to any growing business.",
-    name: "Forrest Gump",
-    designation: "Fullstack developer",
-    src: "https://images.unsplash.com/photo-1624561172888-ac93c696e10c?q=80&w=2592&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-]

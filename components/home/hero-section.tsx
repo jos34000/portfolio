@@ -1,35 +1,108 @@
-import { Button } from "@/components/ui/button"
-import { WavyBackground } from "@/components/ui/wavy-background"
+"use client"
 
-export const HeroSection = () => {
+import { Button } from "@/components/ui/button"
+import { SparklesCore } from "@/components/ui/sparkles"
+import { TypewriterEffect } from "@/components/ui/typewriter-effect"
+import { motion } from "framer-motion"
+import { useEffect, useState } from "react"
+
+export function HeroSection() {
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) return null
+
+  const words = [
+    {
+      text: "Jocelyn",
+    },
+    {
+      text: "Sainson",
+    },
+    {
+      text: "•",
+    },
+    {
+      text: "Full-Stack",
+    },
+    {
+      text: "Developer",
+      className: "text-primary dark:text-primary",
+    },
+  ]
+
   return (
-    <WavyBackground className="max-w-4xl mx-auto pb-40 min-h-[80vh] flex flex-col items-center justify-center">
-      <h1 className="text-xl md:text-4xl lg:text-7xl text-white font-bold font-sans tracking-tighter text-center">
-        Jocelyn Sainson
-      </h1>
-      <p className="text-2xl md:text-3xl mt-4 text-white/80 font-medium font-sans tracking-normal text-center">
-        Full-Stack Developer
-      </p>
-      <p className="text-base md:text-lg mt-6 text-white/60 max-w-2xl text-center font-sans tracking-normal">
-        I build modern and high-performance web applications using Next.js,
-        TypeScript and Prisma
-      </p>
-      <div className="flex gap-4 mt-8">
-        <Button
-          size="lg"
-          variant="default"
-          className="font-sans tracking-normal"
-        >
-          View Projects
-        </Button>
-        <Button
-          size="lg"
-          variant="outline"
-          className="font-sans tracking-normal"
-        >
-          Contact Me
-        </Button>
+    <section
+      id="home"
+      className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden"
+    >
+      <div className="absolute inset-0 w-full h-full">
+        <SparklesCore
+          id="tsparticlesfullpage"
+          background="transparent"
+          minSize={0.6}
+          maxSize={1.4}
+          particleDensity={100}
+          className="w-full h-full"
+          particleColor="#888888"
+        />
       </div>
-    </WavyBackground>
+
+      <div className="container px-4 md:px-6 relative z-10">
+        <div className="flex flex-col items-center justify-center space-y-10 text-center">
+          <div className="space-y-4">
+            <TypewriterEffect
+              words={words}
+              className="text-3xl md:text-5xl lg:text-6xl font-bold"
+            />
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.5, duration: 0.8 }}
+              className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto mt-4"
+            >
+              I build modern, high-performance web applications with Next.js,
+              TypeScript, and React. Turning complex problems into elegant
+              solutions.
+            </motion.p>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 2, duration: 0.8 }}
+            className="flex flex-wrap gap-4 justify-center"
+          >
+            <Button size="lg" className="rounded-full px-8">
+              <a href="#projects">View Projects</a>
+            </Button>
+            <Button size="lg" variant="outline" className="rounded-full px-8">
+              <a href="#contact">Contact Me</a>
+            </Button>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 2.5, duration: 1 }}
+            className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          >
+            <motion.div
+              animate={{ y: [0, 10, 0] }}
+              transition={{
+                repeat: Number.POSITIVE_INFINITY,
+                duration: 2,
+                ease: "easeInOut",
+              }}
+              className="flex flex-col items-center"
+            ></motion.div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
   )
 }
