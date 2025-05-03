@@ -1,7 +1,8 @@
 "use client"
 
 import { zodResolver } from "@hookform/resolvers/zod"
-import { GalleryVerticalEnd, Loader2 } from "lucide-react"
+import { Loader2 } from "lucide-react"
+import Image from "next/image"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 import { useForm } from "react-hook-form"
@@ -12,6 +13,7 @@ import { BackHome } from "@/components/back-home"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { useLogo } from "@/hooks/use-logo"
 import { authClient } from "@/lib/auth/auth-client"
 import { cn } from "@/lib/utils"
 
@@ -60,7 +62,7 @@ export function SignUpForm({
     try {
       setIsLoading(true)
 
-      const { error } = await authClient.signUp.email({
+      await authClient.signUp.email({
         callbackURL: "/login",
         email: values.email,
         password: values.password,
@@ -90,7 +92,10 @@ export function SignUpForm({
         },
       })
     } catch (err) {
-      toast.error("Une erreur est survenue lors de l'inscription")
+      const error = err as Error
+      toast.error(
+        error.message || "Une erreur est survenue lors de l'inscription"
+      )
     } finally {
       setIsLoading(false)
     }
@@ -118,12 +123,18 @@ export function SignUpForm({
               href="#"
               className="flex flex-col items-center gap-2 font-medium"
             >
-              <div className="flex size-8 items-center justify-center rounded-md">
-                <GalleryVerticalEnd className="size-6" />
+              <div className="flex size-28 items-center justify-center rounded-md">
+                <Image
+                  src={useLogo()}
+                  alt="logo"
+                  width={300}
+                  height={300}
+                  className="object-contain"
+                />
               </div>
               <span className="sr-only">Jos Inc.</span>
             </a>
-            <h1 className="text-xl font-bold">Welcome to Exoskel.</h1>
+            <h1 className="text-xl font-bold">Welcome.</h1>
             <div className="text-center text-sm">
               Already have an account ?{" "}
               <a href="/login" className="underline underline-offset-4">
