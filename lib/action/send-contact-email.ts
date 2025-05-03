@@ -2,7 +2,6 @@
 
 import ContactRequestEmail from "@/lib/mails/contact.mail"
 import { sendEmail } from "@/lib/mails/sendEmail"
-
 import ThankYouContactEmail from "@/lib/mails/thanks.mail"
 
 export async function sendContactEmail({

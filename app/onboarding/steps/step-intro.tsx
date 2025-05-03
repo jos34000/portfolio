@@ -39,12 +39,12 @@ export default function StepIntro() {
         </div>
 
         <h1 className="text-4xl font-bold tracking-tight mb-3">
-          Let's craft your perfect experience
+          Let&apos;s craft your perfect experience
         </h1>
         <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-          Welcome to a space where creativity meets technology. I've designed
-          this portfolio to adapt to your preferences and showcase my work in a
-          way that resonates with you.
+          Welcome to a space where creativity meets technology. I&apos;ve
+          designed this portfolio to adapt to your preferences and showcase my
+          work in a way that resonates with you.
         </p>
       </motion.div>
 

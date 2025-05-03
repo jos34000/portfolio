@@ -47,7 +47,7 @@ export default function ThankYouContactEmail({
     <Html>
       <Head>
         <Preview>
-          Thank you for your message — I'll get back to you soon!
+          Thank you for your message — I&apos;ll get back to you soon!
         </Preview>
       </Head>
       <Body
@@ -139,8 +139,8 @@ export default function ThankYouContactEmail({
                   textAlign: "center" as const,
                 }}
               >
-                I've received your request and will get back to you as soon as
-                possible after reviewing your message.
+                I&apos;ve received your request and will get back to you as soon
+                as possible after reviewing your message.
               </Text>
 
               <Section

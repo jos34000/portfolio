@@ -1,7 +1,7 @@
 export const data = [
   {
-    category: "",
-    title: "Front-end",
+    category: "Front-end",
+    title: "",
     src: "/static/Skills/Frontend.png",
   },
   {

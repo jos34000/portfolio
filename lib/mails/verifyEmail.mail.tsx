@@ -132,7 +132,7 @@ export default function VerifyEmail({
                   textAlign: "center" as const,
                 }}
               >
-                We're excited to have you on board. To start your journey,
+                We&apos;re excited to have you on board. To start your journey,
                 please verify your email address by clicking the button below.
               </Text>
 
@@ -231,8 +231,8 @@ export default function VerifyEmail({
                   fontStyle: "italic",
                 }}
               >
-                If you didn't request this verification, you can safely ignore
-                this email.
+                If you didn&apos;t request this verification, you can safely
+                ignore this email.
               </Text>
 
               <Section

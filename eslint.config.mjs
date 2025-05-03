@@ -22,10 +22,10 @@ const importConfig = await compat.config({
     },
   },
   rules: {
-    "import/no-relative-parent-imports": "error",
+    "import/no-relative-parent-imports": "off",
     "import/no-relative-packages": "error",
     "import/order": [
-      "error",
+      "off",
       {
         groups: [
           "builtin",

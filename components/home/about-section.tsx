@@ -36,10 +36,10 @@ export function AboutSection() {
 
             <div className="space-y-4 text-muted-foreground">
               <p>
-                Hello! I'm Jocelyn Sainson, a passionate Full-Stack Developer
-                with expertise in building modern web applications. I specialize
-                in creating responsive, high-performance solutions that solve
-                real-world problems.
+                Hello! I&apos;m Jocelyn Sainson, a passionate Full-Stack
+                Developer with expertise in building modern web applications. I
+                specialize in creating responsive, high-performance solutions
+                that solve real-world problems.
               </p>
               <p>
                 With a strong foundation in both front-end and back-end
@@ -48,9 +48,9 @@ export function AboutSection() {
                 application architectures.
               </p>
               <p>
-                When I'm not coding, you can find me exploring new technologies,
-                contributing to open-source projects, or sharing my knowledge
-                with the developer community.
+                When I&apos;m not coding, you can find me exploring new
+                technologies, contributing to open-source projects, or sharing
+                my knowledge with the developer community.
               </p>
             </div>
 

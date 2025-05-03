@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { cn } from "@/lib/utils"
 import { motion } from "framer-motion"
 import { ExternalLink, Github } from "lucide-react"
+import Image from "next/image"
 import { useState } from "react"
 import { projects } from "../data/projects.data"
 
@@ -77,9 +78,11 @@ export function ProjectsSection() {
                 )}
               >
                 <div className="aspect-video relative overflow-hidden">
-                  <img
+                  <Image
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
+                    width={1920}
+                    height={1080}
                     className="object-cover w-full h-full transition-transform duration-500 hover:scale-105"
                   />
                   {project.featured && (

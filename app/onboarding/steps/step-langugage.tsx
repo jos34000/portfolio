@@ -18,7 +18,8 @@ export default function StepLanguage() {
           Choose your language
         </h2>
         <p className="text-muted-foreground">
-          Select the language you'd like to use while browsing my portfolio.
+          Select the language you&apos;d like to use while browsing my
+          portfolio.
         </p>
       </div>
 

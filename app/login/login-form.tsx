@@ -16,6 +16,7 @@ import { Label } from "@/components/ui/label"
 import { useLogo } from "@/hooks/use-logo"
 import { authClient } from "@/lib/auth/auth-client"
 import { cn } from "@/lib/utils"
+import Link from "next/link"
 
 const formSchema = z.object({
   email: z.string().email("Email invalide"),
@@ -83,7 +84,7 @@ export function LoginForm({
       <form onSubmit={form.handleSubmit(onSubmit)}>
         <div className="flex flex-col gap-6">
           <div className="flex flex-col items-center gap-2">
-            <a
+            <Link
               href="/"
               className="flex flex-col items-center gap-2 font-medium"
             >
@@ -97,10 +98,10 @@ export function LoginForm({
                 />
               </div>
               <span className="sr-only">Jos Inc.</span>
-            </a>
+            </Link>
             <h1 className="text-xl font-bold">Welcome.</h1>
             <div className="text-center text-sm">
-              Don't have an account ?{" "}
+              Don&apos;t have an account ?{" "}
               <a href="/sign-up" className="underline underline-offset-4">
                 Sign up
               </a>
