@@ -15,23 +15,13 @@ export function HeroSection() {
 
   if (!mounted) return null
 
-  const words = [
-    {
-      text: "Jocelyn",
-    },
-    {
-      text: "Sainson",
-    },
-    {
-      text: "•",
-    },
-    {
-      text: "Full-Stack",
-    },
-    {
-      text: "Developer",
-      className: "text-primary dark:text-primary",
-    },
+  const nameWords = [{ text: "Jocelyn" }, { text: "Sainson" }]
+
+  const separatorWords = [{ text: "•" }]
+
+  const roleWords = [
+    { text: "Full-Stack" },
+    { text: "Developer", className: "text-primary dark:text-primary" },
   ]
 
   return (
@@ -54,10 +44,27 @@ export function HeroSection() {
       <div className="container px-4 md:px-6 relative z-10">
         <div className="flex flex-col items-center justify-center space-y-10 text-center">
           <div className="space-y-4">
-            <TypewriterEffect
-              words={words}
-              className="text-3xl md:text-5xl lg:text-6xl font-bold"
-            />
+            <div className="hidden md:block">
+              <TypewriterEffect
+                words={[...nameWords, ...separatorWords, ...roleWords]}
+                className="text-5xl lg:text-6xl font-bold"
+              />
+            </div>
+
+            <div className="flex flex-col space-y-2 md:hidden">
+              <TypewriterEffect
+                words={nameWords}
+                className="text-3xl font-bold"
+              />
+              <TypewriterEffect
+                words={separatorWords}
+                className="text-3xl font-bold text-muted-foreground"
+              />
+              <TypewriterEffect
+                words={roleWords}
+                className="text-3xl font-bold"
+              />
+            </div>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}

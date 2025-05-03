@@ -14,7 +14,14 @@ export const projects: Project[] = [
     description:
       "Personal portfolio website built with Next.js and Tailwind CSS, featuring smooth animations and responsive design.",
     image: "/static/Projects-screenshots/Portfolio.png",
-    tags: ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
+    tags: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Framer Motion",
+      "React Email",
+      "Better Auth",
+    ],
     github: "https://github.com/jos34000/portfolio",
     demo: "https://jocelynsainson.com",
     featured: true,
