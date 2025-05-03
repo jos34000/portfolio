@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation"
 
 import { cn } from "@/lib/utils"
 
-type NavItem = {
+export type NavItem = {
   id: string
   name: string
   link: string
@@ -57,7 +57,7 @@ export const FloatingNav = ({
           </Link>
         )
       )}
-      <div>
+      <div className="flex items-center space-x-2">
         <button
           className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full"
           onClick={() => router.push("/login")}
