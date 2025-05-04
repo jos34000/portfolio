@@ -1,64 +1,116 @@
-# Boiler Plate Next.js
+# Portfolio - Jocelyn Sainson
 
-Ce projet est un starter Next.js moderne, prêt à l'emploi avec :
+Portfolio personnel présentant mes compétences et projets en tant que développeur full-stack.
 
-- Authentification avancée (Better Auth, providers sociaux, validation email)
-- Prisma ORM (PostgreSQL, MySQL, MongoDB, etc.)
-- UI moderne avec Shadcn UI, Radix UI et Tailwind CSS
-- Gestion d'état URL avec nuqs
-- Optimisation Web Vitals (LCP, CLS, FID)
-- TypeScript strict et bonnes pratiques
-- pnpm pour la gestion des dépendances
+## 🚀 Technologies Principales
 
-## Démarrage rapide
+- **Frontend**
 
-1. Installe les dépendances :
+  - Next.js 15 (App Router)
+  - React 19
+  - TypeScript
+  - Tailwind CSS
+  - Shadcn UI & Radix UI
+  - Framer Motion
+
+- **Backend**
+
+  - Node.js
+  - Prisma ORM
+  - PostgreSQL
+  - Better Auth
+
+- **Fonctionnalités**
+  - Authentification avancée (OAuth, Email)
+  - Internationalisation (i18n)
+  - UI/UX moderne et responsive
+  - Emails transactionnels avec React Email
+  - Mode sombre/clair
+  - SEO optimisé
+
+## 🛠 Installation
 
 ```bash
+# Cloner le repository
+git clone https://github.com/votre-username/portfolio.git
+
+# Installer les dépendances
 pnpm install
-```
 
-2. Configure ton fichier `.env` (voir `.env.example` si présent) :
+# Configurer les variables d'environnement
+cp .env.example .env.local
 
-- Variables d'authentification (providers, clés, etc.)
-- `DATABASE_URL` pour Prisma
-- `NEXT_PUBLIC_AUTH_BASE_URL` pour l'auth côté client
-
-3. Lance le serveur de développement :
-
-```bash
+# Lancer en développement
 pnpm dev
 ```
 
-Ouvre [http://localhost:3000](http://localhost:3000) pour voir l'application.
+## 📦 Scripts Disponibles
 
-## Structure du projet
+- `pnpm dev` - Lance le serveur de développement
+- `pnpm build` - Crée une version de production
+- `pnpm start` - Lance la version de production
+- `pnpm lint` - Vérifie le code avec ESLint
 
-- `app/` : Pages et routes Next.js (App Router)
-- `components/` : Composants UI réutilisables (Shadcn, Radix, Tailwind)
-- `lib/` : Auth, mails, helpers, Prisma client
-- `prisma/` : Modèles de données Prisma
+## 🌐 Architecture
 
-## Fonctionnalités principales
+```
+├── app/                # Routes et pages (Next.js App Router)
+├── components/         # Composants React réutilisables
+├── lib/               # Utilitaires, hooks, et configurations
+├── public/            # Assets statiques
+├── prisma/            # Modèles de données et migrations
+└── i18n/              # Fichiers de traduction
+```
 
-- Auth.js (Better Auth) avec validation email, providers sociaux (GitHub, Google)
-- Prisma ORM, migrations automatiques
-- UI accessible et moderne (Shadcn, Radix, Tailwind)
-- Emails transactionnels (Resend)
-- Sécurité et bonnes pratiques TypeScript
+## 🔐 Authentification
 
-## Déploiement
+- Connexion par email/mot de passe
+- OAuth avec GitHub et LinkedIn
+- Validation par email
+- Sessions sécurisées
+- Protection CSRF
 
-Déploie facilement sur [Vercel](https://vercel.com/) ou toute plateforme compatible Node.js.
+## 🎨 Design System
 
-## Ressources utiles
+- Interface utilisateur moderne avec Shadcn UI
+- Composants accessibles avec Radix UI
+- Animations fluides avec Framer Motion
+- Styles personnalisables avec Tailwind CSS
+- Design responsive mobile-first
 
-- [Next.js Docs](https://nextjs.org/docs)
-- [Prisma Docs](https://www.prisma.io/docs)
-- [Shadcn UI](https://ui.shadcn.com/)
-- [Radix UI](https://www.radix-ui.com/)
-- [pnpm](https://pnpm.io/)
+## 🌍 Internationalisation
 
----
+- Support multilingue
+- Détection automatique de la langue
+- URLs localisées
+- Messages d'erreur traduits
 
-**Auteur :** Jocelyn Sainson
+## ⚡ Performance
+
+- Server-Side Rendering (SSR)
+- React Server Components
+- Images optimisées
+- Chargement différé
+- Optimisation des Web Vitals
+
+## 📱 Responsive Design
+
+- Mobile-first approach
+- Breakpoints adaptifs
+- Interface fluide sur tous les appareils
+- Optimisation tactile
+
+## 🔄 CI/CD
+
+- Tests automatisés
+- Linting et vérification des types
+- Déploiement automatique
+- Surveillance des performances
+
+## 📫 Contact
+
+[Liens sociaux à venir]
+
+## 📝 Licence
+
+MIT © Jocelyn Sainson

@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useLogo } from "@/hooks/use-logo"
 import { useSignUp } from "@/hooks/use-signUp"
+import { Link } from "@/i18n/navigation"
 import { cn } from "@/lib/utils"
 import { Loader2 } from "lucide-react"
 import { useTranslations } from "next-intl"
@@ -41,7 +42,7 @@ export function SignUpForm({
       >
         <div className="flex flex-col gap-6">
           <div className="flex flex-col items-center gap-2">
-            <a
+            <Link
               href="/"
               className="flex flex-col items-center gap-2 font-medium"
             >
@@ -55,16 +56,16 @@ export function SignUpForm({
                 />
               </div>
               <span className="sr-only">Jos Inc.</span>
-            </a>
+            </Link>
             <h1 className="text-xl font-bold">{t("welcome")}</h1>
             <div className="text-center text-sm">
               {t("alreadyHaveAccount")}{" "}
-              <a
+              <Link
                 href={`/${locale}/login`}
                 className="underline underline-offset-4"
               >
                 {t("signIn")}
-              </a>
+              </Link>
             </div>
           </div>
           <div className="flex flex-row gap-6">
@@ -198,8 +199,10 @@ export function SignUpForm({
         </div>
       </form>
       <div className="text-muted-foreground *:[a]:hover:text-primary text-center text-xs text-balance *:[a]:underline *:[a]:underline-offset-4">
-        {t("termsAndPolicy.text")} <a href="/">{t("termsAndPolicy.terms")}</a>{" "}
-        {t("termsAndPolicy.and")} <a href="/">{t("termsAndPolicy.privacy")}</a>.
+        {t("termsAndPolicy.text")}{" "}
+        <Link href="/">{t("termsAndPolicy.terms")}</Link>{" "}
+        {t("termsAndPolicy.and")}{" "}
+        <Link href="/">{t("termsAndPolicy.privacy")}</Link>.
       </div>
     </div>
   )
