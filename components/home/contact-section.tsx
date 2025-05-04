@@ -1,5 +1,6 @@
 "use client"
 
+import { useTranslations } from "next-intl"
 import { useState } from "react"
 import { z } from "zod"
 
@@ -11,6 +12,7 @@ import { PlaceholdersAndVanishInput } from "../ui/placeholders-and-vanish-input"
 import { ContactDialog } from "./contact-dialog"
 
 export const Contact = () => {
+  const t = useTranslations("Home.sections.contact")
   const [email, setEmail] = useState("")
   const [isOpen, setIsOpen] = useState(false)
   const [error, setError] = useState("")
@@ -26,7 +28,7 @@ export const Contact = () => {
       setIsOpen(true)
     } catch (error) {
       if (error instanceof z.ZodError) {
-        setError(error.errors[0].message)
+        setError(t("errors.invalidEmail"))
       }
     }
   }
@@ -49,20 +51,14 @@ export const Contact = () => {
       >
         <div className="flex flex-col items-center text-center p-4 space-y-6">
           <h1 className="text-lg md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600">
-            Contact me
+            {t("title")}
           </h1>
           <div className="max-w-lg">
-            <p className="text-neutral-500 text-sm">
-              Provide your Email and a short description of your request. I will
-              answer you as soon as possible.
-            </p>
+            <p className="text-neutral-500 text-sm">{t("description")}</p>
           </div>
           <div className="w-full max-w-2xl">
             <PlaceholdersAndVanishInput
-              placeholders={[
-                "your@email.com",
-                "Provide your email to be able to add a message ",
-              ]}
+              placeholders={[t("placeholders.email"), t("placeholders.hint")]}
               onChange={handleInputChange}
               onSubmit={handleInputSubmit}
               error={error}

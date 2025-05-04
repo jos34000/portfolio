@@ -1,0 +1,224 @@
+{
+  "Common": {
+    "buttons": {
+      "backToHome": "Back to home",
+      "back": "return"
+    }
+  },
+  "Home": {
+    "loading": "Preparing portfolio...",
+    "scrollToTop": "Back to top",
+    "sections": {
+      "hero": {
+        "title": "Hi, I'm Jocelyn",
+        "subtitle": "Full Stack Developer",
+        "description": " I build modern, high-performance web applications with Next.js, TypeScript, and React. Turning complex problems into elegant solutions.",
+        "viewProjects": "View Projects",
+        "contactMe": "Contact Me"
+      },
+      "about": {
+        "title": "About Me",
+        "description": "Discover my journey and skills",
+        "paragraphs": {
+          "intro": "Hello! I'm Jocelyn Sainson, a passionate Full-Stack Developer with expertise in building modern web applications. I specialize in creating responsive, high-performance solutions that solve real-world problems.",
+          "skills": "With a strong foundation in both front-end and back-end technologies, I enjoy working across the entire development stack to deliver seamless user experiences and robust application architectures.",
+          "hobbies": "When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing my knowledge with the developer community."
+        },
+        "buttons": {
+          "cv": "Download CV",
+          "github": "GitHub",
+          "linkedin": "LinkedIn",
+          "email": "Email"
+        }
+      },
+      "skills": {
+        "title": "What can I do for you?",
+        "cards": {
+          "frontend": "Front-end",
+          "backend": "Back-end",
+          "devops": "DevOps",
+          "os": "Multi OS",
+          "qualities": "Qualities"
+        }
+      },
+      "projects": {
+        "title": "Featured Projects",
+        "subtitle": "A selection of my recent work, showcasing my skills and experience in web development.",
+        "filters": {
+          "all": "All"
+        },
+        "badges": {
+          "featured": "Featured"
+        },
+        "buttons": {
+          "code": "Code",
+          "demo": "Go to app"
+        },
+        "items": {
+          "portfolio": {
+            "title": "Portfolio Website",
+            "description": "Personal portfolio website built with Next.js and Tailwind CSS, featuring smooth animations and responsive design."
+          },
+          "exoskel": {
+            "title": "Exoskel",
+            "description": "A complete boiler plate for a full-stack application with Next.js, TypeScript, Prisma, and Tailwind CSS."
+          }
+        }
+      },
+      "contact": {
+        "title": "Contact me",
+        "description": "Provide your Email and a short description of your request. I will answer you as soon as possible.",
+        "placeholders": {
+          "email": "your@email.com",
+          "hint": "Provide your email to be able to add a message"
+        },
+        "errors": {
+          "invalidEmail": "Please enter a valid email address"
+        },
+        "dialog": {
+          "steps": {
+            "1": {
+              "title": "Your request",
+              "description": "Describe your request!"
+            },
+            "2": {
+              "title": "Select a reason",
+              "description": "Choose one of the following reasons"
+            },
+            "3": {
+              "title": "Confirmation",
+              "description": "Check the information before sending"
+            }
+          },
+          "form": {
+            "message": {
+              "placeholder": "Write your request here & add links if necessary ...",
+              "error": "Please enter a message"
+            },
+            "reason": {
+              "placeholder": "Select a reason",
+              "error": "Please select a reason",
+              "options": {
+                "job": "Job offer",
+                "collaboration": "Collaboration",
+                "suggestion": "Suggestion",
+                "other": "Other"
+              }
+            },
+            "preview": {
+              "email": "Email",
+              "message": "Message",
+              "reason": "Reason"
+            }
+          },
+          "buttons": {
+            "back": "Back",
+            "next": "Next",
+            "send": "Send"
+          }
+        }
+      }
+    },
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "skills": "Skills",
+      "projects": "Projects",
+      "contact": "Contact"
+    },
+    "footer": {
+      "rights": "All rights reserved",
+      "madeWith": "Made with",
+      "by": "by"
+    }
+  },
+  "Login": {
+    "title": "Login",
+    "email": "Email",
+    "password": "Password",
+    "login": "Login",
+    "validation": {
+      "email": "Please enter a valid email address",
+      "password": "Please enter a password"
+    },
+    "notifications": {
+      "success": "Successfully logged in!",
+      "invalidCredentials": "Invalid credentials",
+      "invalidUsername": "Error while retrieving the username.",
+      "genericErrorLogin": "An error occurred while logging in.",
+      "genericError": "An error occurred."
+    },
+    "welcome": "Welcome.",
+    "dontHaveAccount": "Don't have an account ?",
+    "signUp": "Sign up",
+    "termsAndPolicy": {
+      "text": "By clicking continue, you agree to our",
+      "terms": "Terms of Service",
+      "and": "and",
+      "privacy": "Privacy Policy"
+    },
+    "loading": "Logging in...",
+    "or": "Or",
+    "and": "and"
+  },
+  "SignUp": {
+    "title": "Sign up",
+    "welcome": "Welcome.",
+    "alreadyHaveAccount": "Already have an account ?",
+    "signIn": "Sign In",
+    "validation": {
+      "firstNameLength": "Your name must contain at least 2 characters",
+      "lastNameLength": "Your last name must contain at least 2 characters",
+      "email": "Invalid Email.",
+      "username": "Username must contain at least 4 characters",
+      "password": "Password must contain at least 8 characters",
+      "passwordConfirmation": "Passwords didn't match"
+    },
+    "form": {
+      "email": "Email",
+      "password": "Password",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "username": "Username",
+      "confirmPassword": "Confirm password",
+      "placeholders": {
+        "firstName": "John",
+        "lastName": "Doe",
+        "username": "JohnDoe007",
+        "email": "johndoe@example.com",
+        "password": "********"
+      },
+      "buttons": {
+        "signUp": "Sign Up",
+        "loading": "Connecting...",
+        "github": "Github",
+        "linkedin": "Linkedin"
+      }
+    },
+    "notifications": {
+      "success": "Account created successfully!",
+      "genericError": "An error occurred.",
+      "genericErrorSignUp": "An error occurred while signing up.",
+      "formError": "Please correct the form errors."
+    },
+
+    "or": "Or",
+    "termsAndPolicy": {
+      "text": "By clicking continue, you agree to our",
+      "terms": "Terms of Service",
+      "and": "and",
+      "privacy": "Privacy Policy"
+    }
+  },
+  "SignOut": {
+    "notifications": {
+      "success": "Successfully signed out!",
+      "error": "An error occurred while signing out."
+    }
+  },
+  "Maintenance": {
+    "title": "New features coming soon!",
+    "description": "This section is under development. We are working hard to provide you with an exceptional experience.",
+    "back": "return"
+  }
+}

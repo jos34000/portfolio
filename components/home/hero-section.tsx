@@ -4,10 +4,12 @@ import { Button } from "@/components/ui/button"
 import { SparklesCore } from "@/components/ui/sparkles"
 import { TypewriterEffect } from "@/components/ui/typewriter-effect"
 import { motion } from "framer-motion"
+import { useTranslations } from "next-intl"
 import { useEffect, useState } from "react"
 
 export function HeroSection() {
   const [mounted, setMounted] = useState(false)
+  const t = useTranslations("Home.sections.hero")
 
   useEffect(() => {
     setMounted(true)
@@ -72,9 +74,7 @@ export function HeroSection() {
               transition={{ delay: 1.5, duration: 0.8 }}
               className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto mt-4"
             >
-              I build modern, high-performance web applications with Next.js,
-              TypeScript, and React. Turning complex problems into elegant
-              solutions.
+              {t("description")}
             </motion.p>
           </div>
 
@@ -85,10 +85,10 @@ export function HeroSection() {
             className="flex flex-wrap gap-4 justify-center"
           >
             <Button size="lg" className="rounded-full px-8">
-              <a href="#projects">View Projects</a>
+              <a href="#projects">{t("viewProjects")}</a>
             </Button>
             <Button size="lg" variant="outline" className="rounded-full px-8">
-              <a href="#contact">Contact Me</a>
+              <a href="#contact">{t("contactMe")}</a>
             </Button>
           </motion.div>
 

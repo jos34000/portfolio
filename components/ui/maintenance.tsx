@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Construction, Hammer } from "lucide-react"
+import { useTranslations } from "next-intl"
 import { Button } from "./button"
 
 interface MaintenanceProps {
@@ -12,11 +13,12 @@ interface MaintenanceProps {
 }
 
 export function Maintenance({
-  title = "Page en construction",
-  description = "Cette fonctionnalité est en cours de développement. Revenez bientôt !",
+  title,
+  description,
   showBackButton = true,
   onBack,
 }: Readonly<MaintenanceProps>) {
+  const t = useTranslations("Maintenance")
   return (
     <div className="min-h-[400px] w-full flex items-center justify-center p-4">
       <motion.div
@@ -57,8 +59,12 @@ export function Maintenance({
         </div>
 
         <div className="space-y-3 max-w-md mx-auto">
-          <h2 className="text-2xl font-bold tracking-tight">{title}</h2>
-          <p className="text-muted-foreground">{description}</p>
+          <h2 className="text-2xl font-bold tracking-tight">
+            {title ?? t("title")}
+          </h2>
+          <p className="text-muted-foreground">
+            {description ?? t("description")}
+          </p>
         </div>
 
         {showBackButton && (
@@ -71,7 +77,7 @@ export function Maintenance({
               variant="outline"
               onClick={onBack || (() => window.history.back())}
             >
-              Retour
+              {t("back")}
             </Button>
           </motion.div>
         )}

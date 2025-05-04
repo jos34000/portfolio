@@ -1,5 +1,6 @@
+import { useRouter } from "@/i18n/navigation"
 import { Loader2 } from "lucide-react"
-import { useRouter } from "next/navigation"
+import { useTranslations } from "next-intl"
 import { useState } from "react"
 
 import { Button } from "./ui/button"
@@ -12,6 +13,7 @@ type Props = {
 export const BackHome = ({ isLoading, onFinishLoading }: Props) => {
   const [isNavigatingHome, setIsNavigatingHome] = useState(false)
   const router = useRouter()
+  const t = useTranslations("Common")
 
   return (
     <>
@@ -43,7 +45,7 @@ export const BackHome = ({ isLoading, onFinishLoading }: Props) => {
             />
           </svg>
         )}
-        Back to home
+        {t("buttons.backToHome")}
       </Button>
       {isLoading && (
         <div className="absolute inset-0 z-50 flex items-center justify-center bg-background/80">

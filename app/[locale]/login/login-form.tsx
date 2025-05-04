@@ -1,79 +1,28 @@
 "use client"
 
-import { zodResolver } from "@hookform/resolvers/zod"
-import { Loader2 } from "lucide-react"
-import Image from "next/image"
-import { useState } from "react"
-import { useForm } from "react-hook-form"
-import { FaGithub, FaGoogle } from "react-icons/fa"
-import { toast } from "sonner"
-import { z } from "zod"
-
 import { BackHome } from "@/components/back-home"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useLogo } from "@/hooks/use-logo"
-import { authClient } from "@/lib/auth/auth-client"
+import { useSignIn } from "@/hooks/use-signIn"
+import { Link } from "@/i18n/navigation"
 import { cn } from "@/lib/utils"
-import Link from "next/link"
-
-const formSchema = z.object({
-  email: z.string().email("Email invalide"),
-  password: z.string().min(1, "Le mot de passe est requis"),
-})
-
-type FormValues = z.infer<typeof formSchema>
+import { Loader2 } from "lucide-react"
+import { useTranslations } from "next-intl"
+import Image from "next/image"
+import { useParams } from "next/navigation"
+import { FaGithub, FaGoogle } from "react-icons/fa"
 
 export function LoginForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
-  const [isLoading, setIsLoading] = useState(false)
-
-  const form = useForm<FormValues>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      email: "",
-      password: "",
-    },
-  })
-
-  const onSubmit = async (values: FormValues) => {
-    try {
-      setIsLoading(true)
-      const { error } = await authClient.signIn.email(
-        {
-          email: values.email,
-          password: values.password,
-          rememberMe: false,
-          callbackURL: "/dashboard",
-        },
-        {
-          onRequest: () => setIsLoading(true),
-          onResponse: () => setIsLoading(false),
-          onError: (ctx: { error: Error }) => {
-            toast.error(ctx.error.message ?? "Identifiants invalides")
-          },
-          onSuccess: async () => {
-            const { data: session } = await authClient.getSession()
-            if (session) {
-              toast.success("Connexion réussie !")
-            } else {
-              toast.error("Erreur lors de la récupération du nom d'utilisateur")
-            }
-          },
-        }
-      )
-      if (error) {
-        toast.error(error.message ?? "Une erreur est survenue")
-      }
-    } catch {
-      toast.error("Une erreur est survenue lors de la connexion")
-    } finally {
-      setIsLoading(false)
-    }
-  }
+  const { form, isLoading, onSubmit, handleSocialSignIn, setIsLoading } =
+    useSignIn()
+  const t = useTranslations("Login")
+  const params = useParams()
+  const locale = params.locale as string
 
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
@@ -99,17 +48,20 @@ export function LoginForm({
               </div>
               <span className="sr-only">Jos Inc.</span>
             </Link>
-            <h1 className="text-xl font-bold">Welcome.</h1>
+            <h1 className="text-xl font-bold">{t("welcome")}</h1>
             <div className="text-center text-sm">
-              Don&apos;t have an account ?{" "}
-              <a href="/sign-up" className="underline underline-offset-4">
-                Sign up
+              {t("dontHaveAccount")}{" "}
+              <a
+                href={`/${locale}/sign-up`}
+                className="underline underline-offset-4"
+              >
+                {t("signUp")}
               </a>
             </div>
           </div>
           <div className="flex flex-col gap-6">
             <div className="grid gap-3">
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email">{t("email")}</Label>
               <Input
                 id="email"
                 type="email"
@@ -119,7 +71,7 @@ export function LoginForm({
               />
             </div>
             <div className="grid gap-3">
-              <Label htmlFor="password">Password</Label>
+              <Label htmlFor="password">{t("password")}</Label>
               <Input
                 id="password"
                 type="password"
@@ -132,16 +84,16 @@ export function LoginForm({
               {isLoading ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  Connexion en cours...
+                  {t("loading")}
                 </>
               ) : (
-                "Login"
+                t("login")
               )}
             </Button>
           </div>
           <div className="after:border-border relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t">
             <span className="bg-background text-muted-foreground relative z-10 px-2">
-              Or
+              {t("or")}
             </span>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
@@ -149,12 +101,7 @@ export function LoginForm({
               variant="outline"
               type="button"
               className="w-full"
-              onClick={async () => {
-                await authClient.signIn.social({
-                  provider: "github",
-                  callbackURL: "/dashboard",
-                })
-              }}
+              onClick={() => handleSocialSignIn("github")}
             >
               <FaGithub />
               Github
@@ -163,12 +110,7 @@ export function LoginForm({
               variant="outline"
               type="button"
               className="w-full"
-              onClick={async () => {
-                await authClient.signIn.social({
-                  provider: "google",
-                  callbackURL: "/dashboard",
-                })
-              }}
+              onClick={() => handleSocialSignIn("google")}
             >
               <FaGoogle />
               Google
@@ -177,8 +119,8 @@ export function LoginForm({
         </div>
       </form>
       <div className="text-muted-foreground *:[a]:hover:text-primary text-center text-xs text-balance *:[a]:underline *:[a]:underline-offset-4">
-        By clicking continue, you agree to our <a href="#">Terms of Service</a>{" "}
-        and <a href="#">Privacy Policy</a>.
+        {t("termsAndPolicy.text")} <a href="/">{t("termsAndPolicy.terms")}</a>{" "}
+        {t("termsAndPolicy.and")} <a href="/">{t("termsAndPolicy.privacy")}</a>.
       </div>
     </div>
   )

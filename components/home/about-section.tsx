@@ -3,9 +3,12 @@
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 import { Download, Github, Linkedin, Mail } from "lucide-react"
+import { useTranslations } from "next-intl"
 import Image from "next/image"
 
 export function AboutSection() {
+  const t = useTranslations("Home.sections.about")
+
   return (
     <section id="about" className="py-20 bg-muted/30">
       <div className="container px-4 md:px-6">
@@ -16,7 +19,7 @@ export function AboutSection() {
           viewport={{ once: true }}
           className="flex flex-col md:flex-row gap-12 items-center"
         >
-          <div className="w-full md:w-2/5 flex justify-center md:justify-start">
+          <div className="w-full md:w-2/5 flex justify-center">
             <div className="relative">
               <div className="absolute -inset-4 rounded-full bg-gradient-to-br from-primary/20 to-primary/0 blur-lg" />
               <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-background shadow-xl">
@@ -32,26 +35,14 @@ export function AboutSection() {
           </div>
 
           <div className="w-full md:w-3/5">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">About Me</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              {t("title")}
+            </h2>
 
             <div className="space-y-4 text-muted-foreground">
-              <p>
-                Hello! I&apos;m Jocelyn Sainson, a passionate Full-Stack
-                Developer with expertise in building modern web applications. I
-                specialize in creating responsive, high-performance solutions
-                that solve real-world problems.
-              </p>
-              <p>
-                With a strong foundation in both front-end and back-end
-                technologies, I enjoy working across the entire development
-                stack to deliver seamless user experiences and robust
-                application architectures.
-              </p>
-              <p>
-                When I&apos;m not coding, you can find me exploring new
-                technologies, contributing to open-source projects, or sharing
-                my knowledge with the developer community.
-              </p>
+              <p>{t("paragraphs.intro")}</p>
+              <p>{t("paragraphs.skills")}</p>
+              <p>{t("paragraphs.hobbies")}</p>
             </div>
 
             <div className="mt-8 flex flex-wrap gap-4">
@@ -63,7 +54,7 @@ export function AboutSection() {
                   rel="noopener noreferrer"
                   className="inline-flex gap-2 items-center"
                 >
-                  Download CV
+                  {t("buttons.cv")}
                 </a>
               </Button>
               <Button variant="ghost" size="sm" className="gap-2">
@@ -74,7 +65,7 @@ export function AboutSection() {
                   className="inline-flex gap-2 items-center"
                 >
                   <Github size={16} />
-                  GitHub
+                  {t("buttons.github")}
                 </a>
               </Button>
               <Button variant="ghost" size="sm" className="gap-2">
@@ -85,7 +76,7 @@ export function AboutSection() {
                   className="inline-flex gap-2 items-center"
                 >
                   <Linkedin size={16} />
-                  LinkedIn
+                  {t("buttons.linkedin")}
                 </a>
               </Button>
               <Button variant="ghost" size="sm" className="gap-2">
@@ -96,7 +87,7 @@ export function AboutSection() {
                   className="inline-flex gap-2 items-center"
                 >
                   <Mail size={16} />
-                  Email
+                  {t("buttons.email")}
                 </a>
               </Button>
             </div>

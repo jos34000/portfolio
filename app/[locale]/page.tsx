@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { ArrowUp } from "lucide-react"
+import { useTranslations } from "next-intl"
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 
@@ -20,6 +21,7 @@ export default function Home() {
   const [loading, setLoading] = useState(true)
   const [canRender, setCanRender] = useState(false)
   const router = useRouter()
+  const t = useTranslations("Home")
 
   useEffect(() => {
     if (window.location.pathname === "/onboarding") {
@@ -64,7 +66,7 @@ export default function Home() {
       `}</style>
 
       {loading ? (
-        <LoadingScreen message="Preparing portfolio..." />
+        <LoadingScreen message={t("loading")} />
       ) : (
         <main className="min-h-screen bg-background">
           <ParticleBackground />
@@ -85,6 +87,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1 }}
+            aria-label={t("scrollToTop")}
           >
             <ArrowUp className="h-5 w-5" />
           </motion.button>

@@ -1,7 +1,7 @@
 "use client"
+import { Link, useRouter } from "@/i18n/navigation"
 import { motion } from "motion/react"
-import Link from "next/link"
-import { useRouter } from "next/navigation"
+import { useTranslations } from "next-intl"
 
 import { cn } from "@/lib/utils"
 
@@ -20,6 +20,7 @@ export const FloatingNav = ({
   className?: string
 }) => {
   const router = useRouter()
+  const t = useTranslations("Home")
   return (
     <motion.div
       initial={{
@@ -53,7 +54,9 @@ export const FloatingNav = ({
             )}
           >
             <span className="block sm:hidden">{navItem.icon}</span>
-            <span className="hidden sm:block text-sm">{navItem.name}</span>
+            <span className="hidden sm:block text-sm">
+              {t(`nav.${navItem.id}`)}
+            </span>
           </Link>
         )
       )}

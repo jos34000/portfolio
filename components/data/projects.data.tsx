@@ -1,6 +1,5 @@
-type Project = {
-  title: string
-  description: string
+export type Project = {
+  id: "portfolio" | "exoskel"
   image: string
   tags: string[]
   github?: string
@@ -10,9 +9,7 @@ type Project = {
 
 export const projects: Project[] = [
   {
-    title: "Portfolio Website",
-    description:
-      "Personal portfolio website built with Next.js and Tailwind CSS, featuring smooth animations and responsive design.",
+    id: "portfolio",
     image: "/static/Projects-screenshots/Portfolio.png",
     tags: [
       "Next.js",
@@ -21,15 +18,14 @@ export const projects: Project[] = [
       "Framer Motion",
       "React Email",
       "Better Auth",
+      "Translations",
     ],
     github: "https://github.com/jos34000/portfolio",
     demo: "https://jocelynsainson.com",
     featured: true,
   },
   {
-    title: "Exoskel",
-    description:
-      "A complete boiler plate for a full-stack application with Next.js, TypeScript, Prisma, and Tailwind CSS.",
+    id: "exoskel",
     image: "/static/Projects-screenshots/Exoskel.png",
     tags: ["Next.js", "TypeScript", "Prisma"],
     github: "https://github.com/jos34000/exoskel",

@@ -1,5 +1,6 @@
 "use client"
 
+import { useTranslations } from "next-intl"
 import { useState } from "react"
 import { z } from "zod"
 
@@ -38,6 +39,7 @@ export const ContactDialog = ({
   email,
   onSubmit,
 }: ContactDialogProps) => {
+  const t = useTranslations("Home.sections.contact.dialog")
   const [message, setMessage] = useState("")
   const [reason, setReason] = useState("")
   const [step, setStep] = useState(1)
@@ -49,7 +51,7 @@ export const ContactDialog = ({
         contactStepSchema.step1.parse({ message })
       } else if (step === 2) {
         if (!reason) {
-          setErrors({ reason: "Please select a reason" })
+          setErrors({ reason: t("form.reason.error") })
           return false
         }
         contactStepSchema.step2.parse({ reason })
@@ -63,7 +65,7 @@ export const ContactDialog = ({
         const newErrors: Record<string, string> = {}
         error.errors.forEach((err) => {
           if (typeof err.path[0] === "string") {
-            newErrors[err.path[0]] = err.message
+            newErrors[err.path[0]] = t(`form.${err.path[0]}.error`)
           }
         })
         setErrors(newErrors)
@@ -96,27 +98,15 @@ export const ContactDialog = ({
     }
   }
 
-  const getStepTitle = () => {
-    if (step === 1) return "Your request"
-    if (step === 2) return "Select a reason"
-    return "Confirmation"
-  }
-
-  const getStepDescription = () => {
-    if (step === 1) return "Describe your request!"
-    if (step === 2) return "Choose one of the following reasons"
-    return "Check the information before sending"
-  }
-
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
       <DialogContent className="bg-neutral-950 text-neutral-200 rounded-lg border border-neutral-800 shadow-2xl max-w-md w-full">
         <DialogHeader>
           <DialogTitle className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600 pb-2">
-            {getStepTitle()}
+            {t(`steps.${step}.title`)}
           </DialogTitle>
           <DialogDescription className="text-neutral-500 text-sm">
-            {getStepDescription()}
+            {t(`steps.${step}.description`)}
           </DialogDescription>
         </DialogHeader>
         <div className="my-6">
@@ -125,7 +115,7 @@ export const ContactDialog = ({
               <Textarea
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                placeholder="Write your request here & add links if necessary ..."
+                placeholder={t("form.message.placeholder")}
                 className={`bg-neutral-950 border-neutral-800 text-neutral-200 rounded-lg focus:ring-2 focus:ring-teal-500 min-h-[150px] placeholder:text-neutral-700 ${
                   errors.message ? "border-red-500" : "border-neutral-800"
                 }`}
@@ -145,13 +135,21 @@ export const ContactDialog = ({
                     "hover:border-sky-600 focus:border-sky-600 focus:ring-1 focus:ring-sky-600"
                   )}
                 >
-                  <SelectValue placeholder="Select a reason" />
+                  <SelectValue placeholder={t("form.reason.placeholder")} />
                 </SelectTrigger>
                 <SelectContent className="bg-neutral-950 border-neutral-800 text-neutral-200">
-                  <SelectItem value="job">Job offer</SelectItem>
-                  <SelectItem value="collaboration">Collaboration</SelectItem>
-                  <SelectItem value="suggestion">Suggestion</SelectItem>
-                  <SelectItem value="other">Other</SelectItem>
+                  <SelectItem value="job">
+                    {t("form.reason.options.job")}
+                  </SelectItem>
+                  <SelectItem value="collaboration">
+                    {t("form.reason.options.collaboration")}
+                  </SelectItem>
+                  <SelectItem value="suggestion">
+                    {t("form.reason.options.suggestion")}
+                  </SelectItem>
+                  <SelectItem value="other">
+                    {t("form.reason.options.other")}
+                  </SelectItem>
                 </SelectContent>
               </Select>
               {errors.reason && (
@@ -162,15 +160,21 @@ export const ContactDialog = ({
           {step === 3 && (
             <div className="space-y-3 text-sm bg-neutral-950 border border-neutral-800 p-4 rounded-lg">
               <p>
-                <strong className="text-neutral-200">Email:</strong>{" "}
+                <strong className="text-neutral-200">
+                  {t("form.preview.email")}:
+                </strong>{" "}
                 <span className="text-neutral-500">{email}</span>
               </p>
               <p>
-                <strong className="text-neutral-200">Message:</strong>{" "}
+                <strong className="text-neutral-200">
+                  {t("form.preview.message")}:
+                </strong>{" "}
                 <span className="text-neutral-500">{message}</span>
               </p>
               <p>
-                <strong className="text-neutral-200">Reason:</strong>{" "}
+                <strong className="text-neutral-200">
+                  {t("form.preview.reason")}:
+                </strong>{" "}
                 <span className="text-neutral-500">{reason}</span>
               </p>
             </div>
@@ -182,7 +186,7 @@ export const ContactDialog = ({
               onClick={prevStep}
               className="bg-neutral-950 border hover:border-indigo-500 text-neutral-200 rounded-lg hover:bg-neutral-900 px-6 py-2 transition-colors duration-300"
             >
-              Back
+              {t("buttons.back")}
             </Button>
           )}
           {step < 3 ? (
@@ -190,14 +194,14 @@ export const ContactDialog = ({
               onClick={nextStep}
               className="bg-neutral-950 border hover:border-sky-500 text-neutral-200 rounded-lg  hover:bg-neutral-900 px-6 py-2 transition-all duration-300"
             >
-              Next
+              {t("buttons.next")}
             </Button>
           ) : (
             <Button
               onClick={handleSubmit}
               className="bg-neutral-950 border hover:border-sky-500 text-neutral-200 rounded-lg hover:bg-neutral-900 px-6 py-2 transition-all duration-300"
             >
-              Send
+              {t("buttons.send")}
             </Button>
           )}
         </DialogFooter>

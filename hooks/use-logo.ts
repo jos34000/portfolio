@@ -14,6 +14,5 @@ export const useLogo = () => {
     return "/static/logo-dark.png"
   }
 
-  const logoTheme = theme === "dark" ? "light" : "dark"
-  return `/static/logo-${logoTheme}.png`
+  return `/static/logo-${theme === "dark" ? "light" : "dark"}.png`
 }

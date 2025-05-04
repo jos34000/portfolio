@@ -8,8 +8,6 @@ import {
   LogOut,
   Sparkles,
 } from "lucide-react"
-import { useRouter } from "next/navigation"
-import { toast } from "sonner"
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import {
@@ -27,13 +25,14 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar"
+import { useSignOut } from "@/hooks/use-signOut"
 import { useUser } from "@/hooks/use-user"
-import { authClient } from "@/lib/auth/auth-client"
 
 export function NavUser() {
-  const { user, loading } = useUser()
+  const { user } = useUser()
   const { isMobile } = useSidebar()
-  const router = useRouter()
+  const signOut = useSignOut()
+
   return (
     <SidebarMenu>
       <SidebarMenuItem>
@@ -99,18 +98,7 @@ export function NavUser() {
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            <DropdownMenuItem
-              onClick={async () =>
-                await authClient.signOut({
-                  fetchOptions: {
-                    onSuccess: () => {
-                      toast.success("Vous êtes déconnecté !")
-                      router.push("/login")
-                    },
-                  },
-                })
-              }
-            >
+            <DropdownMenuItem onClick={signOut}>
               <LogOut />
               Log out
             </DropdownMenuItem>

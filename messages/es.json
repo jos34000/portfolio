@@ -1,0 +1,223 @@
+{
+  "Common": {
+    "buttons": {
+      "backToHome": "Volver al inicio",
+      "back": "Volver"
+    }
+  },
+  "Home": {
+    "loading": "Preparando el portafolio...",
+    "scrollToTop": "Volver arriba",
+    "sections": {
+      "hero": {
+        "title": "Hola, soy Jocelyn",
+        "subtitle": "Desarrollador Full Stack",
+        "description": "Creo aplicaciones web modernas y de alto rendimiento con Next.js, TypeScript y React. Transformo problemas complejos en soluciones elegantes.",
+        "viewProjects": "Ver proyectos",
+        "contactMe": "Contáctame"
+      },
+      "about": {
+        "title": "Sobre mí",
+        "description": "Descubre mi trayectoria y habilidades",
+        "paragraphs": {
+          "intro": "¡Hola! Soy Jocelyn Sainson, un desarrollador Full-Stack apasionado, especializado en crear aplicaciones web modernas. Diseño soluciones reactivas y eficientes para resolver problemas reales.",
+          "skills": "Con una sólida base en tecnologías front-end y back-end, disfruto trabajando en toda la pila para ofrecer experiencias fluidas y arquitecturas robustas.",
+          "hobbies": "Cuando no estoy programando, exploro nuevas tecnologías, contribuyo a proyectos de código abierto o comparto mis conocimientos con la comunidad de desarrolladores."
+        },
+        "buttons": {
+          "cv": "Descargar CV",
+          "github": "GitHub",
+          "linkedin": "LinkedIn",
+          "email": "Email"
+        }
+      },
+      "skills": {
+        "title": "¿Qué puedo hacer por ti?",
+        "cards": {
+          "frontend": "Front-end",
+          "backend": "Back-end",
+          "devops": "DevOps",
+          "os": "Multi-OS",
+          "qualities": "Qualités"
+        }
+      },
+      "projects": {
+        "title": "Proyectos destacados",
+        "subtitle": "Una selección de mis trabajos recientes que muestran mis habilidades en desarrollo web.",
+        "filters": {
+          "all": "Todos"
+        },
+        "badges": {
+          "featured": "Destacado"
+        },
+        "buttons": {
+          "code": "Código",
+          "demo": "Ver la aplicación"
+        },
+        "items": {
+          "portfolio": {
+            "title": "Sitio Portafolio",
+            "description": "Sitio personal desarrollado con Next.js y Tailwind CSS, con animaciones fluidas y diseño responsivo."
+          },
+          "exoskel": {
+            "title": "Exoskel",
+            "description": "Una plantilla completa para una aplicación full-stack con Next.js, TypeScript, Prisma y Tailwind CSS."
+          }
+        }
+      },
+      "contact": {
+        "title": "Contáctame",
+        "description": "Proporcione su correo electrónico y un breve mensaje. Le responderé lo antes posible.",
+        "placeholders": {
+          "email": "votre@email.com",
+          "hint": "Proporcione su correo para poder agregar un mensaje"
+        },
+        "errors": {
+          "invalidEmail": "Por favor, introduzca una dirección de correo electrónico válida"
+        },
+        "dialog": {
+          "steps": {
+            "1": {
+              "title": "Tu solicitud",
+              "description": "¡Describe tu solicitud!"
+            },
+            "2": {
+              "title": "Seleccionar un motivo",
+              "description": "Elige uno de los siguientes motivos"
+            },
+            "3": {
+              "title": "Confirmación",
+              "description": "Verifica la información antes de enviar"
+            }
+          },
+          "form": {
+            "message": {
+              "placeholder": "Escriba su solicitud aquí y agregue enlaces si es necesario...",
+              "error": "Por favor, introduzca un mensaje"
+            },
+            "reason": {
+              "placeholder": "Seleccione un motivo",
+              "error": "Por favor, seleccione un motivo",
+              "options": {
+                "job": "Oferta de trabajo",
+                "collaboration": "Colaboración",
+                "suggestion": "Sugerencia",
+                "other": "Otro"
+              }
+            },
+            "preview": {
+              "email": "Email",
+              "message": "Message",
+              "reason": "Motivo"
+            }
+          },
+          "buttons": {
+            "back": "Volver",
+            "next": "Siguiente",
+            "send": "Enviar"
+          }
+        }
+      }
+    },
+    "nav": {
+      "home": "Inicio",
+      "about": "Sobre mí",
+      "skills": "Habilidades",
+      "projects": "Proyectos",
+      "contact": "Contacto"
+    },
+    "footer": {
+      "rights": "Todos los derechos reservados",
+      "madeWith": "Hecho con",
+      "by": "por"
+    }
+  },
+  "Login": {
+    "title": "Iniciar sesión",
+    "email": "Email",
+    "password": "Contraseña",
+    "login": "Iniciar sesión",
+    "validation": {
+      "email": "Por favor, introduzca una dirección de correo electrónico válida",
+      "password": "Veuillez entrer un mot de passe"
+    },
+    "notifications": {
+      "success": "Connexion réussie !",
+      "invalidCredentials": "Identifiants invalides",
+      "invalidUsername": "Erreur lors de la récupération du nom d'utilisateur.",
+      "genericErrorLogin": "Une erreur est survenue lors de la connexion.",
+      "genericError": "Une erreur est survenue."
+    },
+    "welcome": "Bienvenue.",
+    "dontHaveAccount": "¿No tienes una cuenta?",
+    "signUp": "Registrarse",
+    "termsAndPolicy": {
+      "text": "En cliquant sur continuer, vous acceptez nos",
+      "terms": "Términos de servicio",
+      "and": "y",
+      "privacy": "Política de privacidad"
+    },
+    "loading": "Iniciando sesión...",
+    "or": "O",
+    "and": "y"
+  },
+  "SignUp": {
+    "title": "Registro",
+    "welcome": "Bienvenue.",
+    "alreadyHaveAccount": "¿Ya tienes una cuenta?",
+    "signIn": "Iniciar sesión",
+    "validation": {
+      "firstNameLength": "Tu nombre debe tener al menos 2 caracteres",
+      "lastNameLength": "Tu apellido debe tener al menos 2 caracteres",
+      "email": "Correo electrónico inválido.",
+      "username": "El nombre de usuario debe tener al menos 4 caracteres",
+      "password": "La contraseña debe tener al menos 8 caracteres",
+      "passwordConfirmation": "Las contraseñas no coinciden"
+    },
+    "form": {
+      "email": "Email",
+      "password": "Contraseña",
+      "firstName": "Nombre",
+      "lastName": "Apellido",
+      "username": "Nombre de usuario",
+      "confirmPassword": "Confirmar contraseña",
+      "placeholders": {
+        "firstName": "Juan",
+        "lastName": "Pérez",
+        "username": "JuanPerez007",
+        "email": "juanperez@example.com",
+        "password": "********"
+      },
+      "buttons": {
+        "signUp": "Registrarse",
+        "loading": "Connexion...",
+        "github": "Github",
+        "linkedin": "Linkedin"
+      }
+    },
+    "notifications": {
+      "success": "¡Cuenta creada con éxito!",
+      "genericError": "Une erreur est survenue.",
+      "genericErrorSignUp": "Une erreur est survenue lors de l'inscription.",
+      "formError": "Por favor, corrija los errores del formulario."
+    },
+    "or": "O",
+    "termsAndPolicy": {
+      "text": "En cliquant sur continuer, vous acceptez nos",
+      "terms": "Términos de servicio",
+      "and": "y",
+      "privacy": "Política de privacidad"
+    }
+  },
+  "SignOut": {
+    "notifications": {
+      "success": "¡Sesión cerrada con éxito!",
+      "error": "Se produjo un error al cerrar sesión."
+    }
+  },
+  "Maintenance": {
+    "title": "¡Nuevas funciones próximamente!",
+    "description": "Esta sección está en desarrollo. Estamos trabajando para brindarle una experiencia excepcional.",
+    "back": "Volver"
+  }
+}

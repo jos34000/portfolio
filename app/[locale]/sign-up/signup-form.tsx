@@ -1,105 +1,27 @@
 "use client"
 
-import { zodResolver } from "@hookform/resolvers/zod"
-import { Loader2 } from "lucide-react"
-import Image from "next/image"
-import { useRouter } from "next/navigation"
-import { useState } from "react"
-import { useForm } from "react-hook-form"
-import { toast } from "sonner"
-import { z } from "zod"
-
 import { BackHome } from "@/components/back-home"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useLogo } from "@/hooks/use-logo"
-import { authClient } from "@/lib/auth/auth-client"
+import { useSignUp } from "@/hooks/use-signUp"
 import { cn } from "@/lib/utils"
-
-const formSchema = z
-  .object({
-    firstName: z
-      .string()
-      .min(2, "Your name must contain at least 2 characters"),
-    lastName: z
-      .string()
-      .min(2, "Your last name must contain at least 2 characters"),
-    email: z.string().email("Email invalide"),
-    username: z.string().min(4, "Username must contain at least 4 characters"),
-    initials: z.string(),
-    password: z.string().min(8, "Password must contain at least 8 characters"),
-    passwordConfirmation: z.string(),
-  })
-  .refine((data) => data.password === data.passwordConfirmation, {
-    message: "Passwords didn't match",
-    path: ["passwordConfirmation"],
-  })
-
-type FormValues = z.infer<typeof formSchema>
+import { Loader2 } from "lucide-react"
+import { useTranslations } from "next-intl"
+import Image from "next/image"
+import { useParams } from "next/navigation"
+import { toast } from "sonner"
 
 export function SignUpForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
-  const [isLoading, setIsLoading] = useState(false)
-  const router = useRouter()
-
-  const form = useForm<FormValues>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      firstName: "",
-      lastName: "",
-      initials: "",
-      email: "",
-      username: "",
-      password: "",
-      passwordConfirmation: "",
-    },
-  })
-
-  const onSubmit = async (values: FormValues) => {
-    try {
-      setIsLoading(true)
-
-      await authClient.signUp.email({
-        callbackURL: "/login",
-        email: values.email,
-        password: values.password,
-        name: `${values.firstName} ${values.lastName}`,
-        username: values.username,
-        firstName: values.firstName,
-        lastName: values.lastName,
-        initials: `${values.firstName
-          .charAt(0)
-          .toLocaleUpperCase()}${values.lastName
-          .charAt(0)
-          .toLocaleUpperCase()}`,
-        fetchOptions: {
-          onResponse: () => {
-            setIsLoading(false)
-          },
-          onRequest: () => {
-            setIsLoading(true)
-          },
-          onError: (ctx: { error: Error }) => {
-            toast.error(ctx.error.message ?? "Une erreur est survenue")
-          },
-          onSuccess: async () => {
-            toast.success("Compte créé avec succès !")
-            router.push("/login")
-          },
-        },
-      })
-    } catch (err) {
-      const error = err as Error
-      toast.error(
-        error.message || "Une erreur est survenue lors de l'inscription"
-      )
-    } finally {
-      setIsLoading(false)
-    }
-  }
+  const { form, isLoading, onSubmit, handleSocialSignIn, setIsLoading } =
+    useSignUp()
+  const t = useTranslations("SignUp")
+  const params = useParams()
+  const locale = params.locale as string
 
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
@@ -113,14 +35,14 @@ export function SignUpForm({
           if (firstError && firstError.message) {
             toast.error(firstError.message.toString())
           } else {
-            toast.error("Veuillez corriger les erreurs du formulaire.")
+            toast.error(t("notifications.formError"))
           }
         })}
       >
         <div className="flex flex-col gap-6">
           <div className="flex flex-col items-center gap-2">
             <a
-              href="#"
+              href="/"
               className="flex flex-col items-center gap-2 font-medium"
             >
               <div className="flex size-28 items-center justify-center rounded-md">
@@ -134,31 +56,34 @@ export function SignUpForm({
               </div>
               <span className="sr-only">Jos Inc.</span>
             </a>
-            <h1 className="text-xl font-bold">Welcome.</h1>
+            <h1 className="text-xl font-bold">{t("welcome")}</h1>
             <div className="text-center text-sm">
-              Already have an account ?{" "}
-              <a href="/login" className="underline underline-offset-4">
-                Sign In
+              {t("alreadyHaveAccount")}{" "}
+              <a
+                href={`/${locale}/login`}
+                className="underline underline-offset-4"
+              >
+                {t("signIn")}
               </a>
             </div>
           </div>
           <div className="flex flex-row gap-6">
             <div className="flex flex-col gap-3">
-              <Label htmlFor="firstName">First name</Label>
+              <Label htmlFor="firstName">{t("form.firstName")}</Label>
               <Input
                 id="firstName"
                 type="text"
-                placeholder="John"
+                placeholder={t("form.placeholders.firstName")}
                 {...form.register("firstName")}
                 required
               />
             </div>
             <div className="flex flex-col gap-3">
-              <Label htmlFor="lastName">Last name</Label>
+              <Label htmlFor="lastName">{t("form.lastName")}</Label>
               <Input
                 id="lastName"
                 type="text"
-                placeholder="Doe"
+                placeholder={t("form.placeholders.lastName")}
                 {...form.register("lastName")}
                 required
               />
@@ -166,41 +91,43 @@ export function SignUpForm({
           </div>
           <div className="flex flex-col gap-6">
             <div className="grid gap-3">
-              <Label htmlFor="username">Username</Label>
+              <Label htmlFor="username">{t("form.username")}</Label>
               <Input
                 id="username"
                 type="text"
-                placeholder="JohnDoe007"
+                placeholder={t("form.placeholders.username")}
                 {...form.register("username")}
                 required
               />
             </div>
             <div className="grid gap-3">
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email">{t("form.email")}</Label>
               <Input
                 id="email"
                 type="email"
-                placeholder="johndoe@example.com"
+                placeholder={t("form.placeholders.email")}
                 {...form.register("email")}
                 required
               />
             </div>
             <div className="grid gap-3">
-              <Label htmlFor="password">Password</Label>
+              <Label htmlFor="password">{t("form.password")}</Label>
               <Input
                 id="password"
                 type="password"
-                placeholder="********"
+                placeholder={t("form.placeholders.password")}
                 {...form.register("password")}
                 required
               />
             </div>
             <div className="grid gap-3">
-              <Label htmlFor="passwordConfirmation">Confirm password</Label>
+              <Label htmlFor="passwordConfirmation">
+                {t("form.confirmPassword")}
+              </Label>
               <Input
                 id="passwordConfirmation"
                 type="password"
-                placeholder="********"
+                placeholder={t("form.placeholders.password")}
                 {...form.register("passwordConfirmation")}
                 required
               />
@@ -209,16 +136,16 @@ export function SignUpForm({
               {isLoading ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  Connecting...
+                  {t("form.buttons.loading")}
                 </>
               ) : (
-                "Sign Up"
+                t("form.buttons.signUp")
               )}
             </Button>
           </div>
           <div className="after:border-border relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t">
             <span className="bg-background text-muted-foreground relative z-10 px-2">
-              Or
+              {t("or")}
             </span>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
@@ -226,9 +153,7 @@ export function SignUpForm({
               variant="outline"
               type="button"
               className="w-full"
-              onClick={async () => {
-                await authClient.signIn.social({ provider: "github" })
-              }}
+              onClick={() => handleSocialSignIn("github")}
             >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <path
@@ -247,17 +172,13 @@ export function SignUpForm({
                   fill="currentColor"
                 />
               </svg>
-              Github
+              {t("form.buttons.github")}
             </Button>
             <Button
               variant="outline"
               type="button"
               className="w-full"
-              onClick={async () => {
-                await authClient.signIn.social({
-                  provider: "linkedin",
-                })
-              }}
+              onClick={() => handleSocialSignIn("linkedin")}
             >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <path
@@ -271,14 +192,14 @@ export function SignUpForm({
                   fill="currentColor"
                 />
               </svg>
-              Linkedin
+              {t("form.buttons.linkedin")}
             </Button>
           </div>
         </div>
       </form>
       <div className="text-muted-foreground *:[a]:hover:text-primary text-center text-xs text-balance *:[a]:underline *:[a]:underline-offset-4">
-        By clicking continue, you agree to our <a href="#">Terms of Service</a>{" "}
-        and <a href="#">Privacy Policy</a>.
+        {t("termsAndPolicy.text")} <a href="/">{t("termsAndPolicy.terms")}</a>{" "}
+        {t("termsAndPolicy.and")} <a href="/">{t("termsAndPolicy.privacy")}</a>.
       </div>
     </div>
   )

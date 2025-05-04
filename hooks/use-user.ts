@@ -25,7 +25,7 @@ export const useUser = () => {
           firstName: session.user.firstName,
           lastName: session.user.lastName,
           emailVerified: session.user.emailVerified,
-          image: session.user.image || "",
+          image: session.user.image ?? "",
         })
       }
       setLoading(false)

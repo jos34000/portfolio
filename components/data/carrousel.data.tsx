@@ -1,32 +1,38 @@
-export const data = [
-  {
-    category: "Front-end",
-    title: "",
-    src: "/static/Skills/Frontend.png",
-  },
-  {
-    category: "",
-    title: "Back-end",
-    src: "/static/Skills/Backend.png",
-  },
-  {
-    category: "",
-    title: "DevOps",
-    src: "/static/Skills/DevOps.png",
-  },
-  {
-    category: "",
-    title: "Multi OS",
-    src: "/static/Skills/OS.png",
-  },
-  {
-    category: "",
-    title: "Qualities",
-    src: "/static/Skills/Quality-1.png",
-  },
-  {
-    category: "",
-    title: "Qualities",
-    src: "/static/Skills/Quality-2.png",
-  },
-]
+import { useTranslations } from "next-intl"
+
+export const useCarouselData = () => {
+  const t = useTranslations("Home.sections.skills.cards")
+
+  return [
+    {
+      category: t("frontend"),
+      title: "",
+      src: "/static/Skills/Frontend.png",
+    },
+    {
+      category: t("backend"),
+      title: "",
+      src: "/static/Skills/Backend.png",
+    },
+    {
+      category: t("devops"),
+      title: "",
+      src: "/static/Skills/DevOps.png",
+    },
+    {
+      category: t("os"),
+      title: "",
+      src: "/static/Skills/OS.png",
+    },
+    {
+      category: t("qualities"),
+      title: "",
+      src: "/static/Skills/Quality-1.png",
+    },
+    {
+      category: t("qualities"),
+      title: "",
+      src: "/static/Skills/Quality-2.png",
+    },
+  ]
+}
