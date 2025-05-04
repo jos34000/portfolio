@@ -1,6 +1,6 @@
 "use client"
 
-import { Moon, Sun } from "lucide-react"
+import { Check, Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 
 import { Button } from "@/components/ui/button"
@@ -10,9 +10,25 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { cn } from "@/lib/utils"
+import { useTranslations } from "next-intl"
 
-export function ModeToggle() {
-  const { setTheme } = useTheme()
+type Direction = "top" | "bottom" | "left" | "right"
+type Orientation = "vertical" | "horizontal"
+
+type ThemeToggleProps = {
+  direction?: Direction
+  orientation?: Orientation
+}
+
+export const ThemeToggle = ({
+  direction = "bottom",
+  orientation = "vertical",
+}: ThemeToggleProps) => {
+  const { theme, setTheme } = useTheme()
+  const t = useTranslations("Common")
+
+  const isVerticalDirection = direction === "top" || direction === "bottom"
 
   return (
     <DropdownMenu>
@@ -23,15 +39,47 @@ export function ModeToggle() {
           <span className="sr-only">Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme("light")}>
-          Light
+      <DropdownMenuContent
+        align={isVerticalDirection ? "center" : "end"}
+        alignOffset={isVerticalDirection ? 0 : -5}
+        side={direction}
+        className={cn(
+          "min-w-[120px] h-full",
+          orientation === "horizontal" && "flex flex-row items-center gap-2 p-2"
+        )}
+      >
+        <DropdownMenuItem
+          onClick={() => setTheme("light")}
+          className={cn(
+            "flex items-center justify-between px-2 py-2",
+            orientation === "horizontal" && "flex-1",
+            theme === "light" && "bg-accent"
+          )}
+        >
+          {t("themes.light")}
+          {theme === "light" && <Check className="h-4 w-4 ml-2" />}
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")}>
-          Dark
+        <DropdownMenuItem
+          onClick={() => setTheme("dark")}
+          className={cn(
+            "flex items-center justify-between px-2 py-2",
+            orientation === "horizontal" && "flex-1",
+            theme === "dark" && "bg-accent"
+          )}
+        >
+          {t("themes.dark")}
+          {theme === "dark" && <Check className="h-4 w-4 ml-2" />}
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>
-          System
+        <DropdownMenuItem
+          onClick={() => setTheme("system")}
+          className={cn(
+            "flex items-center justify-between px-2 py-2",
+            orientation === "horizontal" && "flex-1",
+            theme === "system" && "bg-accent"
+          )}
+        >
+          {t("themes.system")}
+          {theme === "system" && <Check className="h-4 w-4 ml-2" />}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

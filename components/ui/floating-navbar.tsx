@@ -21,6 +21,7 @@ export const FloatingNav = ({
 }) => {
   const router = useRouter()
   const t = useTranslations("Home")
+  const tLogin = useTranslations("Login")
   return (
     <motion.div
       initial={{
@@ -65,7 +66,7 @@ export const FloatingNav = ({
           className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full"
           onClick={() => router.push("/login")}
         >
-          <span>Login</span>
+          <span>{tLogin("login")}</span>
           <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent h-px" />
         </button>
       </div>

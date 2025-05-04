@@ -3,6 +3,16 @@
     "buttons": {
       "backToHome": "Retour à l'accueil",
       "back": "Retour"
+    },
+    "languages": {
+      "fr": "Français",
+      "en": "Anglais",
+      "es": "Espagnol"
+    },
+    "themes": {
+      "light": "Clair",
+      "dark": "Sombre",
+      "system": "Système"
     }
   },
   "Home": {
