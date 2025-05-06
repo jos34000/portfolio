@@ -20,7 +20,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
-import { sendContactEmail } from "@/lib/action/send-contact-email"
+import { sendContactEmail } from "@/lib/action/sendEmail.action"
 import { contactStepSchema } from "@/lib/schemas/contacting.schema"
 import { cn } from "@/lib/utils"
 

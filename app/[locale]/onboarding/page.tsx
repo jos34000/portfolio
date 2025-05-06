@@ -2,9 +2,11 @@
 
 import { LoadingScreen } from "@/components/loading-screen"
 import { Button } from "@/components/ui/button"
+import { useRouter } from "@/i18n/navigation"
+import { useOnboarding } from "@/lib/hooks/use-onboarding-storage"
 import { AnimatePresence, motion } from "framer-motion"
-import { ChevronLeft, ChevronRight, X } from "lucide-react"
-import { useRouter } from "next/navigation"
+import { ChevronLeft, ChevronRight } from "lucide-react"
+import { useTranslations } from "next-intl"
 import { useEffect, useState } from "react"
 import { GlassCard } from "./elements/glass-card"
 import StepInterests from "./steps/step-interests"
@@ -15,13 +17,15 @@ import { StepTheme } from "./steps/step-theme"
 export default function OnboardingPage() {
   const [step, setStep] = useState(1)
   const router = useRouter()
+  const t = useTranslations("Common")
+  const { markAsCompleted } = useOnboarding()
   const totalSteps = 4
 
-  const handleNext = () => {
+  const handleNext = async () => {
     if (step < totalSteps) {
       setStep(step + 1)
     } else {
-      localStorage.setItem("onboarding-completed", "true")
+      await markAsCompleted()
       router.push("/")
     }
   }
@@ -32,8 +36,8 @@ export default function OnboardingPage() {
     }
   }
 
-  const handleSkip = () => {
-    localStorage.setItem("onboarding-completed", "true")
+  const handleSkip = async () => {
+    await markAsCompleted()
     localStorage.setItem("preferred-language", "en")
     router.push("/")
   }
@@ -44,7 +48,7 @@ export default function OnboardingPage() {
 
   return (
     <>
-      <LoadingScreen duration={2000} message="Preparing your experience..." />
+      <LoadingScreen duration={1000} message="Preparing your experience..." />
 
       <style jsx global>{`
         :root {
@@ -61,18 +65,6 @@ export default function OnboardingPage() {
 
       <div className="min-h-screen flex items-center justify-center p-4">
         <GlassCard interactive={false} className="w-full max-w-3xl">
-          <div className="absolute top-4 right-4 z-10">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={handleSkip}
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <span className="mr-1">Skip</span>
-              <X className="h-4 w-4" />
-            </Button>
-          </div>
-
           <div className="w-full h-1 bg-muted/50">
             <motion.div
               className="h-full bg-primary"
@@ -90,7 +82,7 @@ export default function OnboardingPage() {
                 animate={{ opacity: 1 }}
                 className="text-sm font-medium text-muted-foreground"
               >
-                Step {step} of {totalSteps}
+                {t("others.step")} {step} {t("others.of")} {totalSteps}
               </motion.span>
               <div className="flex space-x-1">
                 {Array.from({ length: totalSteps }).map((_, i) => (
@@ -114,16 +106,13 @@ export default function OnboardingPage() {
                   className="flex-1"
                 >
                   {step === 1 && <StepIntro />}
-
                   {step === 2 && <StepLanguage />}
-
                   {step === 3 && <StepTheme />}
-
                   {step === 4 && <StepInterests />}
                 </motion.div>
               </AnimatePresence>
 
-              <div className="flex justify-between mt-8 pt-4 border-t border-border/30">
+              <div className="flex items-center justify-between mt-8 pt-4 border-t border-border/30 gap-4">
                 <Button
                   variant="outline"
                   onClick={handleBack}
@@ -131,7 +120,16 @@ export default function OnboardingPage() {
                   className={`${step === 1 ? "opacity-0" : "opacity-100"} backdrop-blur-sm bg-background/50`}
                 >
                   <ChevronLeft className="mr-2 h-4 w-4" />
-                  Back
+                  {t("buttons.return")}
+                </Button>
+
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={handleSkip}
+                  className="text-muted-foreground hover:text-foreground transition-colors text-xs"
+                >
+                  {t("buttons.skip")}
                 </Button>
 
                 <Button
@@ -139,10 +137,10 @@ export default function OnboardingPage() {
                   className="backdrop-blur-sm bg-primary/90 hover:bg-primary/80"
                 >
                   {step === totalSteps ? (
-                    "Finish"
+                    t("buttons.finish")
                   ) : (
                     <>
-                      Next
+                      {t("buttons.next")}
                       <ChevronRight className="ml-2 h-4 w-4" />
                     </>
                   )}

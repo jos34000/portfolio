@@ -1,7 +1,9 @@
 import { motion } from "framer-motion"
 import { Sparkles, User } from "lucide-react"
+import { useTranslations } from "next-intl"
 
 export default function StepIntro() {
+  const t = useTranslations("Onboarding")
   return (
     <div className="space-y-8">
       <motion.div
@@ -39,12 +41,10 @@ export default function StepIntro() {
         </div>
 
         <h1 className="text-4xl font-bold tracking-tight mb-3">
-          Let&apos;s craft your perfect experience
+          {t("steps.intro.title")}
         </h1>
         <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-          Welcome to a space where creativity meets technology. I&apos;ve
-          designed this portfolio to adapt to your preferences and showcase my
-          work in a way that resonates with you.
+          {t("steps.intro.description")}
         </p>
       </motion.div>
 

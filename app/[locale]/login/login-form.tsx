@@ -4,14 +4,13 @@ import { BackHome } from "@/components/back-home"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { useLogo } from "@/hooks/use-logo"
-import { useSignIn } from "@/hooks/use-signIn"
 import { Link } from "@/i18n/navigation"
+import { useLogo } from "@/lib/hooks/use-logo"
+import { useSignIn } from "@/lib/hooks/use-signIn"
 import { cn } from "@/lib/utils"
 import { Loader2 } from "lucide-react"
 import { useTranslations } from "next-intl"
 import Image from "next/image"
-import { useParams } from "next/navigation"
 import { FaGithub, FaGoogle } from "react-icons/fa"
 
 export function LoginForm({
@@ -21,8 +20,6 @@ export function LoginForm({
   const { form, isLoading, onSubmit, handleSocialSignIn, setIsLoading } =
     useSignIn()
   const t = useTranslations("Login")
-  const params = useParams()
-  const locale = params.locale as string
 
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
@@ -51,10 +48,7 @@ export function LoginForm({
             <h1 className="text-xl font-bold">{t("welcome")}</h1>
             <div className="text-center text-sm">
               {t("dontHaveAccount")}{" "}
-              <Link
-                href={`/${locale}/sign-up`}
-                className="underline underline-offset-4"
-              >
+              <Link href={"/sign-up"} className="underline underline-offset-4">
                 {t("signUp")}
               </Link>
             </div>

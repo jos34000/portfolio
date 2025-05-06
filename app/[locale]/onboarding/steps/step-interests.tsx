@@ -1,9 +1,11 @@
 import { Code, Layers, Palette, Zap } from "lucide-react"
+import { useTranslations } from "next-intl"
 import { useState } from "react"
 import { FloatingElement } from "../elements/floating-element"
 import { SelectionOption } from "../elements/selection-option"
 
 export default function StepInterests() {
+  const t = useTranslations("Onboarding")
   const [interests, setInterests] = useState<string[]>([])
   const toggleInterest = (interest: string) => {
     if (interests.includes(interest)) {
@@ -16,11 +18,10 @@ export default function StepInterests() {
     <div className="space-y-8">
       <div>
         <h2 className="text-2xl font-bold tracking-tight mb-3">
-          Areas of Interest
+          {t("steps.interests.choice")}
         </h2>
         <p className="text-muted-foreground">
-          What are you most interested in seeing in my portfolio? Select your
-          interests to personalize your experience.
+          {t("steps.interests.description")}
         </p>
       </div>
 
@@ -28,22 +29,22 @@ export default function StepInterests() {
         {[
           {
             id: "projects",
-            name: "Projects",
+            name: t("steps.interests.projects"),
             icon: <Code className="h-5 w-5" />,
           },
           {
             id: "skills",
-            name: "Skills",
+            name: t("steps.interests.skills"),
             icon: <Palette className="h-5 w-5" />,
           },
           {
             id: "experience",
-            name: "Experience",
+            name: t("steps.interests.experience"),
             icon: <Layers className="h-5 w-5" />,
           },
           {
             id: "blog",
-            name: "Articles",
+            name: t("steps.interests.blog"),
             icon: <Zap className="h-5 w-5" />,
           },
         ].map((item) => (
@@ -70,8 +71,7 @@ export default function StepInterests() {
       </div>
 
       <p className="text-sm text-muted-foreground mt-4">
-        This information will help us highlight the content that interests you
-        the most.
+        {t("steps.interests.lastWords")}
       </p>
     </div>
   )

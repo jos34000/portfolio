@@ -9,18 +9,21 @@ datasource db {
 }
 
 model User {
-  id            String    @id
-  email         String    @unique
-  username      String
-  firstName     String
-  lastName      String
-  initials      String
-  name          String?
-  emailVerified Boolean   @default(false)
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
-  sessions      Session[]
-  accounts      Account[]
+  id              String            @id
+  email           String            @unique
+  username        String
+  firstName       String
+  lastName        String
+  initials        String
+  name            String?
+  emailVerified   Boolean           @default(false)
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+  sessions        Session[]
+  accounts        Account[]
+  analytics       Analytics[]
+  onboardingData  OnboardingData[]
+  onboardingStats OnboardingStats[]
 
   image String?
 
@@ -70,4 +73,41 @@ model Verification {
   updatedAt  DateTime?
 
   @@map("verification")
+}
+
+model Analytics {
+  id        String   @id @default(cuid())
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  path      String
+  method    String
+  userAgent String?
+  ipAddress String?
+  timestamp DateTime @default(now())
+  duration  Int?
+
+  @@map("analytics")
+}
+
+model OnboardingData {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  step        String
+  data        Json
+  completedAt DateTime @default(now())
+
+  @@map("onboarding_data")
+}
+
+model OnboardingStats {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  completedAt DateTime @default(now())
+  userAgent   String?
+  ipAddress   String?
+  data        Json
+
+  @@map("onboarding_stats")
 }

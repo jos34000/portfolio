@@ -15,24 +15,20 @@ export function GlassCard({
   return interactive ? (
     <FloatingElement intensity={intensity} className={className}>
       <div className="backdrop-blur-md bg-card/30 rounded-xl overflow-hidden relative">
-        {/* 3D Border Effect */}
         <div className="absolute inset-0 rounded-xl border border-white/10 dark:border-black/10" />
         <div className="absolute inset-[1px] rounded-[10px] border border-black/5 dark:border-white/5" />
         <div className="absolute inset-0 rounded-xl shadow-[0_0_15px_rgba(0,0,0,0.05)] dark:shadow-[0_0_15px_rgba(255,255,255,0.05)]" />
 
-        {/* Content */}
         <div className="relative">{children}</div>
       </div>
     </FloatingElement>
   ) : (
     <Spotlight className={className}>
       <div className="backdrop-blur-md bg-card/30 rounded-xl overflow-hidden relative">
-        {/* 3D Border Effect */}
         <div className="absolute inset-0 rounded-xl border border-white/10 dark:border-black/10" />
         <div className="absolute inset-[1px] rounded-[10px] border border-black/5 dark:border-white/5" />
         <div className="absolute inset-0 rounded-xl shadow-[0_0_15px_rgba(0,0,0,0.05)] dark:shadow-[0_0_15px_rgba(255,255,255,0.05)]" />
 
-        {/* Content */}
         <div className="relative">{children}</div>
       </div>
     </Spotlight>

@@ -4,9 +4,9 @@ import { BackHome } from "@/components/back-home"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { useLogo } from "@/hooks/use-logo"
-import { useSignUp } from "@/hooks/use-signUp"
 import { Link } from "@/i18n/navigation"
+import { useLogo } from "@/lib/hooks/use-logo"
+import { useSignUp } from "@/lib/hooks/use-signUp"
 import { cn } from "@/lib/utils"
 import { Loader2 } from "lucide-react"
 import { useTranslations } from "next-intl"
@@ -60,10 +60,7 @@ export function SignUpForm({
             <h1 className="text-xl font-bold">{t("welcome")}</h1>
             <div className="text-center text-sm">
               {t("alreadyHaveAccount")}{" "}
-              <Link
-                href={`/${locale}/login`}
-                className="underline underline-offset-4"
-              >
+              <Link href={"/login"} className="underline underline-offset-4">
                 {t("signIn")}
               </Link>
             </div>

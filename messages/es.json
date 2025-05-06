@@ -2,7 +2,11 @@
   "Common": {
     "buttons": {
       "backToHome": "Volver al inicio",
-      "back": "Volver"
+      "back": "Volver",
+      "return": "Volver",
+      "skip": "Omitir",
+      "finish": "Finalizar",
+      "next": "Siguiente"
     },
     "languages": {
       "fr": "Francés",
@@ -13,6 +17,35 @@
       "light": "Claro",
       "dark": "Oscuro",
       "system": "Sistema"
+    },
+    "others": {
+      "of": "de",
+      "step": "Paso"
+    }
+  },
+  "Onboarding": {
+    "steps": {
+      "intro": {
+        "title": "Crea tu experiencia perfecta",
+        "description": "Bienvenido a un espacio donde la creatividad se encuentra con la tecnología. He diseñado este portafolio para adaptarse a tus preferencias y mostrar mi trabajo de una manera que te resuene."
+      },
+      "language": {
+        "choice": "Elige tu idioma",
+        "description": "Selecciona el idioma que deseas utilizar para navegar por mi portafolio."
+      },
+      "theme": {
+        "choice": "Elige tu tema",
+        "description": "Personaliza la apariencia del portafolio a tu gusto."
+      },
+      "interests": {
+        "choice": "¿Qué es lo que más te interesa ver en mi portafolio?",
+        "description": "Selecciona tus áreas de interés para personalizar tu experiencia.",
+        "projects": "Proyectos",
+        "skills": "Habilidades",
+        "experience": "Experiencia",
+        "blog": "Artículos",
+        "lastWords": "Esta información te ayudará a destacar el contenido que te interesa más."
+      }
     }
   },
   "Home": {

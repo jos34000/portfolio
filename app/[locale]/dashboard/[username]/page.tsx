@@ -1,7 +1,7 @@
 "use client"
 
 import { Maintenance } from "@/components/ui/maintenance"
-import { useSignOut } from "@/hooks/use-signOut"
+import { useSignOut } from "@/lib/hooks/use-signOut"
 
 export default function DashboardContent() {
   const signOut = useSignOut()

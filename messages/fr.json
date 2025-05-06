@@ -2,7 +2,11 @@
   "Common": {
     "buttons": {
       "backToHome": "Retour à l'accueil",
-      "back": "Retour"
+      "back": "Retour",
+      "return": "Retour",
+      "skip": "Passer",
+      "finish": "Terminer",
+      "next": "Suivant"
     },
     "languages": {
       "fr": "Français",
@@ -13,6 +17,35 @@
       "light": "Clair",
       "dark": "Sombre",
       "system": "Système"
+    },
+    "others": {
+      "of": "de",
+      "step": "Étape"
+    }
+  },
+  "Onboarding": {
+    "steps": {
+      "intro": {
+        "title": "Créons votre expérience parfaite",
+        "description": "Bienvenue dans un espace où la créativité rencontre la technologie. J'ai conçu ce portefeuille pour vous permettre de me contacter et de me faire part de vos suggestions."
+      },
+      "language": {
+        "choice": "Choisissez votre langue",
+        "description": "Sélectionnez la langue que vous souhaitez utiliser pour naviguer sur mon portfolio."
+      },
+      "theme": {
+        "choice": "Choisissez votre thème",
+        "description": "Sélectionnez le thème qui vous correspond le mieux."
+      },
+      "interests": {
+        "choice": "Choisissez vos centres d'intérêt",
+        "description": "Sélectionnez les centres d'intérêt qui vous correspondent le mieux.",
+        "projects": "Projets",
+        "skills": "Compétences",
+        "experience": "Expérience",
+        "blog": "Articles",
+        "lastWords": "Cette information vous aidera à mettre en évidence le contenu qui vous intéresse le plus."
+      }
     }
   },
   "Home": {

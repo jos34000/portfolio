@@ -73,7 +73,6 @@ export function Loader({
     )
   }
 
-  // Default loader (pulse effect)
   return (
     <div className={cn("relative", sizeClasses[size], className)}>
       <motion.div

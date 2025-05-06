@@ -47,16 +47,18 @@ export const Contact = () => {
     <>
       <div
         id="contact"
-        className="h-[40rem] w-full rounded-md bg-black relative flex items-center justify-center antialiased"
+        className="relative flex h-[40rem] w-full items-center justify-center rounded-md bg-black antialiased"
       >
-        <div className="flex flex-col items-center text-center p-4 space-y-6">
-          <h1 className="text-lg md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600">
+        <div className="flex flex-col items-center space-y-8 p-4 text-center sm:space-y-10">
+          <h1 className="bg-gradient-to-b from-neutral-200 to-neutral-600 bg-clip-text text-4xl font-bold text-transparent sm:text-5xl md:text-7xl">
             {t("title")}
           </h1>
-          <div className="max-w-lg">
-            <p className="text-neutral-500 text-sm">{t("description")}</p>
+          <div className="max-w-lg px-4">
+            <p className="text-base text-neutral-500 sm:text-lg">
+              {t("description")}
+            </p>
           </div>
-          <div className="w-full max-w-2xl">
+          <div className="w-full max-w-2xl px-4">
             <PlaceholdersAndVanishInput
               placeholders={[t("placeholders.email"), t("placeholders.hint")]}
               onChange={handleInputChange}

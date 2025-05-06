@@ -1,21 +1,21 @@
 import { Monitor, Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 
+import { useTranslations } from "next-intl"
 import { FloatingElement } from "../elements/floating-element"
 import { SelectionOption } from "../elements/selection-option"
 
 export const StepTheme = () => {
   const { theme, setTheme } = useTheme()
-
+  const t = useTranslations("Onboarding")
+  const tTheme = useTranslations("Common")
   return (
     <div className="space-y-8">
       <div>
         <h2 className="text-2xl font-bold tracking-tight mb-3">
-          Choose your theme
+          {t("steps.theme.choice")}
         </h2>
-        <p className="text-muted-foreground">
-          Customize the appearance of the portfolio to your liking.
-        </p>
+        <p className="text-muted-foreground">{t("steps.theme.description")}</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-6">
@@ -28,7 +28,7 @@ export const StepTheme = () => {
               <div className="p-3 rounded-full bg-white/80 shadow-sm">
                 <Sun className="h-6 w-6" />
               </div>
-              <span className="font-medium">Light</span>
+              <span className="font-medium">{tTheme("themes.light")}</span>
             </div>
           </SelectionOption>
         </FloatingElement>
@@ -42,7 +42,7 @@ export const StepTheme = () => {
               <div className="p-3 rounded-full bg-gray-900/80 shadow-sm">
                 <Moon className="h-6 w-6" />
               </div>
-              <span className="font-medium">Dark</span>
+              <span className="font-medium">{tTheme("themes.dark")}</span>
             </div>
           </SelectionOption>
         </FloatingElement>
@@ -56,7 +56,7 @@ export const StepTheme = () => {
               <div className="p-3 rounded-full bg-gradient-to-br from-white to-gray-900 shadow-sm">
                 <Monitor className="h-6 w-6" />
               </div>
-              <span className="font-medium">System</span>
+              <span className="font-medium">{tTheme("themes.system")}</span>
             </div>
           </SelectionOption>
         </FloatingElement>

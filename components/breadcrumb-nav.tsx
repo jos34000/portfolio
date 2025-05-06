@@ -17,7 +17,9 @@ export const BreadcrumbNav = () => {
   const segments = pathname
     .split("/")
     .filter(Boolean)
-    .filter((segment, index) => index !== 1)
+    .filter((segment, index) => {
+      return index !== 0 && index !== 2
+    })
     .map((segment, index, array) => ({
       name: segment.charAt(0).toUpperCase() + segment.slice(1),
       href: `/${array.slice(0, index + 1).join("/")}`,

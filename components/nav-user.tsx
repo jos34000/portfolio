@@ -25,8 +25,8 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar"
-import { useSignOut } from "@/hooks/use-signOut"
-import { useUser } from "@/hooks/use-user"
+import { useSignOut } from "@/lib/hooks/use-signOut"
+import { useUser } from "@/lib/hooks/use-user"
 
 export function NavUser() {
   const { user } = useUser()

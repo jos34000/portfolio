@@ -22,7 +22,6 @@ export function SelectionOption({
     >
       {children}
 
-      {/* Selection indicator */}
       {selected && (
         <>
           <motion.div

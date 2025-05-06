@@ -3,23 +3,32 @@ import {
   FrenchIcon,
   SpanishIcon,
 } from "@/components/ui/language-icons"
-import { useState } from "react"
+import { usePathname, useRouter } from "@/i18n/navigation"
+import { useLanguage } from "@/lib/hooks/use-language"
+import { useTranslations } from "next-intl"
 import { FloatingElement } from "../elements/floating-element"
 import { SelectionOption } from "../elements/selection-option"
 
 export default function StepLanguage() {
-  const [language, setLanguage] = useState("en")
-  localStorage.setItem("preferred-language", language)
+  const router = useRouter()
+  const pathname = usePathname()
+  const { language, setLanguage } = useLanguage()
+  const t = useTranslations("Onboarding")
+  const tLanguage = useTranslations("Common")
+
+  const handleLanguageChange = async (newLanguage: typeof language) => {
+    await setLanguage(newLanguage)
+    router.push(pathname, { locale: newLanguage })
+  }
 
   return (
     <div className="space-y-8">
       <div>
         <h2 className="text-2xl font-bold tracking-tight mb-3">
-          Choose your language
+          {t("steps.language.choice")}
         </h2>
         <p className="text-muted-foreground">
-          Select the language you&apos;d like to use while browsing my
-          portfolio.
+          {t("steps.language.description")}
         </p>
       </div>
 
@@ -27,11 +36,11 @@ export default function StepLanguage() {
         <FloatingElement intensity={20}>
           <SelectionOption
             selected={language === "en"}
-            onClick={() => setLanguage("en")}
+            onClick={() => handleLanguageChange("en")}
           >
             <div className="flex items-center space-x-4">
               <EnglishIcon selected={language === "en"} />
-              <span className="font-medium">English</span>
+              <span className="font-medium">{tLanguage("languages.en")}</span>
             </div>
           </SelectionOption>
         </FloatingElement>
@@ -39,11 +48,11 @@ export default function StepLanguage() {
         <FloatingElement intensity={20}>
           <SelectionOption
             selected={language === "fr"}
-            onClick={() => setLanguage("fr")}
+            onClick={() => handleLanguageChange("fr")}
           >
             <div className="flex items-center space-x-4">
               <FrenchIcon selected={language === "fr"} />
-              <span className="font-medium">Français</span>
+              <span className="font-medium">{tLanguage("languages.fr")}</span>
             </div>
           </SelectionOption>
         </FloatingElement>
@@ -51,11 +60,11 @@ export default function StepLanguage() {
         <FloatingElement intensity={20}>
           <SelectionOption
             selected={language === "es"}
-            onClick={() => setLanguage("es")}
+            onClick={() => handleLanguageChange("es")}
           >
             <div className="flex items-center space-x-4">
               <SpanishIcon selected={language === "es"} />
-              <span className="font-medium">Español</span>
+              <span className="font-medium">{tLanguage("languages.es")}</span>
             </div>
           </SelectionOption>
         </FloatingElement>

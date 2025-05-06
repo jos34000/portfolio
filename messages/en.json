@@ -2,7 +2,11 @@
   "Common": {
     "buttons": {
       "backToHome": "Back to home",
-      "back": "return"
+      "return": "Return",
+      "back": "Back",
+      "skip": "Skip",
+      "finish": "Finish",
+      "next": "Next"
     },
     "languages": {
       "fr": "French",
@@ -13,6 +17,35 @@
       "light": "Light",
       "dark": "Dark",
       "system": "System"
+    },
+    "others": {
+      "of": "of",
+      "step": "Step"
+    }
+  },
+  "Onboarding": {
+    "steps": {
+      "intro": {
+        "title": "Let's craft your perfect experience",
+        "description": "Welcome to a space where creativity meets technology. I&apos;ve designed this portfolio to adapt to your preferences and showcase my work in a way that resonates with you."
+      },
+      "language": {
+        "choice": "Choose your language",
+        "description": "Select the language you&apos;d like to use while browsing my portfolio."
+      },
+      "theme": {
+        "choice": "Choose your theme",
+        "description": "Customize the appearance of the portfolio to your liking."
+      },
+      "interests": {
+        "choice": "What are you most interested in seeing in my portfolio?",
+        "description": "Select your areas of interest to personalize your experience.",
+        "projects": "Projects",
+        "skills": "Skills",
+        "experience": "Experience",
+        "blog": "Articles",
+        "lastWords": "This information will help us highlight the content that interests you the most."
+      }
     }
   },
   "Home": {

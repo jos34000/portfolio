@@ -205,12 +205,10 @@ html {
   scroll-behavior: smooth;
 }
 
-/* 3D and perspective styles */
 .perspective-1000 {
   perspective: 1000px;
 }
 
-/* Spotlight effect */
 .spotlight {
   position: relative;
   overflow: hidden;
