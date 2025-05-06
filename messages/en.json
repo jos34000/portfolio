@@ -410,5 +410,38 @@
         "description": "Image illustrating frontend technologies"
       }
     }
+  },
+  "Errors": {
+    "404": {
+      "title": "Page not found",
+      "message": "The page you are looking for does not exist.",
+      "actions": {
+        "primary": "Go Home",
+        "secondary": "Contact Us"
+      }
+    },
+    "403": {
+      "title": "Access Denied",
+      "message": "You do not have permission to access this page.",
+      "actions": {
+        "primary": "Go Home",
+        "secondary": "Go Back"
+      }
+    },
+    "500": {
+      "title": "Server Error",
+      "message": "The server encountered an internal error and was unable to complete your request.",
+      "actions": {
+        "primary": "Go Home",
+        "secondary": "Try Again"
+      }
+    },
+    "global": {
+      "title": "Critical Error",
+      "message": "An unexpected error has occurred on the server.",
+      "actions": {
+        "primary": "Try Again"
+      }
+    }
   }
 }

@@ -409,5 +409,38 @@
         "description": "Image illustrant les technologies frontend"
       }
     }
+  },
+  "Errors": {
+    "404": {
+      "title": "Page non trouvée",
+      "message": "La page que vous recherchez n'existe pas.",
+      "actions": {
+        "primary": "Accueil",
+        "secondary": "Nous contacter"
+      }
+    },
+    "403": {
+      "title": "Accès refusé",
+      "message": "Vous n'avez pas la permission d'accéder à cette page.",
+      "actions": {
+        "primary": "Accueil",
+        "secondary": "Retour"
+      }
+    },
+    "500": {
+      "title": "Erreur serveur",
+      "message": "Le serveur a rencontré une erreur interne et n'a pas pu traiter votre requête.",
+      "actions": {
+        "primary": "Accueil",
+        "secondary": "Réessayer"
+      }
+    },
+    "global": {
+      "title": "Erreur critique",
+      "message": "Une erreur inattendue s'est produite sur le serveur.",
+      "actions": {
+        "primary": "Réessayer"
+      }
+    }
   }
 }

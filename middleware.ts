@@ -15,10 +15,9 @@ const middleware = async (request: NextRequest) => {
   const hasSession = getSessionCookie(request)
 
   const createRedirectUrl = (path: string) => {
-    return new URL(`/${locale}${path}`, request.url)
+    return new URL(`/${locale}/error${path}`, request.url)
   }
 
-  // Remove locale from pathname for route checking
   const pathnameWithoutLocale = pathname.replace(`/${locale}`, "")
 
   try {
