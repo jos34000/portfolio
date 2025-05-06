@@ -20,7 +20,7 @@ type SettingsProps = {
 }
 
 export const Settings = ({ className }: SettingsProps) => {
-  const { theme, resolvedTheme } = useTheme()
+  const { resolvedTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {

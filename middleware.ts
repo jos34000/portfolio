@@ -4,54 +4,37 @@ import type { NextRequest } from "next/server"
 import { NextResponse } from "next/server"
 import { routing } from "./i18n/routing"
 
-const onboardingRoutes = ["/onboarding"]
-const postOnboardingRoutes = ["/login", "/register", "/dashboard"]
-const restrictedRoutes = ["/dashboard", "/settings", "/profile"]
-
 const middleware = async (request: NextRequest) => {
   const pathname = request.nextUrl.pathname
   const locale = pathname.split("/")[1]
-  const isOnboardingCompleted = request.cookies.has("onboarding-completed")
-  const hasSession = getSessionCookie(request)
-
-  const createRedirectUrl = (path: string) => {
-    return new URL(`/${locale}/error${path}`, request.url)
-  }
-
   const pathnameWithoutLocale = pathname.replace(`/${locale}`, "")
 
-  try {
-    if (
-      restrictedRoutes.some((route) => pathnameWithoutLocale.startsWith(route))
-    ) {
-      if (!hasSession) {
-        return NextResponse.redirect(createRedirectUrl("/403"))
-      }
-    }
+  const isOnboardingCompleted =
+    request.cookies.get("onboarding-completed")?.value === "true"
+  const hasSession = getSessionCookie(request)
 
-    if (!isOnboardingCompleted) {
-      if (
-        postOnboardingRoutes.some((route) =>
-          pathnameWithoutLocale.startsWith(route)
-        )
-      ) {
-        return NextResponse.redirect(createRedirectUrl("/onboarding"))
-      }
-    } else {
-      if (
-        onboardingRoutes.some((route) =>
-          pathnameWithoutLocale.startsWith(route)
-        )
-      ) {
-        return NextResponse.redirect(createRedirectUrl("/dashboard"))
-      }
+  if (pathnameWithoutLocale.startsWith("/dashboard")) {
+    if (!hasSession) {
+      return NextResponse.redirect(new URL(`/${locale}/error/403`, request.url))
     }
-
-    const handleI18nRouting = createMiddleware(routing)
-    return handleI18nRouting(request)
-  } catch (error) {
-    return NextResponse.redirect(createRedirectUrl("/500"))
   }
+
+  if (
+    !isOnboardingCompleted &&
+    !pathnameWithoutLocale.startsWith("/onboarding")
+  ) {
+    return NextResponse.redirect(new URL(`/${locale}/onboarding`, request.url))
+  }
+
+  if (
+    isOnboardingCompleted &&
+    pathnameWithoutLocale.startsWith("/onboarding")
+  ) {
+    return NextResponse.redirect(new URL(`/${locale}`, request.url))
+  }
+
+  const handleI18nRouting = createMiddleware(routing)
+  return handleI18nRouting(request)
 }
 
 export default middleware

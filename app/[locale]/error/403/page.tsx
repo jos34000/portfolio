@@ -17,7 +17,7 @@ export default function ForbiddenError() {
         },
         secondary: {
           label: t("actions.secondary"),
-          href: "javascript:history.back()",
+          href: "/login",
         },
       }}
     />

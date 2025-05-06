@@ -45,6 +45,19 @@
         "experience": "Experiencia",
         "blog": "Artículos",
         "lastWords": "Esta información te ayudará a destacar el contenido que te interesa más."
+      },
+      "cookies": {
+        "title": "Configuración de cookies",
+        "description": "Utilizamos cookies para mejorar tu experiencia. Por favor, selecciona qué tipos de cookies aceptas.",
+        "necessary": "Cookies necesarias",
+        "necessaryDescription": "Estas cookies son esenciales para el funcionamiento del sitio web y no se pueden desactivar.",
+        "functional": "Cookies funcionales",
+        "functionalDescription": "Estas cookies permiten mejorar la funcionalidad y personalización de tu experiencia.",
+        "analytics": "Cookies analíticas",
+        "analyticsDescription": "Estas cookies nos ayudan a entender cómo los visitantes interactúan con el sitio web.",
+        "marketing": "Cookies de marketing",
+        "marketingDescription": "Estas cookies se utilizan para rastrear a los visitantes en los sitios web para mostrar anuncios relevantes.",
+        "legalNote": "Al continuar, aceptas nuestra política de privacidad y términos de servicio."
       }
     }
   },
@@ -418,7 +431,7 @@
       "message": "La página que estás buscando no existe.",
       "actions": {
         "primary": "Inicio",
-        "secondary": "Contáctanos"
+        "secondary": "Registrarse"
       }
     },
     "403": {
@@ -426,7 +439,7 @@
       "message": "No tienes permiso para acceder a esta página.",
       "actions": {
         "primary": "Inicio",
-        "secondary": "Volver"
+        "secondary": ""
       }
     },
     "500": {

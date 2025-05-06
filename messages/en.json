@@ -45,6 +45,19 @@
         "experience": "Experience",
         "blog": "Articles",
         "lastWords": "This information will help us highlight the content that interests you the most."
+      },
+      "cookies": {
+        "title": "Cookie Settings",
+        "description": "We use cookies to enhance your experience. Please select which types of cookies you accept.",
+        "necessary": "Necessary Cookies",
+        "necessaryDescription": "These cookies are essential for the website to function and cannot be disabled.",
+        "functional": "Functional Cookies",
+        "functionalDescription": "These cookies enable improved functionality and personalization of your experience.",
+        "analytics": "Analytics Cookies",
+        "analyticsDescription": "These cookies help us understand how visitors interact with the website.",
+        "marketing": "Marketing Cookies",
+        "marketingDescription": "These cookies are used to track visitors across websites to display relevant advertisements.",
+        "legalNote": "By continuing, you agree to our privacy policy and terms of service."
       }
     }
   },
@@ -425,7 +438,7 @@
       "message": "You do not have permission to access this page.",
       "actions": {
         "primary": "Go Home",
-        "secondary": "Go Back"
+        "secondary": "Login"
       }
     },
     "500": {

@@ -9,6 +9,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 import { useTranslations } from "next-intl"
 import { useEffect, useState } from "react"
 import { GlassCard } from "./elements/glass-card"
+import StepCookies from "./step/step-cookies"
 import StepInterests from "./steps/step-interests"
 import StepIntro from "./steps/step-intro"
 import StepLanguage from "./steps/step-langugage"
@@ -19,7 +20,7 @@ export default function OnboardingPage() {
   const router = useRouter()
   const t = useTranslations("Common")
   const { markAsCompleted } = useOnboarding()
-  const totalSteps = 4
+  const totalSteps = 5
 
   const handleNext = async () => {
     if (step < totalSteps) {
@@ -106,9 +107,10 @@ export default function OnboardingPage() {
                   className="flex-1"
                 >
                   {step === 1 && <StepIntro />}
-                  {step === 2 && <StepLanguage />}
-                  {step === 3 && <StepTheme />}
-                  {step === 4 && <StepInterests />}
+                  {step === 2 && <StepCookies />}
+                  {step === 3 && <StepLanguage />}
+                  {step === 4 && <StepTheme />}
+                  {step === 5 && <StepInterests />}
                 </motion.div>
               </AnimatePresence>
 
