@@ -5,8 +5,8 @@ import { NextResponse } from "next/server"
 import { routing } from "./i18n/routing"
 
 const onboardingRoutes = ["/onboarding"]
-
 const postOnboardingRoutes = ["/login", "/register", "/dashboard"]
+const restrictedRoutes = ["/dashboard", "/settings", "/profile"]
 
 const middleware = async (request: NextRequest) => {
   const pathname = request.nextUrl.pathname
@@ -18,24 +18,41 @@ const middleware = async (request: NextRequest) => {
     return new URL(`/${locale}${path}`, request.url)
   }
 
-  if (!isOnboardingCompleted) {
-    if (postOnboardingRoutes.some((route) => pathname.includes(route))) {
-      return NextResponse.redirect(createRedirectUrl("/onboarding"))
-    }
-  } else {
-    if (onboardingRoutes.some((route) => pathname.includes(route))) {
-      return NextResponse.redirect(createRedirectUrl("/dashboard"))
-    }
-  }
+  // Remove locale from pathname for route checking
+  const pathnameWithoutLocale = pathname.replace(`/${locale}`, "")
 
-  if (pathname.includes("/dashboard")) {
-    if (!hasSession) {
-      return NextResponse.redirect(createRedirectUrl("/login"))
+  try {
+    if (
+      restrictedRoutes.some((route) => pathnameWithoutLocale.startsWith(route))
+    ) {
+      if (!hasSession) {
+        return NextResponse.redirect(createRedirectUrl("/403"))
+      }
     }
-  }
 
-  const handleI18nRouting = createMiddleware(routing)
-  return handleI18nRouting(request)
+    if (!isOnboardingCompleted) {
+      if (
+        postOnboardingRoutes.some((route) =>
+          pathnameWithoutLocale.startsWith(route)
+        )
+      ) {
+        return NextResponse.redirect(createRedirectUrl("/onboarding"))
+      }
+    } else {
+      if (
+        onboardingRoutes.some((route) =>
+          pathnameWithoutLocale.startsWith(route)
+        )
+      ) {
+        return NextResponse.redirect(createRedirectUrl("/dashboard"))
+      }
+    }
+
+    const handleI18nRouting = createMiddleware(routing)
+    return handleI18nRouting(request)
+  } catch (error) {
+    return NextResponse.redirect(createRedirectUrl("/500"))
+  }
 }
 
 export default middleware

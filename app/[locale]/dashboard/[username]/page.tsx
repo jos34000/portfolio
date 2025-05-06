@@ -3,7 +3,11 @@
 import { Maintenance } from "@/components/ui/maintenance"
 import { useSignOut } from "@/lib/hooks/use-signOut"
 
-export default function DashboardContent() {
+export default function DashboardPage({
+  params,
+}: {
+  params: { locale: string; username: string }
+}) {
   const signOut = useSignOut()
 
   return (
