@@ -1,4 +1,6 @@
+import { Settings } from "@/components/home/settings"
 import { routing } from "@/i18n/routing"
+
 import { NextIntlClientProvider, hasLocale } from "next-intl"
 import { notFound } from "next/navigation"
 
@@ -14,5 +16,10 @@ export default async function LocaleLayout({
     notFound()
   }
 
-  return <NextIntlClientProvider>{children}</NextIntlClientProvider>
+  return (
+    <NextIntlClientProvider>
+      {children}
+      <Settings />
+    </NextIntlClientProvider>
+  )
 }

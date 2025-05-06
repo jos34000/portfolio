@@ -1,7 +1,16 @@
+import { ThemeProvider } from "@/components/themes/theme-provider"
 import type { Metadata } from "next"
-import { ThemeProvider } from "next-themes"
+import { Inter, JetBrains_Mono } from "next/font/google"
+import { Suspense } from "react"
 import { Toaster } from "sonner"
 import "./globals.css"
+import Loading from "./loading"
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains",
+})
 
 export const metadata: Metadata = {
   title: "Portfolio de Jos",
@@ -21,7 +30,10 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html suppressHydrationWarning>
+    <html
+      className={`${inter.variable} ${jetbrainsMono.variable}`}
+      suppressHydrationWarning
+    >
       <body>
         <ThemeProvider
           attribute="class"
@@ -29,8 +41,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main>{children}</main>
-          <Toaster richColors position="top-right" />
+          <Suspense fallback={<Loading />}>
+            <main>{children}</main>
+            <Toaster richColors position="top-right" />
+          </Suspense>
         </ThemeProvider>
       </body>
     </html>
