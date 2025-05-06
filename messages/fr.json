@@ -64,7 +64,7 @@
         "description": "Découvrez mon parcours et mes compétences",
         "paragraphs": {
           "intro": "Bonjour ! Je suis Jocelyn Sainson, un développeur Full-Stack passionné, spécialisé dans la création d'applications web modernes. Je conçois des solutions réactives et performantes pour résoudre des problèmes concrets.",
-          "skills": "Avec une solide base en technologies front-end et back-end, j’aime intervenir sur l’ensemble de la stack pour offrir des expériences fluides et des architectures robustes.",
+          "skills": "Avec une solide base en technologies front-end et back-end, j'aime intervenir sur l'ensemble de la stack pour offrir des expériences fluides et des architectures robustes.",
           "hobbies": "Quand je ne code pas, je découvre de nouvelles technologies, je contribue à des projets open-source ou je partage mes connaissances avec la communauté des développeurs."
         },
         "buttons": {
@@ -126,11 +126,11 @@
             },
             "2": {
               "title": "Sélectionner un motif",
-              "description": "Choisissez l’un des motifs suivants"
+              "description": "Choisissez l'un des motifs suivants"
             },
             "3": {
               "title": "Confirmation",
-              "description": "Vérifiez les informations avant d’envoyer"
+              "description": "Vérifiez les informations avant d'envoyer"
             }
           },
           "form": {
@@ -193,7 +193,7 @@
     },
     "welcome": "Bienvenue.",
     "dontHaveAccount": "Pas encore de compte ?",
-    "signUp": "S’inscrire",
+    "signUp": "S'inscrire",
     "termsAndPolicy": {
       "text": "En cliquant sur continuer, vous acceptez nos",
       "terms": "Conditions d'utilisation",
@@ -232,7 +232,7 @@
         "password": "********"
       },
       "buttons": {
-        "signUp": "S’inscrire",
+        "signUp": "S'inscrire",
         "loading": "Connexion...",
         "github": "Github",
         "linkedin": "Linkedin"
@@ -262,5 +262,152 @@
     "title": "Nouvelles fonctionnalités à venir !",
     "description": "Cette section est en cours de développement. Nous travaillons dur pour vous offrir une expérience exceptionnelle.",
     "back": "Retour"
+  },
+  "library": {
+    "components": {
+      "title": "Composants",
+      "description": "Composants réutilisables pour construire votre interface utilisateur",
+      "noResults": "Aucun composant ne correspond à votre recherche.",
+      "types": {
+        "UI": "UI",
+        "Layout": "Mise en page",
+        "Navigation": "Navigation",
+        "Form": "Formulaire",
+        "DataDisplay": "Affichage de données"
+      },
+      "status": {
+        "New": "Nouveau",
+        "Updated": "Mis à jour",
+        "Deprecated": "Déprécié"
+      },
+      "complexity": {
+        "Simple": "Simple",
+        "Moderate": "Modéré",
+        "Complex": "Complexe"
+      },
+      "items": {
+        "button": {
+          "name": "Button",
+          "description": "Un bouton interactif pour les actions utilisateur"
+        },
+        "card": {
+          "name": "Card",
+          "description": "Un conteneur pour afficher du contenu"
+        },
+        "tabs": {
+          "name": "Tabs",
+          "description": "Onglets pour organiser le contenu"
+        }
+      }
+    },
+    "colors": {
+      "title": "Couleurs",
+      "description": "Palette de couleurs de votre application",
+      "noResults": "Aucune couleur ne correspond à votre recherche.",
+      "categories": {
+        "Base": "Base",
+        "Background": "Arrière-plan",
+        "Text": "Texte",
+        "Border": "Bordure"
+      },
+      "items": {
+        "primary": {
+          "name": "Primary",
+          "description": "Couleur principale de l'application"
+        },
+        "secondary": {
+          "name": "Secondary",
+          "description": "Couleur secondaire de l'application"
+        },
+        "accent": {
+          "name": "Accent",
+          "description": "Couleur d'accent pour les éléments mis en évidence"
+        },
+        "background": {
+          "name": "Background",
+          "description": "Couleur de fond principale"
+        },
+        "foreground": {
+          "name": "Foreground",
+          "description": "Couleur de texte principale"
+        },
+        "muted": {
+          "name": "Muted",
+          "description": "Couleur atténuée pour les éléments secondaires"
+        },
+        "border": {
+          "name": "Border",
+          "description": "Couleur de bordure standard"
+        }
+      }
+    },
+    "fonts": {
+      "title": "Typographie",
+      "description": "Polices de caractères utilisées dans votre application",
+      "noResults": "Aucune police ne correspond à votre recherche.",
+      "inter": {
+        "description": "Police principale de l'application",
+        "category": "Sans-serif"
+      },
+      "jetbrainsMono": {
+        "description": "Police monospace pour le code",
+        "category": "Monospace"
+      }
+    },
+    "icons": {
+      "title": "Icônes",
+      "description": "Icônes disponibles dans votre application",
+      "noResults": "Aucune icône ne correspond à votre recherche.",
+      "category": {
+        "lucide": "Lucide"
+      }
+    },
+    "images": {
+      "title": "Images",
+      "description": "Images et illustrations disponibles dans votre application",
+      "noResults": "Aucune image ne correspond à votre recherche.",
+      "category": {
+        "illustrations": "Illustrations",
+        "technologies": "Technologies"
+      },
+      "tags": {
+        "quality": "qualité",
+        "human": "humain",
+        "skill": "compétence",
+        "backend": "backend",
+        "technology": "technologie",
+        "development": "développement",
+        "devops": "devops",
+        "tools": "outils",
+        "os": "os",
+        "system": "système",
+        "operating": "exploitation",
+        "frontend": "frontend"
+      },
+      "humanQuality": {
+        "name": "Human Quality",
+        "description": "Image illustrant les qualités humaines"
+      },
+      "humanQuality2": {
+        "name": "Human Quality 2",
+        "description": "Image illustrant les qualités humaines (variante)"
+      },
+      "backendTech": {
+        "name": "Backend Technologies",
+        "description": "Image illustrant les technologies backend"
+      },
+      "devops": {
+        "name": "DevOps",
+        "description": "Image illustrant les outils DevOps"
+      },
+      "os": {
+        "name": "Operating Systems",
+        "description": "Image illustrant les systèmes d'exploitation"
+      },
+      "frontendTech": {
+        "name": "Frontend Technologies",
+        "description": "Image illustrant les technologies frontend"
+      }
+    }
   }
 }

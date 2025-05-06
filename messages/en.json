@@ -263,5 +263,152 @@
     "title": "New features coming soon!",
     "description": "This section is under development. We are working hard to provide you with an exceptional experience.",
     "back": "return"
+  },
+  "library": {
+    "components": {
+      "title": "Components",
+      "description": "Reusable components to build your user interface",
+      "noResults": "No components match your search criteria.",
+      "types": {
+        "UI": "UI",
+        "Layout": "Layout",
+        "Navigation": "Navigation",
+        "Form": "Form",
+        "DataDisplay": "Data Display"
+      },
+      "status": {
+        "New": "New",
+        "Updated": "Updated",
+        "Deprecated": "Deprecated"
+      },
+      "complexity": {
+        "Simple": "Simple",
+        "Moderate": "Moderate",
+        "Complex": "Complex"
+      },
+      "items": {
+        "button": {
+          "name": "Button",
+          "description": "An interactive button for user actions"
+        },
+        "card": {
+          "name": "Card",
+          "description": "A container to display content"
+        },
+        "tabs": {
+          "name": "Tabs",
+          "description": "Tabs to organize content"
+        }
+      }
+    },
+    "colors": {
+      "title": "Colors",
+      "description": "Color palette of your application",
+      "noResults": "No colors match your search criteria.",
+      "categories": {
+        "Base": "Base",
+        "Background": "Background",
+        "Text": "Text",
+        "Border": "Border"
+      },
+      "items": {
+        "primary": {
+          "name": "Primary",
+          "description": "Main color of the application"
+        },
+        "secondary": {
+          "name": "Secondary",
+          "description": "Secondary color of the application"
+        },
+        "accent": {
+          "name": "Accent",
+          "description": "Accent color for highlighted elements"
+        },
+        "background": {
+          "name": "Background",
+          "description": "Main background color"
+        },
+        "foreground": {
+          "name": "Foreground",
+          "description": "Main text color"
+        },
+        "muted": {
+          "name": "Muted",
+          "description": "Muted color for secondary elements"
+        },
+        "border": {
+          "name": "Border",
+          "description": "Standard border color"
+        }
+      }
+    },
+    "fonts": {
+      "title": "Typography",
+      "description": "Fonts used in your application",
+      "noResults": "No fonts match your search.",
+      "jetbrainsMono": {
+        "description": "Main application font",
+        "category": "Sans-serif"
+      },
+      "inter": {
+        "description": "Monospace font for code",
+        "category": "Monospace"
+      }
+    },
+    "icons": {
+      "title": "Icons",
+      "description": "Icons available in your application",
+      "noResults": "No icons match your search.",
+      "category": {
+        "lucide": "Lucide"
+      }
+    },
+    "images": {
+      "title": "Images",
+      "description": "Images and illustrations available in your application",
+      "noResults": "No images match your search.",
+      "category": {
+        "illustrations": "Illustrations",
+        "technologies": "Technologies"
+      },
+      "tags": {
+        "quality": "quality",
+        "human": "human",
+        "skill": "skill",
+        "backend": "backend",
+        "technology": "technology",
+        "development": "development",
+        "devops": "devops",
+        "tools": "tools",
+        "os": "os",
+        "system": "system",
+        "operating": "operating",
+        "frontend": "frontend"
+      },
+      "humanQuality": {
+        "name": "Human Quality",
+        "description": "Image illustrating human qualities"
+      },
+      "humanQuality2": {
+        "name": "Human Quality 2",
+        "description": "Image illustrating human qualities (variant)"
+      },
+      "backendTech": {
+        "name": "Backend Technologies",
+        "description": "Image illustrating backend technologies"
+      },
+      "devops": {
+        "name": "DevOps",
+        "description": "Image illustrating DevOps tools"
+      },
+      "os": {
+        "name": "Operating Systems",
+        "description": "Image illustrating operating systems"
+      },
+      "frontendTech": {
+        "name": "Frontend Technologies",
+        "description": "Image illustrating frontend technologies"
+      }
+    }
   }
 }

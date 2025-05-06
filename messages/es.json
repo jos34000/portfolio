@@ -262,5 +262,154 @@
     "title": "¡Nuevas funciones próximamente!",
     "description": "Esta sección está en desarrollo. Estamos trabajando para brindarle una experiencia excepcional.",
     "back": "Volver"
+  },
+  "library": {
+    "components": {
+      "title": "Componentes",
+      "description": "Componentes reutilizables para construir tu interfaz de usuario",
+      "noResults": "Ningún componente coincide con tus criterios de búsqueda.",
+      "types": {
+        "UI": "UI",
+        "Layout": "Diseño",
+        "Navigation": "Navegación",
+        "Form": "Formulario",
+        "DataDisplay": "Visualización de datos"
+      },
+      "status": {
+        "New": "Nuevo",
+        "Updated": "Actualizado",
+        "Deprecated": "Obsoleto"
+      },
+      "complexity": {
+        "Simple": "Simple",
+        "Moderate": "Moderado",
+        "Complex": "Complejo"
+      },
+      "items": {
+        "button": {
+          "name": "Button",
+          "description": "Un botón interactivo para acciones del usuario"
+        },
+        "card": {
+          "name": "Card",
+          "description": "Un contenedor para mostrar contenido"
+        },
+        "tabs": {
+          "name": "Tabs",
+          "description": "Pestañas para organizar contenido"
+        }
+      }
+    },
+    "colors": {
+      "title": "Colores",
+      "description": "Paleta de colores de tu aplicación",
+      "noResults": "Ningún color coincide con tus criterios de búsqueda.",
+      "categories": {
+        "Base": "Base",
+        "Background": "Fondo",
+        "Text": "Texto",
+        "Border": "Borde"
+      },
+      "items": {
+        "primary": {
+          "name": "Primary",
+          "description": "Color principal de la aplicación"
+        },
+        "secondary": {
+          "name": "Secondary",
+          "description": "Color secundario de la aplicación"
+        },
+        "accent": {
+          "name": "Accent",
+          "description": "Color de acento para elementos destacados"
+        },
+        "background": {
+          "name": "Background",
+          "description": "Color de fondo principal"
+        },
+        "foreground": {
+          "name": "Foreground",
+          "description": "Color de texto principal"
+        },
+        "muted": {
+          "name": "Muted",
+          "description": "Color atenuado para elementos secundarios"
+        },
+        "border": {
+          "name": "Border",
+          "description": "Color de borde estándar"
+        }
+      }
+    }
+  },
+  "Library": {
+    "fonts": {
+      "title": "Tipografía",
+      "description": "Fuentes utilizadas en su aplicación",
+      "noResults": "Ninguna fuente coincide con su búsqueda.",
+      "inter": {
+        "description": "Fuente principal de la aplicación",
+        "category": "Sans-serif"
+      },
+      "jetbrainsMono": {
+        "description": "Fuente monoespaciada para código",
+        "category": "Monospace"
+      }
+    },
+    "icons": {
+      "title": "Iconos",
+      "description": "Iconos disponibles en su aplicación",
+      "noResults": "Ningún icono coincide con su búsqueda.",
+      "category": {
+        "lucide": "Lucide"
+      }
+    },
+    "images": {
+      "title": "Imágenes",
+      "description": "Imágenes e ilustraciones disponibles en su aplicación",
+      "noResults": "Ninguna imagen coincide con su búsqueda.",
+      "category": {
+        "illustrations": "Ilustraciones",
+        "technologies": "Tecnologías"
+      },
+      "tags": {
+        "quality": "calidad",
+        "human": "humano",
+        "skill": "habilidad",
+        "backend": "backend",
+        "technology": "tecnología",
+        "development": "desarrollo",
+        "devops": "devops",
+        "tools": "herramientas",
+        "os": "so",
+        "system": "sistema",
+        "operating": "operativo",
+        "frontend": "frontend"
+      },
+      "humanQuality": {
+        "name": "Calidad Humana",
+        "description": "Imagen que ilustra las cualidades humanas"
+      },
+      "humanQuality2": {
+        "name": "Calidad Humana 2",
+        "description": "Imagen que ilustra las cualidades humanas (variante)"
+      },
+      "backendTech": {
+        "name": "Tecnologías Backend",
+        "description": "Imagen que ilustra las tecnologías backend"
+      },
+      "devops": {
+        "name": "DevOps",
+        "description": "Imagen que ilustra las herramientas DevOps"
+      },
+      "os": {
+        "name": "Sistemas Operativos",
+        "description": "Imagen que ilustra los sistemas operativos"
+      },
+      "frontendTech": {
+        "name": "Tecnologías Frontend",
+        "description": "Imagen que ilustra las tecnologías frontend"
+      }
+    }
   }
 }
