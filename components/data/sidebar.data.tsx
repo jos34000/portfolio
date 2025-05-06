@@ -11,7 +11,16 @@ import {
   SquareTerminal,
 } from "lucide-react"
 
-export const data = {
+type GenerateUrlParams = {
+  username: string
+  path: string
+}
+
+const generateUrl = ({ username, path }: GenerateUrlParams) => {
+  return `/dashboard/${username}/${path}`
+}
+
+export const createSidebarData = (username: string) => ({
   user: {
     name: "shadcn",
     email: "m@example.com",
@@ -37,86 +46,119 @@ export const data = {
   navMain: [
     {
       title: "Playground",
-      url: "#",
+      url: generateUrl({ username, path: "/dashboard" }),
       icon: SquareTerminal,
       isActive: true,
       items: [
         {
-          title: "History",
-          url: `#`,
+          title: "Library",
+          url: generateUrl({ username, path: "library" }),
         },
         {
           title: "Starred",
-          url: "#",
+          url: generateUrl({ username, path: "/dashboard/starred" }),
         },
         {
           title: "Settings",
-          url: "#",
+          url: generateUrl({ username, path: "/dashboard/settings" }),
         },
       ],
     },
     {
       title: "Models",
-      url: "#",
+      url: generateUrl({ username, path: "/dashboard/models" }),
       icon: Bot,
       items: [
         {
           title: "Genesis",
-          url: "#",
+          url: generateUrl({
+            username,
+            path: "/dashboard/models/genesis",
+          }),
         },
         {
           title: "Explorer",
-          url: "#",
+          url: generateUrl({
+            username,
+            path: "/dashboard/models/explorer",
+          }),
         },
         {
           title: "Quantum",
-          url: "#",
+          url: generateUrl({
+            username,
+            path: "/dashboard/models/quantum",
+          }),
         },
       ],
     },
     {
       title: "Documentation",
-      url: "#",
+      url: generateUrl({ username, path: "/dashboard/docs" }),
       icon: BookOpen,
       items: [
         {
           title: "Introduction",
-          url: "#",
+          url: generateUrl({
+            username,
+            path: "/dashboard/docs/introduction",
+          }),
         },
         {
           title: "Get Started",
-          url: "#",
+          url: generateUrl({
+            username,
+            path: "/dashboard/docs/get-started",
+          }),
         },
         {
           title: "Tutorials",
-          url: "#",
+          url: generateUrl({
+            username,
+            path: "/dashboard/docs/tutorials",
+          }),
         },
         {
           title: "Changelog",
-          url: "#",
+          url: generateUrl({
+            username,
+            path: "/dashboard/docs/changelog",
+          }),
         },
       ],
     },
     {
       title: "Settings",
-      url: "#",
+      url: generateUrl({ username, path: "/dashboard/settings" }),
       icon: Settings2,
       items: [
         {
           title: "General",
-          url: "#",
+          url: generateUrl({
+            username,
+            path: "/dashboard/settings/general",
+          }),
         },
         {
           title: "Team",
-          url: "#",
+          url: generateUrl({
+            username,
+            path: "/dashboard/settings/team",
+          }),
         },
         {
           title: "Billing",
-          url: "#",
+          url: generateUrl({
+            username,
+            path: "/dashboard/settings/billing",
+          }),
         },
         {
           title: "Limits",
-          url: "#",
+          url: generateUrl({
+            username,
+            path: "/dashboard/settings/limits",
+          }),
         },
       ],
     },
@@ -124,18 +166,24 @@ export const data = {
   projects: [
     {
       name: "Design Engineering",
-      url: "#",
+      url: generateUrl({
+        username,
+        path: "/dashboard/projects/design",
+      }),
       icon: Frame,
     },
     {
       name: "Sales & Marketing",
-      url: "#",
+      url: generateUrl({ username, path: "/dashboard/projects/sales" }),
       icon: PieChart,
     },
     {
       name: "Travel",
-      url: "#",
+      url: generateUrl({
+        username,
+        path: "/dashboard/projects/travel",
+      }),
       icon: Map,
     },
   ],
-}
+})

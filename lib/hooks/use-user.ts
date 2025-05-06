@@ -11,6 +11,7 @@ export const useUser = () => {
     lastName: string
     emailVerified: boolean
     image: string
+    username: string
   } | null>(null)
   const [loading, setLoading] = useState(true)
 
@@ -25,6 +26,7 @@ export const useUser = () => {
           firstName: session.user.firstName,
           lastName: session.user.lastName,
           emailVerified: session.user.emailVerified,
+          username: session.user.username,
           image: session.user.image ?? "",
         })
       }

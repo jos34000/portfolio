@@ -4,7 +4,6 @@ import { Check, Languages } from "lucide-react"
 import { useTranslations } from "next-intl"
 import { useParams, useRouter } from "next/navigation"
 
-import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -50,17 +49,17 @@ export const LanguageToggle = ({
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon">
+        <button className="relative size-full flex items-center justify-center transition-colors hover:opacity-70">
           <Languages className="h-[1.2rem] w-[1.2rem]" />
           <span className="sr-only">Change language</span>
-        </Button>
+        </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent
         align={isVerticalDirection ? "center" : "end"}
         alignOffset={isVerticalDirection ? 0 : -5}
         side={direction}
         className={cn(
-          "min-w-[120px]",
+          "min-w-[120px] h-full",
           orientation === "horizontal" && "flex flex-row items-center gap-2 p-2"
         )}
       >

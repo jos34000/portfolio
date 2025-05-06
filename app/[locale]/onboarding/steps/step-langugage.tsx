@@ -4,7 +4,7 @@ import {
   SpanishIcon,
 } from "@/components/ui/language-icons"
 import { usePathname, useRouter } from "@/i18n/navigation"
-import { useLanguage } from "@/lib/hooks/use-language"
+import { useLanguage } from "@/lib/hooks/use-language-storage"
 import { useTranslations } from "next-intl"
 import { FloatingElement } from "../elements/floating-element"
 import { SelectionOption } from "../elements/selection-option"

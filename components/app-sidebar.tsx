@@ -13,20 +13,27 @@ import {
   SidebarHeader,
   SidebarRail,
 } from "@/components/ui/sidebar"
-import { data } from "./data/sidebar.data"
+import { useUser } from "@/lib/hooks/use-user"
+import { createSidebarData } from "./data/sidebar.data"
 
 export function AppSidebar({
   username,
+  locale,
   ...props
-}: { username: string } & React.ComponentProps<typeof Sidebar>) {
+}: { username: string; locale: string } & React.ComponentProps<
+  typeof Sidebar
+>) {
+  const { user } = useUser()
+  const sidebarData = createSidebarData(user?.username ?? "")
+
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
-        <TeamSwitcher teams={data.teams} />
+        <TeamSwitcher teams={sidebarData.teams} />
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={data.navMain} username={username} />
-        <NavProjects projects={data.projects} username={username} />
+        <NavMain items={sidebarData.navMain} username={username} />
+        <NavProjects projects={sidebarData.projects} username={username} />
       </SidebarContent>
       <SidebarFooter>
         <NavUser />

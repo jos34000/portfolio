@@ -5,7 +5,6 @@ import { cookies } from "next/headers"
 
 export type SupportedLanguage = "en" | "fr" | "es"
 
-// Cookie management
 const setCookie = async (name: string, value: string) => {
   const cookieStore = await cookies()
   cookieStore.set(name, value, {
@@ -31,7 +30,6 @@ const deleteCookie = async (name: string) => {
   cookieStore.delete(name)
 }
 
-// Language actions
 export const setLanguageCookie = async (language: SupportedLanguage) => {
   await setCookie("preferred-language", language)
 }
@@ -41,7 +39,6 @@ export const getLanguageCookie = async (): Promise<SupportedLanguage> => {
   return (value as SupportedLanguage) || "en"
 }
 
-// Onboarding actions
 export const setOnboardingCookie = async () => {
   await setCookie("onboarding-completed", "true")
 }
@@ -54,7 +51,6 @@ export const hasOnboardingCookie = async () => {
   return await hasCookie("onboarding-completed")
 }
 
-// Database actions
 export const saveOnboardingCompletion = async (
   userId: string,
   onboardingData: any

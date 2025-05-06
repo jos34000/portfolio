@@ -6,29 +6,42 @@ import { useTheme } from "next-themes"
 
 import { LanguageToggle } from "@/components/language/language-toggle"
 import { ThemeToggle } from "@/components/themes/theme-toggle"
+import { buttonVariants } from "@/components/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { cn } from "@/lib/utils"
+import { useEffect, useState } from "react"
 
 type SettingsProps = {
   className?: string
 }
 
 export const Settings = ({ className }: SettingsProps) => {
-  const { theme } = useTheme()
-  const isDark = theme === "dark"
+  const { theme, resolvedTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
 
-  const bubbleStyle = isDark ? "bg-white text-black" : "bg-black text-white"
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return null
+  }
+
+  const isDark = resolvedTheme === "dark"
+  const bubbleStyle = isDark
+    ? "bg-white text-black hover:bg-white/90"
+    : "bg-black text-white hover:bg-black/90"
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <motion.button
           className={cn(
-            "fixed bottom-8 right-8 p-3 size-12 rounded-full shadow-lg transition-colors z-50 hover:opacity-90",
+            "fixed bottom-8 right-8 p-3 size-12 rounded-full shadow-lg transition-colors z-50",
             bubbleStyle,
             className
           )}
@@ -36,7 +49,7 @@ export const Settings = ({ className }: SettingsProps) => {
           whileTap={{ y: 0 }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
+          transition={{ duration: 0.2 }}
         >
           <Settings2 className="h-5 w-5" />
           <span className="sr-only">Open settings</span>
@@ -52,9 +65,10 @@ export const Settings = ({ className }: SettingsProps) => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1 }}
+          transition={{ duration: 0.1 }}
           className={cn(
-            "size-12 flex items-center justify-center backdrop-blur-sm rounded-full shadow-lg",
+            buttonVariants({ variant: "ghost", size: "icon" }),
+            "size-12 rounded-full shadow-lg backdrop-blur-sm",
             bubbleStyle
           )}
         >
@@ -63,9 +77,10 @@ export const Settings = ({ className }: SettingsProps) => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
+          transition={{ duration: 0.1 }}
           className={cn(
-            "size-12 flex items-center justify-center backdrop-blur-sm rounded-full shadow-lg",
+            buttonVariants({ variant: "ghost", size: "icon" }),
+            "size-12 rounded-full shadow-lg backdrop-blur-sm",
             bubbleStyle
           )}
         >
