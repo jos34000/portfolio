@@ -1,8 +1,14 @@
 "use client"
 
-import { motion } from "framer-motion"
-import { Layers, ImageIcon, Palette, Type, ImagesIcon as Icons } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { motion } from "framer-motion"
+import {
+  ImagesIcon as Icons,
+  ImageIcon,
+  Layers,
+  Palette,
+  Type,
+} from "lucide-react"
 
 type Category = "components" | "images" | "icons" | "fonts" | "colors" | "all"
 
@@ -11,7 +17,10 @@ interface LibraryNavProps {
   onCategoryChange: (category: Category) => void
 }
 
-export function LibraryNav({ activeCategory, onCategoryChange }: LibraryNavProps) {
+export function LibraryNav({
+  activeCategory,
+  onCategoryChange,
+}: Readonly<LibraryNavProps>) {
   const categories = [
     { id: "all", name: "Tous les éléments", icon: Layers },
     { id: "components", name: "Composants", icon: Layers },
@@ -38,7 +47,7 @@ export function LibraryNav({ activeCategory, onCategoryChange }: LibraryNavProps
                     "w-full flex items-center space-x-3 px-4 py-2.5 rounded-lg text-left transition-colors",
                     activeCategory === category.id
                       ? "bg-primary/10 text-primary"
-                      : "hover:bg-primary/5 text-foreground",
+                      : "hover:bg-primary/5 text-foreground"
                   )}
                 >
                   <Icon className="h-4 w-4" />

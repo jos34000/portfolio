@@ -7,7 +7,10 @@ interface LibrarySectionTitleProps {
   description: string
 }
 
-export function LibrarySectionTitle({ title, description }: LibrarySectionTitleProps) {
+export function LibrarySectionTitle({
+  title,
+  description,
+}: Readonly<LibrarySectionTitleProps>) {
   return (
     <div className="mb-6">
       <motion.h2

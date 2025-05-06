@@ -1,61 +1,67 @@
 "use client"
 import { LibraryImageItem } from "@/components/library/library-image-item"
 import { LibrarySectionTitle } from "@/components/library/library-section-title"
+import { useTranslations } from "next-intl"
 
 interface ImagesSectionProps {
   searchQuery: string
   filters: string[]
 }
 
-export function ImagesSection({ searchQuery, filters }: ImagesSectionProps) {
+export function ImagesSection({
+  searchQuery,
+  filters,
+}: Readonly<ImagesSectionProps>) {
+  const t = useTranslations("library.images")
+
   const images = [
     {
       id: "human-quality",
-      name: "Human Quality",
-      description: "Image illustrant les qualités humaines",
-      path: "/images/human-quality.png",
-      category: "Illustrations",
-      tags: ["qualité", "humain", "compétence"],
+      name: t("humanQuality.name"),
+      description: t("humanQuality.description"),
+      path: "/static/skills/Quality-1.png",
+      category: t("category.illustrations"),
+      tags: [t("tags.quality"), t("tags.human"), t("tags.skill")],
     },
     {
       id: "human-quality-2",
-      name: "Human Quality 2",
-      description: "Image illustrant les qualités humaines (variante)",
-      path: "/images/human-quality-2.png",
-      category: "Illustrations",
-      tags: ["qualité", "humain", "compétence"],
+      name: t("humanQuality2.name"),
+      description: t("humanQuality2.description"),
+      path: "/static/skills/Quality-2.png",
+      category: t("category.illustrations"),
+      tags: [t("tags.quality"), t("tags.human"), t("tags.skill")],
     },
     {
       id: "techno-back",
-      name: "Backend Technologies",
-      description: "Image illustrant les technologies backend",
-      path: "/images/techno-back.png",
-      category: "Technologies",
-      tags: ["backend", "technologie", "développement"],
+      name: t("backendTech.name"),
+      description: t("backendTech.description"),
+      path: "/static/skills/Backend.png",
+      category: t("category.technologies"),
+      tags: [t("tags.backend"), t("tags.technology"), t("tags.development")],
     },
     {
       id: "devops",
-      name: "DevOps",
-      description: "Image illustrant les outils DevOps",
-      path: "/images/devops.png",
-      category: "Technologies",
-      tags: ["devops", "outils", "développement"],
+      name: t("devops.name"),
+      description: t("devops.description"),
+      path: "/static/skills/DevOps.png",
+      category: t("category.technologies"),
+      tags: [t("tags.devops"), t("tags.tools"), t("tags.development")],
     },
     {
       id: "os",
-      name: "Operating Systems",
-      description: "Image illustrant les systèmes d'exploitation",
-      path: "/images/os.png",
-      category: "Technologies",
-      tags: ["os", "système", "exploitation"],
+      name: t("os.name"),
+      description: t("os.description"),
+      path: "/static/skills/OS.png",
+      category: t("category.technologies"),
+      tags: [t("tags.os"), t("tags.system"), t("tags.operating")],
     },
     {
       id: "technos-front",
-      name: "Frontend Technologies",
-      description: "Image illustrant les technologies frontend",
-      path: "/images/technos-front.png",
-      category: "Technologies",
-      tags: ["frontend", "technologie", "développement"],
+      name: t("frontendTech.name"),
+      description: t("frontendTech.description"),
+      path: "/static/skills/Frontend.png",
+      category: t("category.technologies"),
+      tags: [t("tags.frontend"), t("tags.technology"), t("tags.development")],
     },
   ]
 
@@ -78,10 +84,7 @@ export function ImagesSection({ searchQuery, filters }: ImagesSectionProps) {
 
   return (
     <section className="mb-12">
-      <LibrarySectionTitle
-        title="Images"
-        description="Images et illustrations disponibles dans votre application"
-      />
+      <LibrarySectionTitle title={t("title")} description={t("description")} />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredImages.map((image) => (
@@ -98,7 +101,7 @@ export function ImagesSection({ searchQuery, filters }: ImagesSectionProps) {
 
       {filteredImages.length === 0 && (
         <div className="text-center py-12 text-muted-foreground">
-          Aucune image ne correspond à votre recherche.
+          {t("noResults")}
         </div>
       )}
     </section>

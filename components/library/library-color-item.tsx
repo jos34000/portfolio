@@ -1,12 +1,18 @@
 "use client"
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import { Copy, Check } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import { motion } from "framer-motion"
+import { Check, Copy } from "lucide-react"
 import { useTheme } from "next-themes"
+import { useState } from "react"
 
 interface LibraryColorItemProps {
   name: string
@@ -26,8 +32,10 @@ export function LibraryColorItem({
   darkValue,
   cssVariable,
   usage,
-}: LibraryColorItemProps) {
-  const [copied, setCopied] = useState<"variable" | "value" | "usage" | null>(null)
+}: Readonly<LibraryColorItemProps>) {
+  const [copied, setCopied] = useState<"variable" | "value" | "usage" | null>(
+    null
+  )
   const { theme } = useTheme()
   const isDark = theme === "dark"
 
@@ -51,7 +59,9 @@ export function LibraryColorItem({
           <div className="flex justify-between items-start">
             <div>
               <CardTitle className="text-lg">{name}</CardTitle>
-              <p className="text-sm text-muted-foreground mt-1">{description}</p>
+              <p className="text-sm text-muted-foreground mt-1">
+                {description}
+              </p>
             </div>
             <Badge variant="outline">{category}</Badge>
           </div>
@@ -62,16 +72,22 @@ export function LibraryColorItem({
               <div className="flex-1">
                 <div
                   className="h-20 rounded-lg border border-border/50 mb-2"
-                  style={{ backgroundColor: `hsl(${colorValue})` }}
+                  style={{ backgroundColor: colorValue }}
                 />
-                <p className="text-xs text-center text-muted-foreground">{isDark ? "Dark Mode" : "Light Mode"}</p>
+                <p className="text-xs text-center text-muted-foreground">
+                  {isDark ? "Dark Mode" : "Light Mode"}
+                </p>
               </div>
               <div className="flex-1">
                 <div
                   className="h-20 rounded-lg border border-border/50 mb-2"
-                  style={{ backgroundColor: `hsl(${isDark ? lightValue : darkValue})` }}
+                  style={{
+                    backgroundColor: isDark ? lightValue : darkValue,
+                  }}
                 />
-                <p className="text-xs text-center text-muted-foreground">{isDark ? "Light Mode" : "Dark Mode"}</p>
+                <p className="text-xs text-center text-muted-foreground">
+                  {isDark ? "Light Mode" : "Dark Mode"}
+                </p>
               </div>
             </div>
 
@@ -84,7 +100,11 @@ export function LibraryColorItem({
                   className="h-6 w-6 ml-2 flex-shrink-0"
                   onClick={() => handleCopy("variable", cssVariable)}
                 >
-                  {copied === "variable" ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
+                  {copied === "variable" ? (
+                    <Check className="h-3 w-3" />
+                  ) : (
+                    <Copy className="h-3 w-3" />
+                  )}
                 </Button>
               </div>
 
@@ -96,7 +116,11 @@ export function LibraryColorItem({
                   className="h-6 w-6 ml-2 flex-shrink-0"
                   onClick={() => handleCopy("value", colorValue)}
                 >
-                  {copied === "value" ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
+                  {copied === "value" ? (
+                    <Check className="h-3 w-3" />
+                  ) : (
+                    <Copy className="h-3 w-3" />
+                  )}
                 </Button>
               </div>
 
@@ -108,15 +132,27 @@ export function LibraryColorItem({
                   className="h-6 w-6 ml-2 flex-shrink-0"
                   onClick={() => handleCopy("usage", usage)}
                 >
-                  {copied === "usage" ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
+                  {copied === "usage" ? (
+                    <Check className="h-3 w-3" />
+                  ) : (
+                    <Copy className="h-3 w-3" />
+                  )}
                 </Button>
               </div>
             </div>
           </div>
         </CardContent>
         <CardFooter className="pt-2 flex justify-end">
-          <Button variant="outline" size="sm" onClick={() => handleCopy("variable", cssVariable)}>
-            {copied === "variable" ? <Check className="h-4 w-4 mr-2" /> : <Copy className="h-4 w-4 mr-2" />}
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => handleCopy("variable", cssVariable)}
+          >
+            {copied === "variable" ? (
+              <Check className="h-4 w-4 mr-2" />
+            ) : (
+              <Copy className="h-4 w-4 mr-2" />
+            )}
             Copier Variable
           </Button>
         </CardFooter>

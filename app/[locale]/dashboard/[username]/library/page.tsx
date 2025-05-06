@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { LibraryHeader } from "@/components/library/library-header"
+import { FilterPopover } from "@/components/library/filter-popover"
 import { LibraryNav } from "@/components/library/library-nav"
 import { ColorsSection } from "@/components/library/sections/colors-section"
 import { ComponentsSection } from "@/components/library/sections/components-section"
@@ -13,9 +13,8 @@ import { LoadingScreen } from "@/components/loading-screen"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { useLanguage } from "@/lib/hooks/use-language"
 import { motion } from "framer-motion"
-import { Filter, Search, X } from "lucide-react"
+import { Search, X } from "lucide-react"
 import { useEffect, useState } from "react"
 
 type Category = "components" | "images" | "icons" | "fonts" | "colors" | "all"
@@ -25,7 +24,6 @@ export default function LibraryPage() {
   const [searchQuery, setSearchQuery] = useState("")
   const [loading, setLoading] = useState(true)
   const [filters, setFilters] = useState<string[]>([])
-  const t = useLanguage()
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -63,8 +61,6 @@ export default function LibraryPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <LibraryHeader />
-
       <div className="container mx-auto px-4 py-8 flex flex-col md:flex-row gap-8">
         <LibraryNav
           activeCategory={activeCategory}
@@ -84,9 +80,10 @@ export default function LibraryPage() {
                 />
               </div>
               <div className="flex gap-2">
-                <Button variant="outline" size="icon" title="Filtrer">
-                  <Filter className="h-4 w-4" />
-                </Button>
+                <FilterPopover
+                  selectedFilters={filters}
+                  onFilterChange={setFilters}
+                />
                 {filters.length > 0 && (
                   <Button variant="ghost" size="sm" onClick={clearFilters}>
                     Effacer les filtres

@@ -1,19 +1,25 @@
 "use client"
 import { LibraryColorItem } from "@/components/library/library-color-item"
 import { LibrarySectionTitle } from "@/components/library/library-section-title"
+import { useTranslations } from "next-intl"
 
 interface ColorsSectionProps {
   searchQuery: string
   filters: string[]
 }
 
-export function ColorsSection({ searchQuery, filters }: ColorsSectionProps) {
+export function ColorsSection({
+  searchQuery,
+  filters,
+}: Readonly<ColorsSectionProps>) {
+  const t = useTranslations("library.colors")
+
   const colors = [
     {
       id: "primary",
-      name: "Primary",
-      description: "Couleur principale de l'application",
-      category: "Base",
+      name: t("items.primary.name"),
+      description: t("items.primary.description"),
+      category: t("categories.Base"),
       lightValue: "oklch(0 0 0)",
       darkValue: "oklch(1 0 0)",
       cssVariable: "var(--primary)",
@@ -21,9 +27,9 @@ export function ColorsSection({ searchQuery, filters }: ColorsSectionProps) {
     },
     {
       id: "secondary",
-      name: "Secondary",
-      description: "Couleur secondaire de l'application",
-      category: "Base",
+      name: t("items.secondary.name"),
+      description: t("items.secondary.description"),
+      category: t("categories.Base"),
       lightValue: "oklch(0.94 0 0)",
       darkValue: "oklch(0.25 0 0)",
       cssVariable: "var(--secondary)",
@@ -31,9 +37,9 @@ export function ColorsSection({ searchQuery, filters }: ColorsSectionProps) {
     },
     {
       id: "accent",
-      name: "Accent",
-      description: "Couleur d'accent pour les éléments mis en évidence",
-      category: "Base",
+      name: t("items.accent.name"),
+      description: t("items.accent.description"),
+      category: t("categories.Base"),
       lightValue: "oklch(0.94 0 0)",
       darkValue: "oklch(0.32 0 0)",
       cssVariable: "var(--accent)",
@@ -41,9 +47,9 @@ export function ColorsSection({ searchQuery, filters }: ColorsSectionProps) {
     },
     {
       id: "background",
-      name: "Background",
-      description: "Couleur de fond principale",
-      category: "Background",
+      name: t("items.background.name"),
+      description: t("items.background.description"),
+      category: t("categories.Background"),
       lightValue: "oklch(0.99 0 0)",
       darkValue: "oklch(0 0 0)",
       cssVariable: "var(--background)",
@@ -51,9 +57,9 @@ export function ColorsSection({ searchQuery, filters }: ColorsSectionProps) {
     },
     {
       id: "foreground",
-      name: "Foreground",
-      description: "Couleur de texte principale",
-      category: "Text",
+      name: t("items.foreground.name"),
+      description: t("items.foreground.description"),
+      category: t("categories.Text"),
       lightValue: "oklch(0 0 0)",
       darkValue: "oklch(1 0 0)",
       cssVariable: "var(--foreground)",
@@ -61,9 +67,9 @@ export function ColorsSection({ searchQuery, filters }: ColorsSectionProps) {
     },
     {
       id: "muted",
-      name: "Muted",
-      description: "Couleur atténuée pour les éléments secondaires",
-      category: "Text",
+      name: t("items.muted.name"),
+      description: t("items.muted.description"),
+      category: t("categories.Text"),
       lightValue: "oklch(0.97 0 0)",
       darkValue: "oklch(0.23 0 0)",
       cssVariable: "var(--muted)",
@@ -71,13 +77,43 @@ export function ColorsSection({ searchQuery, filters }: ColorsSectionProps) {
     },
     {
       id: "border",
-      name: "Border",
-      description: "Couleur de bordure standard",
-      category: "Border",
+      name: t("items.border.name"),
+      description: t("items.border.description"),
+      category: t("categories.Border"),
       lightValue: "oklch(0.92 0 0)",
       darkValue: "oklch(0.26 0 0)",
       cssVariable: "var(--border)",
       usage: "border-border",
+    },
+    {
+      id: "destructive",
+      name: "Destructive",
+      description: "Couleur pour les actions destructives",
+      category: t("categories.Base"),
+      lightValue: "oklch(0.63 0.19 23.03)",
+      darkValue: "oklch(0.69 0.2 23.91)",
+      cssVariable: "var(--destructive)",
+      usage: "text-destructive, bg-destructive",
+    },
+    {
+      id: "ring",
+      name: "Ring",
+      description: "Couleur pour les focus et outlines",
+      category: t("categories.Border"),
+      lightValue: "oklch(0 0 0)",
+      darkValue: "oklch(0.72 0 0)",
+      cssVariable: "var(--ring)",
+      usage: "ring, outline-ring",
+    },
+    {
+      id: "input",
+      name: "Input",
+      description: "Couleur pour les champs de saisie",
+      category: t("categories.Border"),
+      lightValue: "oklch(0.94 0 0)",
+      darkValue: "oklch(0.32 0 0)",
+      cssVariable: "var(--input)",
+      usage: "border-input",
     },
   ]
 
@@ -97,10 +133,7 @@ export function ColorsSection({ searchQuery, filters }: ColorsSectionProps) {
 
   return (
     <section className="mb-12">
-      <LibrarySectionTitle
-        title="Couleurs"
-        description="Palette de couleurs de votre application"
-      />
+      <LibrarySectionTitle title={t("title")} description={t("description")} />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredColors.map((color) => (
@@ -119,7 +152,7 @@ export function ColorsSection({ searchQuery, filters }: ColorsSectionProps) {
 
       {filteredColors.length === 0 && (
         <div className="text-center py-12 text-muted-foreground">
-          Aucune couleur ne correspond à votre recherche.
+          {t("noResults")}
         </div>
       )}
     </section>

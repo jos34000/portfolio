@@ -4,6 +4,26 @@ import { LibrarySectionTitle } from "@/components/library/library-section-title"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { useTranslations } from "next-intl"
+
+const ButtonPreview = () => <Button>Click me</Button>
+
+const CardPreview = () => (
+  <Card>
+    <CardContent className="p-6">Contenu de la carte</CardContent>
+  </Card>
+)
+
+const TabsPreview = () => (
+  <Tabs defaultValue="tab1">
+    <TabsList>
+      <TabsTrigger value="tab1">Onglet 1</TabsTrigger>
+      <TabsTrigger value="tab2">Onglet 2</TabsTrigger>
+    </TabsList>
+    <TabsContent value="tab1">Contenu de l'onglet 1</TabsContent>
+    <TabsContent value="tab2">Contenu de l'onglet 2</TabsContent>
+  </Tabs>
+)
 
 interface ComponentsSectionProps {
   searchQuery: string
@@ -13,15 +33,20 @@ interface ComponentsSectionProps {
 export function ComponentsSection({
   searchQuery,
   filters,
-}: ComponentsSectionProps) {
+}: Readonly<ComponentsSectionProps>) {
+  const t = useTranslations("library.components")
+
   const components = [
     {
       id: "button",
-      name: "Button",
-      description: "Un bouton interactif pour les actions utilisateur",
+      name: t("items.button.name"),
+      description: t("items.button.description"),
       category: "Interaction",
+      type: t("types.UI"),
+      status: t("status.Updated"),
+      complexity: t("complexity.Simple"),
       code: `<Button>Click me</Button>`,
-      preview: () => <Button>Click me</Button>,
+      preview: ButtonPreview,
       usage: `import { Button } from "@/components/ui/button"
 
 export function MyComponent() {
@@ -30,19 +55,18 @@ export function MyComponent() {
     },
     {
       id: "card",
-      name: "Card",
-      description: "Un conteneur pour afficher du contenu",
+      name: t("items.card.name"),
+      description: t("items.card.description"),
       category: "Layout",
+      type: t("types.Layout"),
+      status: t("status.New"),
+      complexity: t("complexity.Simple"),
       code: `<Card>
   <CardContent className="p-6">
     Contenu de la carte
   </CardContent>
 </Card>`,
-      preview: () => (
-        <Card>
-          <CardContent className="p-6">Contenu de la carte</CardContent>
-        </Card>
-      ),
+      preview: CardPreview,
       usage: `import { Card, CardContent } from "@/components/ui/card"
 
 export function MyComponent() {
@@ -55,9 +79,12 @@ export function MyComponent() {
     },
     {
       id: "tabs",
-      name: "Tabs",
-      description: "Onglets pour organiser le contenu",
+      name: t("items.tabs.name"),
+      description: t("items.tabs.description"),
       category: "Navigation",
+      type: t("types.Navigation"),
+      status: t("status.Updated"),
+      complexity: t("complexity.Moderate"),
       code: `<Tabs defaultValue="tab1">
   <TabsList>
     <TabsTrigger value="tab1">Onglet 1</TabsTrigger>
@@ -66,16 +93,7 @@ export function MyComponent() {
   <TabsContent value="tab1">Contenu de l'onglet 1</TabsContent>
   <TabsContent value="tab2">Contenu de l'onglet 2</TabsContent>
 </Tabs>`,
-      preview: () => (
-        <Tabs defaultValue="tab1">
-          <TabsList>
-            <TabsTrigger value="tab1">Onglet 1</TabsTrigger>
-            <TabsTrigger value="tab2">Onglet 2</TabsTrigger>
-          </TabsList>
-          <TabsContent value="tab1">Contenu de l'onglet 1</TabsContent>
-          <TabsContent value="tab2">Contenu de l'onglet 2</TabsContent>
-        </Tabs>
-      ),
+      preview: TabsPreview,
       usage: `import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 export function MyComponent() {
@@ -101,7 +119,10 @@ export function MyComponent() {
     const matchesFilters =
       filters.length === 0 ||
       filters.some(
-        (filter) => component.category.toLowerCase() === filter.toLowerCase()
+        (filter) =>
+          component.type === filter ||
+          component.status === filter ||
+          component.complexity === filter
       )
 
     return matchesSearch && matchesFilters
@@ -109,10 +130,7 @@ export function MyComponent() {
 
   return (
     <section className="mb-12">
-      <LibrarySectionTitle
-        title="Composants"
-        description="Composants réutilisables pour construire votre interface utilisateur"
-      />
+      <LibrarySectionTitle title={t("title")} description={t("description")} />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredComponents.map((component) => (
@@ -124,13 +142,18 @@ export function MyComponent() {
             preview={component.preview}
             code={component.code}
             usage={component.usage}
+            tags={[
+              { label: component.type, variant: "default" },
+              { label: component.status, variant: "outline" },
+              { label: component.complexity, variant: "secondary" },
+            ]}
           />
         ))}
       </div>
 
       {filteredComponents.length === 0 && (
         <div className="text-center py-12 text-muted-foreground">
-          Aucun composant ne correspond à votre recherche.
+          {t("noResults")}
         </div>
       )}
     </section>

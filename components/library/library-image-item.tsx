@@ -4,7 +4,13 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import { Copy, Check, Download, Link } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
 
@@ -16,7 +22,13 @@ interface LibraryImageItemProps {
   tags: string[]
 }
 
-export function LibraryImageItem({ title, description, category, path, tags }: LibraryImageItemProps) {
+export function LibraryImageItem({
+  title,
+  description,
+  category,
+  path,
+  tags,
+}: Readonly<LibraryImageItemProps>) {
   const [copied, setCopied] = useState<"path" | "html" | null>(null)
 
   const handleCopy = (type: "path" | "html", text: string) => {
@@ -39,7 +51,9 @@ export function LibraryImageItem({ title, description, category, path, tags }: L
           <div className="flex justify-between items-start">
             <div>
               <CardTitle className="text-lg">{title}</CardTitle>
-              <p className="text-sm text-muted-foreground mt-1">{description}</p>
+              <p className="text-sm text-muted-foreground mt-1">
+                {description}
+              </p>
             </div>
             <Badge variant="outline">{category}</Badge>
           </div>
@@ -47,7 +61,12 @@ export function LibraryImageItem({ title, description, category, path, tags }: L
         <CardContent className="flex-1">
           <div className="bg-muted/40 rounded-lg p-4 flex items-center justify-center overflow-hidden">
             <div className="relative w-full h-48">
-              <Image src={path || "/placeholder.svg"} alt={title} fill className="object-contain" />
+              <Image
+                src={path || "/placeholder.svg"}
+                alt={title}
+                fill
+                className="object-contain"
+              />
             </div>
           </div>
 
@@ -68,14 +87,26 @@ export function LibraryImageItem({ title, description, category, path, tags }: L
                 className="h-6 w-6 ml-2 flex-shrink-0"
                 onClick={() => handleCopy("path", path)}
               >
-                {copied === "path" ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
+                {copied === "path" ? (
+                  <Check className="h-3 w-3" />
+                ) : (
+                  <Copy className="h-3 w-3" />
+                )}
               </Button>
             </div>
           </div>
         </CardContent>
         <CardFooter className="pt-2 flex justify-between">
-          <Button variant="outline" size="sm" onClick={() => handleCopy("html", htmlCode)}>
-            {copied === "html" ? <Check className="h-4 w-4 mr-2" /> : <Link className="h-4 w-4 mr-2" />}
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => handleCopy("html", htmlCode)}
+          >
+            {copied === "html" ? (
+              <Check className="h-4 w-4 mr-2" />
+            ) : (
+              <Link className="h-4 w-4 mr-2" />
+            )}
             Copier HTML
           </Button>
           <Button variant="outline" size="sm" asChild>

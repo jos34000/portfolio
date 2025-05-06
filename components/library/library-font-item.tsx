@@ -1,11 +1,17 @@
 "use client"
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import { Copy, Check } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import { motion } from "framer-motion"
+import { Check, Copy } from "lucide-react"
+import { useState } from "react"
 
 interface LibraryFontItemProps {
   name: string
@@ -25,8 +31,10 @@ export function LibraryFontItem({
   cssVariable,
   cssImport,
   cssUsage,
-}: LibraryFontItemProps) {
-  const [copied, setCopied] = useState<"variable" | "import" | "usage" | null>(null)
+}: Readonly<LibraryFontItemProps>) {
+  const [copied, setCopied] = useState<"variable" | "import" | "usage" | null>(
+    null
+  )
 
   const handleCopy = (type: "variable" | "import" | "usage", text: string) => {
     navigator.clipboard.writeText(text)
@@ -46,7 +54,9 @@ export function LibraryFontItem({
           <div className="flex justify-between items-start">
             <div>
               <CardTitle className="text-lg">{name}</CardTitle>
-              <p className="text-sm text-muted-foreground mt-1">{description}</p>
+              <p className="text-sm text-muted-foreground mt-1">
+                {description}
+              </p>
             </div>
             <Badge variant="outline">{category}</Badge>
           </div>
@@ -58,7 +68,11 @@ export function LibraryFontItem({
                 <div
                   key={weight}
                   className="bg-muted/40 p-3 rounded-lg"
-                  style={{ fontFamily: name, fontWeight: weight === "Regular" ? "normal" : weight.toLowerCase() }}
+                  style={{
+                    fontFamily: name,
+                    fontWeight:
+                      weight === "Regular" ? "normal" : weight.toLowerCase(),
+                  }}
                 >
                   <div className="flex justify-between items-center">
                     <span className="text-lg">Aa Bb Cc 123</span>
@@ -77,7 +91,11 @@ export function LibraryFontItem({
                   className="h-6 w-6 ml-2 flex-shrink-0"
                   onClick={() => handleCopy("variable", cssVariable)}
                 >
-                  {copied === "variable" ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
+                  {copied === "variable" ? (
+                    <Check className="h-3 w-3" />
+                  ) : (
+                    <Copy className="h-3 w-3" />
+                  )}
                 </Button>
               </div>
 
@@ -89,7 +107,11 @@ export function LibraryFontItem({
                   className="h-6 w-6 ml-2 flex-shrink-0"
                   onClick={() => handleCopy("import", cssImport)}
                 >
-                  {copied === "import" ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
+                  {copied === "import" ? (
+                    <Check className="h-3 w-3" />
+                  ) : (
+                    <Copy className="h-3 w-3" />
+                  )}
                 </Button>
               </div>
 
@@ -101,15 +123,27 @@ export function LibraryFontItem({
                   className="h-6 w-6 ml-2 flex-shrink-0"
                   onClick={() => handleCopy("usage", cssUsage)}
                 >
-                  {copied === "usage" ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
+                  {copied === "usage" ? (
+                    <Check className="h-3 w-3" />
+                  ) : (
+                    <Copy className="h-3 w-3" />
+                  )}
                 </Button>
               </div>
             </div>
           </div>
         </CardContent>
         <CardFooter className="pt-2 flex justify-end">
-          <Button variant="outline" size="sm" onClick={() => handleCopy("usage", cssUsage)}>
-            {copied === "usage" ? <Check className="h-4 w-4 mr-2" /> : <Copy className="h-4 w-4 mr-2" />}
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => handleCopy("usage", cssUsage)}
+          >
+            {copied === "usage" ? (
+              <Check className="h-4 w-4 mr-2" />
+            ) : (
+              <Copy className="h-4 w-4 mr-2" />
+            )}
             Copier CSS
           </Button>
         </CardFooter>

@@ -2,6 +2,8 @@
 import { LibraryIconItem } from "@/components/library/library-icon-item"
 import { LibrarySectionTitle } from "@/components/library/library-section-title"
 import * as LucideIcons from "lucide-react"
+import { LucideIcon } from "lucide-react"
+import { useTranslations } from "next-intl"
 
 interface IconsSectionProps {
   searchQuery: string
@@ -12,6 +14,8 @@ export function IconsSection({
   searchQuery,
   filters,
 }: Readonly<IconsSectionProps>) {
+  const t = useTranslations("library.icons")
+
   const iconNames = [
     "Home",
     "Settings",
@@ -42,8 +46,8 @@ export function IconsSection({
   const icons = iconNames.map((name) => ({
     id: name.toLowerCase(),
     name,
-    component: LucideIcons[name as keyof typeof LucideIcons],
-    category: "Lucide",
+    component: LucideIcons[name as keyof typeof LucideIcons] as LucideIcon,
+    category: t("category.lucide"),
     usage: `import { ${name} } from "lucide-react"
 
 export function MyComponent() {
@@ -67,10 +71,7 @@ export function MyComponent() {
 
   return (
     <section className="mb-12">
-      <LibrarySectionTitle
-        title="Icônes"
-        description="Icônes disponibles dans votre application"
-      />
+      <LibrarySectionTitle title={t("title")} description={t("description")} />
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
         {filteredIcons.map((icon) => {
@@ -89,7 +90,7 @@ export function MyComponent() {
 
       {filteredIcons.length === 0 && (
         <div className="text-center py-12 text-muted-foreground">
-          Aucune icône ne correspond à votre recherche.
+          {t("noResults")}
         </div>
       )}
     </section>

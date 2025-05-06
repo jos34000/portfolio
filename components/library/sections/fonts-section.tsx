@@ -1,43 +1,39 @@
 "use client"
 import { LibraryFontItem } from "@/components/library/library-font-item"
 import { LibrarySectionTitle } from "@/components/library/library-section-title"
+import { useTranslations } from "next-intl"
 
 interface FontsSectionProps {
   searchQuery: string
   filters: string[]
 }
 
-export function FontsSection({ searchQuery, filters }: FontsSectionProps) {
+export const FontsSection = ({
+  searchQuery,
+  filters,
+}: Readonly<FontsSectionProps>) => {
+  const t = useTranslations("library.fonts")
+
   const fonts = [
     {
-      id: "geist",
-      name: "Geist",
-      description: "Police principale de l'application",
-      category: "Sans-serif",
+      id: "inter",
+      name: "Inter",
+      description: t("inter.description"),
+      category: t("inter.category"),
       weights: ["Regular", "Medium", "Bold"],
       cssVariable: "var(--font-sans)",
-      cssImport: `@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;700&display=swap');`,
-      cssUsage: `font-family: var(--font-sans);`,
+      cssImport: `import { Inter } from "next/font/google"`,
+      cssUsage: `font-family: var(--font-inter);`,
     },
     {
-      id: "geist-mono",
-      name: "Geist Mono",
-      description: "Police monospace pour le code",
-      category: "Monospace",
+      id: "jetbrains-mono",
+      name: "JetBrains Mono",
+      description: t("jetbrainsMono.description"),
+      category: t("jetbrainsMono.category"),
       weights: ["Regular", "Medium"],
       cssVariable: "var(--font-mono)",
-      cssImport: `@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&display=swap');`,
-      cssUsage: `font-family: var(--font-mono);`,
-    },
-    {
-      id: "georgia",
-      name: "Georgia",
-      description: "Police serif pour certains contenus",
-      category: "Serif",
-      weights: ["Regular", "Bold", "Italic"],
-      cssVariable: "var(--font-serif)",
-      cssImport: `/* Police système, pas besoin d'import */`,
-      cssUsage: `font-family: var(--font-serif);`,
+      cssImport: `import { JetBrains_Mono } from "next/font/google"`,
+      cssUsage: `font-family: var(--font-jetbrains);`,
     },
   ]
 
@@ -57,10 +53,7 @@ export function FontsSection({ searchQuery, filters }: FontsSectionProps) {
 
   return (
     <section className="mb-12">
-      <LibrarySectionTitle
-        title="Typographie"
-        description="Polices de caractères utilisées dans votre application"
-      />
+      <LibrarySectionTitle title={t("title")} description={t("description")} />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredFonts.map((font) => (
@@ -79,7 +72,7 @@ export function FontsSection({ searchQuery, filters }: FontsSectionProps) {
 
       {filteredFonts.length === 0 && (
         <div className="text-center py-12 text-muted-foreground">
-          Aucune police ne correspond à votre recherche.
+          {t("noResults")}
         </div>
       )}
     </section>
