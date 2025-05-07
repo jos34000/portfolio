@@ -91,7 +91,7 @@ export const useSignUp = () => {
     }
   }
 
-  const handleSocialSignIn = async (provider: "github" | "linkedin") => {
+  const handleSocialSignIn = async (provider: "github" | "google") => {
     await authClient.signIn.social({ provider })
   }
 

@@ -176,7 +176,7 @@ export function SignUpForm({
               variant="outline"
               type="button"
               className="w-full"
-              onClick={() => handleSocialSignIn("linkedin")}
+              onClick={() => handleSocialSignIn("google")}
             >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <path
@@ -190,7 +190,7 @@ export function SignUpForm({
                   fill="currentColor"
                 />
               </svg>
-              {t("form.buttons.linkedin")}
+              {t("form.buttons.google")}
             </Button>
           </div>
         </div>
