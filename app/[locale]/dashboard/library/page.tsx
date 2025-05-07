@@ -40,12 +40,6 @@ export default function LibraryPage() {
     setSearchQuery(e.target.value)
   }
 
-  const addFilter = (filter: string) => {
-    if (!filters.includes(filter)) {
-      setFilters([...filters, filter])
-    }
-  }
-
   const removeFilter = (filter: string) => {
     setFilters(filters.filter((f) => f !== filter))
   }

@@ -20,7 +20,6 @@ import {
 
 export function NavMain({
   items,
-  username,
 }: Readonly<{
   items: {
     title: string
@@ -32,13 +31,7 @@ export function NavMain({
       url: string
     }[]
   }[]
-  username: string
 }>) {
-  const getPath = (url: string) =>
-    url.startsWith("/dashboard/")
-      ? url.replace("/dashboard/", `/dashboard/${username}/`)
-      : url
-
   return (
     <SidebarGroup>
       <SidebarGroupLabel>Platform</SidebarGroupLabel>
@@ -63,7 +56,7 @@ export function NavMain({
                   {item.items?.map((subItem) => (
                     <SidebarMenuSubItem key={subItem.title}>
                       <SidebarMenuSubButton asChild>
-                        <a href={getPath(subItem.url)}>
+                        <a href={subItem.url}>
                           <span>{subItem.title}</span>
                         </a>
                       </SidebarMenuSubButton>

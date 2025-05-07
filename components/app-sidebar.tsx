@@ -13,16 +13,10 @@ import {
   SidebarRail,
 } from "@/components/shadcn/sidebar"
 import { TeamSwitcher } from "@/components/team-switcher"
-import { useUser } from "@/lib/hooks/use-user"
 import { createSidebarData } from "./data/sidebar.data"
 
-export function AppSidebar({
-  username,
-
-  ...props
-}: { username: string } & React.ComponentProps<typeof Sidebar>) {
-  const { user } = useUser()
-  const sidebarData = createSidebarData(user?.username ?? "")
+export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const sidebarData = createSidebarData()
 
   return (
     <Sidebar collapsible="icon" {...props}>
@@ -30,8 +24,8 @@ export function AppSidebar({
         <TeamSwitcher teams={sidebarData.teams} />
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={sidebarData.navMain} username={username} />
-        <NavProjects projects={sidebarData.projects} username={username} />
+        <NavMain items={sidebarData.navMain} />
+        <NavProjects projects={sidebarData.projects} />
       </SidebarContent>
       <SidebarFooter>
         <NavUser />

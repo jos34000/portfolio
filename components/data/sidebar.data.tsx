@@ -11,16 +11,7 @@ import {
   SquareTerminal,
 } from "lucide-react"
 
-type GenerateUrlParams = {
-  username: string
-  path: string
-}
-
-const generateUrl = ({ username, path }: GenerateUrlParams) => {
-  return `/dashboard/${username}/${path}`
-}
-
-export const createSidebarData = (username: string) => ({
+export const createSidebarData = () => ({
   user: {
     name: "shadcn",
     email: "m@example.com",
@@ -46,119 +37,86 @@ export const createSidebarData = (username: string) => ({
   navMain: [
     {
       title: "Playground",
-      url: generateUrl({ username, path: "/dashboard" }),
+      url: "/dashboard",
       icon: SquareTerminal,
       isActive: true,
       items: [
         {
           title: "Library",
-          url: generateUrl({ username, path: "library" }),
+          url: "/dashboard/library",
         },
         {
           title: "Starred",
-          url: generateUrl({ username, path: "/dashboard/starred" }),
+          url: "/dashboard/starred",
         },
         {
           title: "Settings",
-          url: generateUrl({ username, path: "/dashboard/settings" }),
+          url: "/dashboard/settings",
         },
       ],
     },
     {
       title: "Models",
-      url: generateUrl({ username, path: "/dashboard/models" }),
+      url: "/dashboard/models",
       icon: Bot,
       items: [
         {
           title: "Genesis",
-          url: generateUrl({
-            username,
-            path: "/dashboard/models/genesis",
-          }),
+          url: "/dashboard/models/genesis",
         },
         {
           title: "Explorer",
-          url: generateUrl({
-            username,
-            path: "/dashboard/models/explorer",
-          }),
+          url: "/dashboard/models/explorer",
         },
         {
           title: "Quantum",
-          url: generateUrl({
-            username,
-            path: "/dashboard/models/quantum",
-          }),
+          url: "/dashboard/models/quantum",
         },
       ],
     },
     {
       title: "Documentation",
-      url: generateUrl({ username, path: "/dashboard/docs" }),
+      url: "/dashboard/docs",
       icon: BookOpen,
       items: [
         {
           title: "Introduction",
-          url: generateUrl({
-            username,
-            path: "/dashboard/docs/introduction",
-          }),
+          url: "/dashboard/docs/introduction",
         },
         {
           title: "Get Started",
-          url: generateUrl({
-            username,
-            path: "/dashboard/docs/get-started",
-          }),
+          url: "/dashboard/docs/get-started",
         },
         {
           title: "Tutorials",
-          url: generateUrl({
-            username,
-            path: "/dashboard/docs/tutorials",
-          }),
+          url: "/dashboard/docs/tutorials",
         },
         {
           title: "Changelog",
-          url: generateUrl({
-            username,
-            path: "/dashboard/docs/changelog",
-          }),
+          url: "/dashboard/docs/changelog",
         },
       ],
     },
     {
       title: "Settings",
-      url: generateUrl({ username, path: "/dashboard/settings" }),
+      url: "/dashboard/settings",
       icon: Settings2,
       items: [
         {
           title: "General",
-          url: generateUrl({
-            username,
-            path: "/dashboard/settings/general",
-          }),
+          url: "/dashboard/settings/general",
         },
         {
           title: "Team",
-          url: generateUrl({
-            username,
-            path: "/dashboard/settings/team",
-          }),
+          url: "/dashboard/settings/team",
         },
         {
           title: "Billing",
-          url: generateUrl({
-            username,
-            path: "/dashboard/settings/billing",
-          }),
+          url: "/dashboard/settings/billing",
         },
         {
           title: "Limits",
-          url: generateUrl({
-            username,
-            path: "/dashboard/settings/limits",
-          }),
+          url: "/dashboard/settings/limits",
         },
       ],
     },
@@ -166,23 +124,17 @@ export const createSidebarData = (username: string) => ({
   projects: [
     {
       name: "Design Engineering",
-      url: generateUrl({
-        username,
-        path: "/dashboard/projects/design",
-      }),
+      url: "/dashboard/projects/design",
       icon: Frame,
     },
     {
       name: "Sales & Marketing",
-      url: generateUrl({ username, path: "/dashboard/projects/sales" }),
+      url: "/dashboard/projects/sales",
       icon: PieChart,
     },
     {
       name: "Travel",
-      url: generateUrl({
-        username,
-        path: "/dashboard/projects/travel",
-      }),
+      url: "/dashboard/projects/travel",
       icon: Map,
     },
   ],
