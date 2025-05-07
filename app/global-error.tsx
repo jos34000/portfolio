@@ -1,7 +1,7 @@
 "use client"
 
+import { PremiumError } from "@/components/shadcn/premium-error"
 import { ThemeProvider } from "@/components/themes/theme-provider"
-import { PremiumError } from "@/components/ui/premium-error"
 import { useEffect } from "react"
 
 interface GlobalErrorProps {

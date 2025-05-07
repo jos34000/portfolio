@@ -5,24 +5,22 @@ import * as React from "react"
 import { NavMain } from "@/components/nav-main"
 import { NavProjects } from "@/components/nav-projects"
 import { NavUser } from "@/components/nav-user"
-import { TeamSwitcher } from "@/components/team-switcher"
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
   SidebarRail,
-} from "@/components/ui/sidebar"
+} from "@/components/shadcn/sidebar"
+import { TeamSwitcher } from "@/components/team-switcher"
 import { useUser } from "@/lib/hooks/use-user"
 import { createSidebarData } from "./data/sidebar.data"
 
 export function AppSidebar({
   username,
-  locale,
+
   ...props
-}: { username: string; locale: string } & React.ComponentProps<
-  typeof Sidebar
->) {
+}: { username: string } & React.ComponentProps<typeof Sidebar>) {
   const { user } = useUser()
   const sidebarData = createSidebarData(user?.username ?? "")
 

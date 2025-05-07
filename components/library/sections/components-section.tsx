@@ -1,9 +1,14 @@
 "use client"
 import { LibraryItem } from "@/components/library/library-item"
 import { LibrarySectionTitle } from "@/components/library/library-section-title"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Button } from "@/components/shadcn/button"
+import { Card, CardContent } from "@/components/shadcn/card"
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/components/shadcn/tabs"
 import { useTranslations } from "next-intl"
 
 const ButtonPreview = () => <Button>Click me</Button>
@@ -20,8 +25,8 @@ const TabsPreview = () => (
       <TabsTrigger value="tab1">Onglet 1</TabsTrigger>
       <TabsTrigger value="tab2">Onglet 2</TabsTrigger>
     </TabsList>
-    <TabsContent value="tab1">Contenu de l'onglet 1</TabsContent>
-    <TabsContent value="tab2">Contenu de l'onglet 2</TabsContent>
+    <TabsContent value="tab1">Contenu de l&apos;onglet 1</TabsContent>
+    <TabsContent value="tab2">Contenu de l&apos;onglet 2</TabsContent>
   </Tabs>
 )
 
@@ -47,7 +52,7 @@ export function ComponentsSection({
       complexity: t("complexity.Simple"),
       code: `<Button>Click me</Button>`,
       preview: ButtonPreview,
-      usage: `import { Button } from "@/components/ui/button"
+      usage: `import { Button } from "@/components/shadcn/button"
 
 export function MyComponent() {
   return <Button>Click me</Button>
@@ -67,7 +72,7 @@ export function MyComponent() {
   </CardContent>
 </Card>`,
       preview: CardPreview,
-      usage: `import { Card, CardContent } from "@/components/ui/card"
+      usage: `import { Card, CardContent } from "@/components/shadcn/card"
 
 export function MyComponent() {
   return (
@@ -94,7 +99,7 @@ export function MyComponent() {
   <TabsContent value="tab2">Contenu de l'onglet 2</TabsContent>
 </Tabs>`,
       preview: TabsPreview,
-      usage: `import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+      usage: `import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/shadcn/tabs"
 
 export function MyComponent() {
   return (

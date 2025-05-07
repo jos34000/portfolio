@@ -1,4 +1,3 @@
-"use client"
 import { Link, useRouter } from "@/i18n/navigation"
 import { motion } from "motion/react"
 import { useTranslations } from "next-intl"

@@ -11,20 +11,20 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog"
+} from "@/components/shadcn/dialog"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
-import { Textarea } from "@/components/ui/textarea"
-import { sendContactEmail } from "@/lib/action/sendEmail.action"
+} from "@/components/shadcn/select"
+import { Textarea } from "@/components/shadcn/textarea"
+import { sendContactEmail } from "@/lib/actions/sendEmail.action"
 import { contactStepSchema } from "@/lib/schemas/contacting.schema"
 import { cn } from "@/lib/utils"
 
-import { Button } from "../ui/button"
+import { Button } from "../shadcn/button"
 
 type ContactDialogProps = {
   isOpen: boolean

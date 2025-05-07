@@ -1,14 +1,14 @@
 "use client"
 
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/shadcn/badge"
+import { Button } from "@/components/shadcn/button"
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
+} from "@/components/shadcn/card"
 import { motion } from "framer-motion"
 import { Check, Copy } from "lucide-react"
 import { useTheme } from "next-themes"

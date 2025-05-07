@@ -1,32 +1,30 @@
 "use client"
 
 import { LoadingScreen } from "@/components/loading-screen"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/shadcn/button"
 import { useRouter } from "@/i18n/navigation"
-import { useOnboarding } from "@/lib/hooks/use-onboarding-storage"
 import { AnimatePresence, motion } from "framer-motion"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { useTranslations } from "next-intl"
 import { useEffect, useState } from "react"
-import { GlassCard } from "./elements/glass-card"
-import StepCookies from "./step/step-cookies"
+
+import { GlassCard } from "@/components/onboarding/glass-card"
+import StepCookies from "./steps/step-cookies"
 import StepInterests from "./steps/step-interests"
 import StepIntro from "./steps/step-intro"
 import StepLanguage from "./steps/step-langugage"
-import { StepTheme } from "./steps/step-theme"
+import StepTheme from "./steps/step-theme"
 
 export default function OnboardingPage() {
   const [step, setStep] = useState(1)
   const router = useRouter()
   const t = useTranslations("Common")
-  const { markAsCompleted } = useOnboarding()
   const totalSteps = 5
 
   const handleNext = async () => {
     if (step < totalSteps) {
       setStep(step + 1)
     } else {
-      await markAsCompleted()
       router.push("/")
     }
   }
@@ -38,8 +36,6 @@ export default function OnboardingPage() {
   }
 
   const handleSkip = async () => {
-    await markAsCompleted()
-    localStorage.setItem("preferred-language", "en")
     router.push("/")
   }
 
@@ -107,10 +103,10 @@ export default function OnboardingPage() {
                   className="flex-1"
                 >
                   {step === 1 && <StepIntro />}
-                  {step === 2 && <StepCookies />}
-                  {step === 3 && <StepLanguage />}
-                  {step === 4 && <StepTheme />}
-                  {step === 5 && <StepInterests />}
+                  {step === 2 && <StepLanguage />}
+                  {step === 3 && <StepTheme />}
+                  {step === 4 && <StepInterests />}
+                  {step === 5 && <StepCookies />}
                 </motion.div>
               </AnimatePresence>
 

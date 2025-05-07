@@ -1,11 +1,12 @@
 "use client"
 
+import { FloatingElement } from "@/components/onboarding/floating-element"
+import { SelectionOption } from "@/components/onboarding/selection-option"
+import { setOnboardingCookie } from "@/lib/actions/cookies.action"
 import { motion } from "framer-motion"
 import { BarChart, Cookie, Settings, Shield } from "lucide-react"
 import { useTranslations } from "next-intl"
 import { useState } from "react"
-import { FloatingElement } from "../elements/floating-element"
-import { SelectionOption } from "../elements/selection-option"
 
 export default function StepCookies() {
   const t = useTranslations("Onboarding.steps.cookies")
@@ -22,11 +23,13 @@ export default function StepCookies() {
   })
 
   const toggleCookie = (type: keyof typeof cookiePreferences) => {
-    if (type === "necessary") return // Ne peut pas être désactivé
-    setCookiePreferences({
+    if (type === "necessary") return
+    const updated = {
       ...cookiePreferences,
       [type]: !cookiePreferences[type],
-    })
+    }
+    setCookiePreferences(updated)
+    setOnboardingCookie()
   }
 
   return (
@@ -44,7 +47,7 @@ export default function StepCookies() {
         <FloatingElement intensity={20} scale={1.01}>
           <SelectionOption
             selected={cookiePreferences.necessary}
-            onClick={() => {}} // Ne fait rien car toujours activé
+            onClick={() => {}}
           >
             <div className="flex items-center space-x-4">
               <div className="p-2.5 rounded-full bg-primary/20">

@@ -1,23 +1,37 @@
+"use client"
+import { FloatingElement } from "@/components/onboarding/floating-element"
+import { SelectionOption } from "@/components/onboarding/selection-option"
 import {
   EnglishIcon,
   FrenchIcon,
   SpanishIcon,
-} from "@/components/ui/language-icons"
+} from "@/components/shadcn/language-icons"
 import { usePathname, useRouter } from "@/i18n/navigation"
-import { useLanguage } from "@/lib/hooks/use-language-storage"
-import { useTranslations } from "next-intl"
-import { FloatingElement } from "../elements/floating-element"
-import { SelectionOption } from "../elements/selection-option"
+import {
+  setLanguageCookie,
+  SupportedLanguage,
+} from "@/lib/actions/cookies.action"
+import Cookies from "js-cookie"
 
-export default function StepLanguage() {
+import { useTranslations } from "next-intl"
+import { useEffect, useState } from "react"
+
+const StepLanguage = () => {
   const router = useRouter()
   const pathname = usePathname()
-  const { language, setLanguage } = useLanguage()
+  const [language, setLanguage] = useState<SupportedLanguage>("en")
   const t = useTranslations("Onboarding")
   const tLanguage = useTranslations("Common")
 
-  const handleLanguageChange = async (newLanguage: typeof language) => {
-    await setLanguage(newLanguage)
+  useEffect(() => {
+    const cookieLanguage = Cookies.get("NEXT_LOCALE") as SupportedLanguage
+    if (cookieLanguage && cookieLanguage !== language)
+      setLanguage(cookieLanguage)
+  }, [language])
+
+  const handleLanguageChange = async (newLanguage: SupportedLanguage) => {
+    setLanguage(newLanguage)
+    await setLanguageCookie(newLanguage)
     router.push(pathname, { locale: newLanguage })
   }
 
@@ -72,3 +86,5 @@ export default function StepLanguage() {
     </div>
   )
 }
+
+export default StepLanguage

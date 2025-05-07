@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-import { Timeline } from "@/components/ui/timeline"
+import { Timeline } from "@/components/shadcn/timeline"
 
 export function Steps() {
   const data = [

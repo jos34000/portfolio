@@ -1,9 +1,9 @@
 import { Monitor, Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 
+import { FloatingElement } from "@/components/onboarding/floating-element"
+import { SelectionOption } from "@/components/onboarding/selection-option"
 import { useTranslations } from "next-intl"
-import { FloatingElement } from "../elements/floating-element"
-import { SelectionOption } from "../elements/selection-option"
 
 export const StepTheme = () => {
   const { theme, setTheme } = useTheme()
@@ -64,3 +64,5 @@ export const StepTheme = () => {
     </div>
   )
 }
+
+export default StepTheme

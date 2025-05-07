@@ -11,7 +11,7 @@ import { Contact } from "@/components/home/contact-section"
 import { HeroSection } from "@/components/home/hero-section"
 import { ProjectsSection } from "@/components/home/projects-section"
 import { LoadingScreen } from "@/components/loading-screen"
-import { FloatingNav } from "@/components/ui/floating-navbar"
+import { FloatingNav } from "@/components/shadcn/floating-navbar"
 
 export default function Home() {
   const [loading, setLoading] = useState(true)

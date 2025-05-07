@@ -7,7 +7,7 @@ import {
   SidebarInset,
   SidebarProvider,
   SidebarTrigger,
-} from "@/components/ui/sidebar"
+} from "@/components/shadcn/sidebar"
 
 export default async function DashboardLayout({
   children,

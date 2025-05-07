@@ -1,13 +1,9 @@
 "use client"
 
-import { Maintenance } from "@/components/ui/maintenance"
+import { Maintenance } from "@/components/shadcn/maintenance"
 import { useSignOut } from "@/lib/hooks/use-signOut"
 
-export default function DashboardPage({
-  params,
-}: {
-  params: { locale: string; username: string }
-}) {
+export default function DashboardPage() {
   const signOut = useSignOut()
 
   return (

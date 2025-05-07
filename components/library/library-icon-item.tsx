@@ -2,9 +2,9 @@
 
 import type React from "react"
 
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/shadcn/badge"
+import { Button } from "@/components/shadcn/button"
+import { Card, CardContent } from "@/components/shadcn/card"
 import { motion } from "framer-motion"
 import { Check, Copy } from "lucide-react"
 import { useState } from "react"

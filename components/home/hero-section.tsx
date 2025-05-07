@@ -1,8 +1,8 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
-import { SparklesCore } from "@/components/ui/sparkles"
-import { TypewriterEffect } from "@/components/ui/typewriter-effect"
+import { Button } from "@/components/shadcn/button"
+import { SparklesCore } from "@/components/shadcn/sparkles"
+import { TypewriterEffect } from "@/components/shadcn/typewriter-effect"
 import { motion } from "framer-motion"
 import { useTranslations } from "next-intl"
 import { useEffect, useState } from "react"

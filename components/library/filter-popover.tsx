@@ -1,10 +1,10 @@
-import { Button } from "@/components/ui/button"
-import { Checkbox } from "@/components/ui/checkbox"
+import { Button } from "@/components/shadcn/button"
+import { Checkbox } from "@/components/shadcn/checkbox"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover"
+} from "@/components/shadcn/popover"
 import { Filter } from "lucide-react"
 
 type FilterCategory = {

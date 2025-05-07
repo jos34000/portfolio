@@ -1,18 +1,18 @@
 "use client"
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import { Copy, Check, Download, Link } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/shadcn/badge"
+import { Button } from "@/components/shadcn/button"
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+} from "@/components/shadcn/card"
+import { motion } from "framer-motion"
+import { Check, Copy, Download, Link } from "lucide-react"
 import Image from "next/image"
+import { useState } from "react"
 
 interface LibraryImageItemProps {
   title: string

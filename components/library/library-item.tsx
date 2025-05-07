@@ -1,7 +1,7 @@
 "use client"
 
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/shadcn/badge"
+import { Button } from "@/components/shadcn/button"
 import {
   Card,
   CardContent,
@@ -9,8 +9,13 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+} from "@/components/shadcn/card"
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/components/shadcn/tabs"
 import { motion } from "framer-motion"
 import { Check, Code, Copy, ExternalLink } from "lucide-react"
 import * as React from "react"

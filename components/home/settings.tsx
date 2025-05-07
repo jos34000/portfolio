@@ -5,13 +5,13 @@ import { Settings2 } from "lucide-react"
 import { useTheme } from "next-themes"
 
 import { LanguageToggle } from "@/components/language/language-toggle"
-import { ThemeToggle } from "@/components/themes/theme-toggle"
-import { buttonVariants } from "@/components/ui/button"
+import { buttonVariants } from "@/components/shadcn/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "@/components/shadcn/dropdown-menu"
+import { ThemeToggle } from "@/components/themes/theme-toggle"
 import { cn } from "@/lib/utils"
 import { useEffect, useState } from "react"
 

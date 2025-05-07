@@ -1,8 +1,8 @@
+import { FloatingElement } from "@/components/onboarding/floating-element"
+import { SelectionOption } from "@/components/onboarding/selection-option"
 import { Code, Layers, Palette, Zap } from "lucide-react"
 import { useTranslations } from "next-intl"
 import { useState } from "react"
-import { FloatingElement } from "../elements/floating-element"
-import { SelectionOption } from "../elements/selection-option"
 
 export default function StepInterests() {
   const t = useTranslations("Onboarding")

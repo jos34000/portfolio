@@ -8,7 +8,6 @@ export type SupportedLanguage = "en" | "fr" | "es"
 const setCookie = async (name: string, value: string) => {
   const cookieStore = await cookies()
   cookieStore.set(name, value, {
-    httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     sameSite: "lax",
     path: "/",

@@ -1,6 +1,6 @@
 "use client"
 
-import { Loader } from "@/components/ui/loader"
+import { Loader } from "@/components/shadcn/loader"
 import { AnimatePresence, motion } from "framer-motion"
 import { useEffect, useState } from "react"
 interface LoadingScreenProps {

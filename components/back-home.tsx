@@ -3,7 +3,7 @@ import { Loader2 } from "lucide-react"
 import { useTranslations } from "next-intl"
 import { useState } from "react"
 
-import { Button } from "./ui/button"
+import { Button } from "./shadcn/button"
 
 type Props = {
   isLoading: boolean

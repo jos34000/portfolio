@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/shadcn/button"
 import { motion } from "framer-motion"
 import { Home } from "lucide-react"
 import Link from "next/link"
@@ -127,7 +127,7 @@ export function ErrorPage({
           className="text-center mt-8"
         >
           <p className="text-muted-foreground text-sm">
-            Si le problème persiste, veuillez contacter l'administrateur du
+            Si le problème persiste, veuillez contacter l&apos;administrateur du
             site.
           </p>
         </motion.div>

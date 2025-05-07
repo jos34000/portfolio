@@ -1,4 +1,4 @@
-import { Spotlight } from "@/components/ui/spotlight"
+import { Spotlight } from "@/components/shadcn/spotlight"
 import { FloatingElement } from "./floating-element"
 
 export function GlassCard({

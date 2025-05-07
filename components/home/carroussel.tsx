@@ -1,5 +1,5 @@
 "use client"
-import { Card, Carousel } from "@/components/ui/cards-carousel"
+import { Card, Carousel } from "@/components/shadcn/cards-carousel"
 import { useTranslations } from "next-intl"
 import { useCarouselData } from "../data/carrousel.data"
 

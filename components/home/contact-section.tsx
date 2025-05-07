@@ -6,8 +6,8 @@ import { z } from "zod"
 
 import { contactSchema } from "@/lib/schemas/contacting.schema"
 
-import { BackgroundBeams } from "../ui/background-beams"
-import { PlaceholdersAndVanishInput } from "../ui/placeholders-and-vanish-input"
+import { BackgroundBeams } from "../shadcn/background-beams"
+import { PlaceholdersAndVanishInput } from "../shadcn/placeholders-and-vanish-input"
 
 import { ContactDialog } from "./contact-dialog"
 

@@ -1,6 +1,6 @@
 "use client"
 
-import { PremiumError } from "@/components/ui/premium-error"
+import { PremiumError } from "@/components/shadcn/premium-error"
 import { useTranslations } from "next-intl"
 
 export default function ForbiddenError() {
