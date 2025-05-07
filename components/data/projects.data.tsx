@@ -21,7 +21,7 @@ export const projects: Project[] = [
       "Translations",
     ],
     github: "https://github.com/jos34000/portfolio",
-    demo: "https://jocelynsainson.com",
+    demo: "https://jossainson.dev",
     featured: true,
   },
   {
@@ -29,6 +29,6 @@ export const projects: Project[] = [
     image: "/static/Projects-screenshots/Exoskel.png",
     tags: ["Next.js", "TypeScript", "Prisma"],
     github: "https://github.com/jos34000/exoskel",
-    demo: "https://ecommerce-demo.jocelynsainson.com",
+    demo: "https://exoskel.jossainson.dev",
   },
 ]
