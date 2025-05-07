@@ -12,7 +12,8 @@
     "dev:email": "email dev --port 3001 --dir ./lib/mails",
     "generate": "prisma generate",
     "migrate:dev": "dotenv -e .env.development -- pnpx prisma migrate dev",
-    "migrate:prod": "dotenv -e .env.production -- pnpx prisma migrate deploy"
+    "migrate:prod": "dotenv -e .env.production -- pnpx prisma migrate deploy",
+    "vercel-build": "prisma generate && prisma migrate deploy && next build"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
