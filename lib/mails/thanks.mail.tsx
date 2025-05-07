@@ -95,7 +95,7 @@ export default function ThankYouContactEmail({
                 }}
               >
                 <Img
-                  src="https://jossainson.dev/static/logo-dark.png"
+                  src="https://jossainson.dev/static/logo-light.png"
                   width="60"
                   height="60"
                   alt="Logo"
