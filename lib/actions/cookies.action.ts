@@ -1,6 +1,5 @@
 "use server"
 
-import { prisma } from "@/lib/db/client"
 import { cookies } from "next/headers"
 
 export type SupportedLanguage = "en" | "fr" | "es"
@@ -48,16 +47,4 @@ export const removeOnboardingCookie = async () => {
 
 export const hasOnboardingCookie = async () => {
   return await hasCookie("onboarding-completed")
-}
-
-export const saveOnboardingCompletion = async (
-  userId: string,
-  onboardingData: any
-) => {
-  await prisma.onboardingStats.create({
-    data: {
-      userId,
-      data: onboardingData,
-    },
-  })
 }
