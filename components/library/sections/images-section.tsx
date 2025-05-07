@@ -43,7 +43,7 @@ export function ImagesSection({
       id: "devops",
       name: t("devops.name"),
       description: t("devops.description"),
-      path: "/static/skills/DevOps.png",
+      path: "/static/skills/Dev-Ops.png",
       category: t("category.technologies"),
       tags: [t("tags.devops"), t("tags.tools"), t("tags.development")],
     },

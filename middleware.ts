@@ -13,6 +13,13 @@ const middleware = async (request: NextRequest) => {
     request.cookies.get("onboarding-completed")?.value === "true"
   const hasSession = getSessionCookie(request)
 
+  const supportedLocales = ["fr", "en", "es"]
+  const isValidLocale = supportedLocales.includes(locale)
+
+  if (!isValidLocale) {
+    return NextResponse.redirect(new URL(`/en${pathname}`, request.url))
+  }
+
   if (pathnameWithoutLocale.startsWith("/dashboard")) {
     if (!hasSession) {
       return NextResponse.redirect(new URL(`/${locale}/error/403`, request.url))

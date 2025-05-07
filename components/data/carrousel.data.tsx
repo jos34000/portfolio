@@ -17,7 +17,7 @@ export const useCarouselData = () => {
     {
       category: t("devops"),
       title: "",
-      src: "/static/Skills/DevOps.png",
+      src: "/static/Skills/Dev-Ops.png",
     },
     {
       category: t("os"),
