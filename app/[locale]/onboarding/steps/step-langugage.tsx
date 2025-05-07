@@ -7,10 +7,7 @@ import {
   SpanishIcon,
 } from "@/components/shadcn/language-icons"
 import { usePathname, useRouter } from "@/i18n/navigation"
-import {
-  setLanguageCookie,
-  SupportedLanguage,
-} from "@/lib/actions/cookies.action"
+import { SupportedLanguage } from "@/lib/actions/cookies.action"
 import Cookies from "js-cookie"
 
 import { useTranslations } from "next-intl"
@@ -31,7 +28,10 @@ const StepLanguage = () => {
 
   const handleLanguageChange = async (newLanguage: SupportedLanguage) => {
     setLanguage(newLanguage)
-    await setLanguageCookie(newLanguage)
+    Cookies.set("preferred-language", newLanguage, {
+      path: "/",
+      sameSite: "None",
+    })
     router.push(pathname, { locale: newLanguage })
   }
 

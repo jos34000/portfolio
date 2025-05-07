@@ -2,7 +2,6 @@
 
 import { FloatingElement } from "@/components/onboarding/floating-element"
 import { SelectionOption } from "@/components/onboarding/selection-option"
-import { setOnboardingCookie } from "@/lib/actions/cookies.action"
 import { motion } from "framer-motion"
 import { BarChart, Cookie, Settings, Shield } from "lucide-react"
 import { useTranslations } from "next-intl"
@@ -29,7 +28,6 @@ export default function StepCookies() {
       [type]: !cookiePreferences[type],
     }
     setCookiePreferences(updated)
-    setOnboardingCookie()
   }
 
   return (

@@ -9,12 +9,12 @@ import { useTranslations } from "next-intl"
 import { useEffect, useState } from "react"
 
 import { GlassCard } from "@/components/onboarding/glass-card"
+import Cookies from "js-cookie"
 import StepCookies from "./steps/step-cookies"
 import StepInterests from "./steps/step-interests"
 import StepIntro from "./steps/step-intro"
 import StepLanguage from "./steps/step-langugage"
 import StepTheme from "./steps/step-theme"
-
 export default function OnboardingPage() {
   const [step, setStep] = useState(1)
   const router = useRouter()
@@ -25,6 +25,11 @@ export default function OnboardingPage() {
     if (step < totalSteps) {
       setStep(step + 1)
     } else {
+      Cookies.set("onboarding-completed", "true", {
+        path: "/",
+        sameSite: "None",
+        secure: true,
+      })
       router.push("/")
     }
   }
