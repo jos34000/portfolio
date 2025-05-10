@@ -248,7 +248,7 @@
         "signUp": "Registrarse",
         "loading": "Connexion...",
         "github": "Github",
-        "linkedin": "Linkedin"
+        "google": "Google"
       }
     },
     "notifications": {
@@ -456,6 +456,57 @@
       "actions": {
         "primary": "Intentar de nuevo"
       }
+    }
+  },
+  "Mail": {
+    "contact": {
+      "preview": "Nueva solicitud de contacto",
+      "title": "Nueva solicitud de contacto !",
+      "reason": "Motivo de la solicitud :",
+      "message": "Mensaje :",
+      "copyright": "© 2024 Jocelyn Sainson. Todos los derechos reservados."
+    },
+    "thanks": {
+      "preview": "Gracias por su mensaje — ¡Le responderé lo antes posible!",
+      "title": "¡Gracias por su mensaje!",
+      "message": "He recibido su solicitud y le responderé lo antes posible después de revisar su mensaje.",
+      "expectedResponseTime": "Tiempo de respuesta esperado: en 24-48 horas",
+      "responseHours": "Horas de respuesta: Lunes-Viernes, 9h-18h (CET)",
+      "summary": "Resumen de su solicitud de contacto",
+      "immediateAssistance": "Para una asistencia inmediata, puede:",
+      "callNow": "Llamar ahora",
+      "scheduleMeeting": "Programar una reunión",
+      "commonQuestions": "Preguntas comunes",
+      "servicePackages": "¿Cuáles son sus paquetes de servicio?",
+      "rates": "¿Cuáles son sus tarifas?",
+      "howSoonCanWeStart": "¿Cuándo podemos comenzar?",
+      "joinOurGrowingCommunity": "Únase a nuestra comunidad en crecimiento",
+      "satisfiedClients": "Clientes satisfechos",
+      "averageRating": "Calificación promedio",
+      "responseRate": "Tasa de respuesta",
+      "connectWithUs": "Contáctenos",
+      "thankYouAgain": "¡Gracias de nuevo por su confianza. ¡Hasta luego!"
+    },
+    "verifyEmail": {
+      "preview": "Verificar su dirección de correo electrónico",
+      "title": "Verificar su dirección de correo electrónico",
+      "welcome": "¡Bienvenido!",
+      "welcomeUser": "¡Bienvenido {{userFirstname}}!",
+      "message1": "Para verificar su dirección de correo electrónico, haga clic en el siguiente enlace:",
+      "message2": "Si no solicitó esta verificación, puede ignorar este correo electrónico.",
+      "message3": "Solo haga clic en los enlaces de fuentes de confianza",
+      "link": "Verificar mi correo electrónico",
+      "message4": "Si no solicitó esta verificación, puede ignorar este correo electrónico.",
+      "quickLinks": "Enlaces rápidos",
+      "documentation": "Documentación",
+      "gettingStarted": "Empezar",
+      "community": "Comunidad",
+      "message5": "Esta solicitud de verificación fue iniciada desde:",
+      "device": "Dispositivo",
+      "unknown": "Desconocido",
+      "copyright": "© 2024 Jocelyn Sainson. Todos los derechos reservados.",
+      "privacyPolicy": "Política de privacidad",
+      "unsubscribe": "Cancelar suscripción"
     }
   }
 }

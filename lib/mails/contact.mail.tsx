@@ -7,6 +7,7 @@ import {
   Section,
   Text,
 } from "@react-email/components"
+import { getTranslations } from "next-intl/server"
 
 interface ContactRequestEmailProps {
   senderEmail: string
@@ -14,15 +15,16 @@ interface ContactRequestEmailProps {
   message: string
 }
 
-export function ContactRequestEmail({
+export async function ContactRequestEmail({
   senderEmail,
   reason,
   message,
 }: Readonly<ContactRequestEmailProps>) {
+  const t = await getTranslations("Mail.contact")
   return (
     <Html>
       <Head>
-        <Preview>Nouvelle demande de contact</Preview>
+        <Preview>{t("preview")}</Preview>
       </Head>
       <Body
         style={{
@@ -59,7 +61,7 @@ export function ContactRequestEmail({
                 color: "#000000",
               }}
             >
-              Nouvelle demande de contact !
+              {t("title")}
             </Text>
 
             <Text
@@ -82,7 +84,7 @@ export function ContactRequestEmail({
                 color: "#666666",
               }}
             >
-              <strong style={{ color: "#000000" }}>Raison du contact :</strong>{" "}
+              <strong style={{ color: "#000000" }}>{t("reason")} :</strong>{" "}
               {reason}
             </Text>
 
@@ -94,7 +96,7 @@ export function ContactRequestEmail({
                 color: "#666666",
               }}
             >
-              <strong style={{ color: "#000000" }}>Message :</strong>
+              <strong style={{ color: "#000000" }}>{t("message")} :</strong>
             </Text>
 
             <Text
@@ -117,7 +119,7 @@ export function ContactRequestEmail({
               color: "#666666",
             }}
           >
-            © 2024 Jocelyn Sainson. Tous droits réservés.
+            {t("copyright")}
           </Text>
         </Container>
       </Body>

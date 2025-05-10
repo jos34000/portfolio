@@ -10,6 +10,7 @@ import {
   Section,
   Text,
 } from "@react-email/components"
+import { getTranslations } from "next-intl/server"
 
 interface ThankYouContactEmailProps {
   userFirstname?: string
@@ -18,7 +19,7 @@ interface ThankYouContactEmailProps {
   reason: string
 }
 
-export default function ThankYouContactEmail({
+export default async function ThankYouContactEmail({
   userFirstname,
   email,
   message,
@@ -43,12 +44,12 @@ export default function ThankYouContactEmail({
       "https://raw.githubusercontent.com/phosphor-icons/core/main/assets/regular/device-mobile.svg",
   }
 
+  const t = await getTranslations("Mail.thanks")
+
   return (
     <Html>
       <Head>
-        <Preview>
-          Thank you for your message — I&apos;ll get back to you soon!
-        </Preview>
+        <Preview>{t("preview")}</Preview>
       </Head>
       <Body
         style={{
@@ -125,9 +126,7 @@ export default function ThankYouContactEmail({
                   textAlign: "center" as const,
                 }}
               >
-                {userFirstname
-                  ? `Thank you ${userFirstname}!`
-                  : "Thank you for your message!"}
+                {t("title")}
               </Text>
 
               <Text
@@ -139,8 +138,7 @@ export default function ThankYouContactEmail({
                   textAlign: "center" as const,
                 }}
               >
-                I&apos;ve received your request and will get back to you as soon
-                as possible after reviewing your message.
+                {t("message")}
               </Text>
 
               <Section
@@ -175,7 +173,7 @@ export default function ThankYouContactEmail({
                       margin: "0",
                     }}
                   >
-                    Expected response time: within 24-48 hours
+                    {t("expectedResponseTime")}
                   </Text>
                 </div>
                 <div
@@ -200,7 +198,7 @@ export default function ThankYouContactEmail({
                       margin: "0",
                     }}
                   >
-                    Business hours: Monday-Friday, 9AM-6PM (CET)
+                    {t("responseHours")}
                   </Text>
                 </div>
               </Section>
@@ -223,7 +221,7 @@ export default function ThankYouContactEmail({
                     textAlign: "center" as const,
                   }}
                 >
-                  Your Contact Request Summary
+                  {t("summary")}
                 </Text>
 
                 {email && (
@@ -314,7 +312,7 @@ export default function ThankYouContactEmail({
                     marginBottom: "24px",
                   }}
                 >
-                  For immediate assistance, you can:
+                  {t("immediateAssistance")}
                 </Text>
 
                 <div
@@ -343,7 +341,7 @@ export default function ThankYouContactEmail({
                       border: "none",
                     }}
                   >
-                    Call now
+                    {t("callNow")}
                   </Button>
 
                   <Button
@@ -364,7 +362,7 @@ export default function ThankYouContactEmail({
                       border: "1px solid rgba(255,255,255,0.2)",
                     }}
                   >
-                    Schedule a meeting
+                    {t("scheduleMeeting")}
                   </Button>
                 </div>
               </Section>
@@ -384,7 +382,7 @@ export default function ThankYouContactEmail({
                     textAlign: "center" as const,
                   }}
                 >
-                  Common Questions
+                  {t("commonQuestions")}
                 </Text>
                 <div
                   style={{
@@ -416,7 +414,7 @@ export default function ThankYouContactEmail({
                       alt=""
                       style={{ filter: "invert(1)" }}
                     />
-                    What are your service packages?
+                    {t("servicePackages")}
                   </Link>
                   <Link
                     href="#"
@@ -441,7 +439,7 @@ export default function ThankYouContactEmail({
                       alt=""
                       style={{ filter: "invert(1)" }}
                     />
-                    What are your rates?
+                    {t("rates")}
                   </Link>
                   <Link
                     href="#"
@@ -466,7 +464,7 @@ export default function ThankYouContactEmail({
                       alt=""
                       style={{ filter: "invert(1)" }}
                     />
-                    How soon can we start?
+                    {t("howSoonCanWeStart")}
                   </Link>
                 </div>
               </Section>
@@ -486,7 +484,7 @@ export default function ThankYouContactEmail({
                     textAlign: "center" as const,
                   }}
                 >
-                  Join our growing community
+                  {t("joinOurGrowingCommunity")}
                 </Text>
                 <div
                   style={{
@@ -519,7 +517,7 @@ export default function ThankYouContactEmail({
                         margin: "4px 0 0 0",
                       }}
                     >
-                      Satisfied Clients
+                      {t("satisfiedClients")}
                     </Text>
                   </div>
                   <div
@@ -545,7 +543,7 @@ export default function ThankYouContactEmail({
                         margin: "4px 0 0 0",
                       }}
                     >
-                      Average Rating
+                      {t("averageRating")}
                     </Text>
                   </div>
                   <div
@@ -571,7 +569,7 @@ export default function ThankYouContactEmail({
                         margin: "4px 0 0 0",
                       }}
                     >
-                      Response Rate
+                      {t("responseRate")}
                     </Text>
                   </div>
                 </div>
@@ -591,7 +589,7 @@ export default function ThankYouContactEmail({
                     textAlign: "center" as const,
                   }}
                 >
-                  Connect with us
+                  {t("connectWithUs")}
                 </Text>
                 <div
                   style={{
@@ -672,7 +670,7 @@ export default function ThankYouContactEmail({
                 margin: "0",
               }}
             >
-              Thank you again for your trust. Talk to you soon!
+              {t("thankYouAgain")}
             </Text>
           </Container>
         </Container>

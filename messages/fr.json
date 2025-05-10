@@ -248,7 +248,7 @@
         "signUp": "S'inscrire",
         "loading": "Connexion...",
         "github": "Github",
-        "linkedin": "Linkedin"
+        "google": "Google"
       }
     },
     "notifications": {
@@ -454,6 +454,57 @@
       "actions": {
         "primary": "Réessayer"
       }
+    }
+  },
+  "Mail": {
+    "contact": {
+      "preview": "Nouvelle demande de contact",
+      "title": "Nouvelle demande de contact !",
+      "reason": "Motif de la demande :",
+      "message": "Message :",
+      "copyright": "© 2024 Jocelyn Sainson. Tous droits réservés."
+    },
+    "thanks": {
+      "preview": "Merci pour votre message — Je reviendrai vers vous dès que possible !",
+      "title": "Merci pour votre message !",
+      "message": "J'ai reçu votre demande et reviendrai vers vous dès que possible après avoir examiné votre message.",
+      "expectedResponseTime": "Temps de réponse attendu : dans les 24-48 heures",
+      "responseHours": "Heures de réponse : Lundi-Vendredi, 9h-18h (CET)",
+      "summary": "Résumé de votre demande de contact",
+      "immediateAssistance": "Pour une assistance immédiate, vous pouvez :",
+      "callNow": "Appeler maintenant",
+      "scheduleMeeting": "Planifier un rendez-vous",
+      "commonQuestions": "Questions courantes",
+      "servicePackages": "Quels sont vos packages de service ?",
+      "rates": "Quels sont vos tarifs ?",
+      "howSoonCanWeStart": "Quand pouvons-nous commencer ?",
+      "joinOurGrowingCommunity": "Rejoignez notre communauté en croissance",
+      "satisfiedClients": "Clients satisfaits",
+      "averageRating": "Note moyenne",
+      "responseRate": "Taux de réponse",
+      "connectWithUs": "Contactez-nous",
+      "thankYouAgain": "Merci encore pour votre confiance. À bientôt !"
+    },
+    "verifyEmail": {
+      "preview": "Vérifier votre adresse email",
+      "title": "Vérifier votre adresse email",
+      "welcome": "Bienvenue !",
+      "welcomeUser": "Bienvenue {{userFirstname}} !",
+      "message1": "Pour vérifier votre adresse email, veuillez cliquer sur le lien ci-dessous :",
+      "message2": "Si vous n'avez pas demandé cette vérification, vous pouvez ignorer cet email.",
+      "message3": "Seulement cliquer sur les liens de sources de confiance",
+      "link": "Vérifier mon email",
+      "message4": "Si vous n'avez pas demandé cette vérification, vous pouvez ignorer cet email.",
+      "quickLinks": "Liens rapides",
+      "documentation": "Documentation",
+      "gettingStarted": "Commencer",
+      "community": "Communauté",
+      "message5": "Cette demande de vérification a été initiée depuis :",
+      "device": "Appareil",
+      "unknown": "Inconnu",
+      "copyright": "© 2024 Jocelyn Sainson. Tous droits réservés.",
+      "privacyPolicy": "Politique de confidentialité",
+      "unsubscribe": "Se désinscrire"
     }
   }
 }

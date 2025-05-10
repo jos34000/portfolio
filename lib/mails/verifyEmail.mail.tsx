@@ -11,6 +11,7 @@ import {
   Section,
   Text,
 } from "@react-email/components"
+import { getTranslations } from "next-intl/server"
 
 interface VerifyEmailProps {
   verificationUrl: string
@@ -22,7 +23,7 @@ interface VerifyEmailProps {
   }
 }
 
-export default function VerifyEmail({
+export default async function VerifyEmail({
   verificationUrl,
   userFirstname,
   deviceInfo,
@@ -40,10 +41,11 @@ export default function VerifyEmail({
       "https://raw.githubusercontent.com/phosphor-icons/core/main/assets/regular/device-mobile.svg",
   }
 
+  const t = await getTranslations("Mail.verifyEmail")
   return (
     <Html>
       <Head>
-        <Preview>Verify your email address to continue</Preview>
+        <Preview>{t("preview")}</Preview>
       </Head>
       <Body
         style={{
@@ -120,7 +122,9 @@ export default function VerifyEmail({
                   textAlign: "center" as const,
                 }}
               >
-                {userFirstname ? `Welcome ${userFirstname}!` : "Welcome!"}
+                {userFirstname
+                  ? t("welcomeUser", { userFirstname })
+                  : t("welcome")}
               </Text>
 
               <Text
@@ -132,8 +136,7 @@ export default function VerifyEmail({
                   textAlign: "center" as const,
                 }}
               >
-                We&apos;re excited to have you on board. To start your journey,
-                please verify your email address by clicking the button below.
+                {t("message")}
               </Text>
 
               <Section
@@ -168,7 +171,7 @@ export default function VerifyEmail({
                       margin: "0",
                     }}
                   >
-                    This verification link will expire in 24 hours
+                    {t("message2")}
                   </Text>
                 </div>
                 <div
@@ -193,7 +196,7 @@ export default function VerifyEmail({
                       margin: "0",
                     }}
                   >
-                    Only click links from trusted sources
+                    {t("message3")}
                   </Text>
                 </div>
               </Section>
@@ -218,7 +221,7 @@ export default function VerifyEmail({
                     minWidth: "200px",
                   }}
                 >
-                  Verify my email
+                  {t("link")}
                 </Button>
               </Section>
 
@@ -231,8 +234,7 @@ export default function VerifyEmail({
                   fontStyle: "italic",
                 }}
               >
-                If you didn&apos;t request this verification, you can safely
-                ignore this email.
+                {t("message4")}
               </Text>
 
               <Section
@@ -250,7 +252,7 @@ export default function VerifyEmail({
                     textAlign: "center" as const,
                   }}
                 >
-                  Quick Links
+                  {t("quickLinks")}
                 </Text>
                 <div
                   style={{
@@ -277,7 +279,7 @@ export default function VerifyEmail({
                       alt=""
                       style={{ filter: "invert(1)" }}
                     />
-                    Documentation
+                    {t("documentation")}
                   </Link>
                   <Link
                     href="#"
@@ -297,7 +299,7 @@ export default function VerifyEmail({
                       alt=""
                       style={{ filter: "invert(1)" }}
                     />
-                    Getting Started
+                    {t("gettingStarted")}
                   </Link>
                   <Link
                     href="#"
@@ -317,7 +319,7 @@ export default function VerifyEmail({
                       alt=""
                       style={{ filter: "invert(1)" }}
                     />
-                    Community
+                    {t("community")}
                   </Link>
                 </div>
               </Section>
@@ -347,7 +349,7 @@ export default function VerifyEmail({
                     alt=""
                     style={{ filter: "invert(1)" }}
                   />
-                  This verification request was initiated from:
+                  {t("message5")}
                 </Text>
                 <Text
                   style={{
@@ -357,7 +359,7 @@ export default function VerifyEmail({
                     margin: "4px 0 0 0",
                   }}
                 >
-                  {`${deviceInfo?.device ?? "Unknown"} • ${deviceInfo?.browser ?? "Unknown"} • ${deviceInfo?.ip ?? "Unknown"}`}
+                  {`${deviceInfo?.device ?? t("unknown")} • ${deviceInfo?.browser ?? t("unknown")} • ${deviceInfo?.ip ?? t("unknown")}`}
                 </Text>
               </Section>
             </Section>
@@ -375,7 +377,7 @@ export default function VerifyEmail({
                   marginBottom: "16px",
                 }}
               >
-                © 2024 Boiler Plate. All rights reserved.
+                {t("copyright")}
               </Text>
 
               <Hr
@@ -405,7 +407,7 @@ export default function VerifyEmail({
                     border: "1px solid rgba(255,255,255,0.1)",
                   }}
                 >
-                  Privacy Policy
+                  {t("privacyPolicy")}
                 </Link>
                 <Link
                   href="#"
@@ -419,7 +421,7 @@ export default function VerifyEmail({
                     border: "1px solid rgba(255,255,255,0.1)",
                   }}
                 >
-                  Unsubscribe
+                  {t("unsubscribe")}
                 </Link>
               </div>
             </Section>
