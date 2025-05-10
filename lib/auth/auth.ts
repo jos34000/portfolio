@@ -60,7 +60,7 @@ export const auth = betterAuth({
       await sendEmail(
         user.email,
         "Vérifiez votre email",
-        VerifyEmail({
+        await VerifyEmail({
           verificationUrl: url,
           userFirstname: user.name,
           deviceInfo: {
