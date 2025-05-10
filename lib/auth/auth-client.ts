@@ -4,6 +4,6 @@ import { createAuthClient } from "better-auth/react"
 import { auth } from "./auth"
 
 export const authClient = createAuthClient({
-  baseURL: "https://jossainson.dev",
+  baseURL: process.env.NEXT_PUBLIC_AUTH_URL,
   plugins: [inferAdditionalFields<typeof auth>()],
 })

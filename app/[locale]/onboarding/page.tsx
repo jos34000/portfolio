@@ -41,6 +41,11 @@ export default function OnboardingPage() {
   }
 
   const handleSkip = async () => {
+    Cookies.set("onboarding-completed", "true", {
+      path: "/",
+      sameSite: "None",
+      secure: true,
+    })
     router.push("/")
   }
 
