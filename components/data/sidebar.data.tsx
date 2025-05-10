@@ -1,21 +1,19 @@
 import {
   AudioWaveform,
   BookOpen,
-  Bot,
   Command,
   Frame,
   GalleryVerticalEnd,
-  Map,
-  PieChart,
+  Library,
+  Presentation,
   Settings2,
-  SquareTerminal,
 } from "lucide-react"
 
 export const createSidebarData = () => ({
   user: {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
+    name: "",
+    email: "",
+    avatar: "",
   },
   teams: [
     {
@@ -36,13 +34,13 @@ export const createSidebarData = () => ({
   ],
   navMain: [
     {
-      title: "Playground",
-      url: "/dashboard",
-      icon: SquareTerminal,
+      title: "Library",
+      url: "/dashboard/library",
+      icon: Library,
       isActive: true,
       items: [
         {
-          title: "Library",
+          title: "Images",
           url: "/dashboard/library",
         },
         {
@@ -56,21 +54,17 @@ export const createSidebarData = () => ({
       ],
     },
     {
-      title: "Models",
-      url: "/dashboard/models",
-      icon: Bot,
+      title: "Articles",
+      url: "/dashboard/articles",
+      icon: Presentation,
       items: [
         {
-          title: "Genesis",
-          url: "/dashboard/models/genesis",
+          title: "News",
+          url: "/dashboard/articles/news",
         },
         {
-          title: "Explorer",
-          url: "/dashboard/models/explorer",
-        },
-        {
-          title: "Quantum",
-          url: "/dashboard/models/quantum",
+          title: "Tutorials",
+          url: "/dashboard/articles/tutorials",
         },
       ],
     },
@@ -123,19 +117,9 @@ export const createSidebarData = () => ({
   ],
   projects: [
     {
-      name: "Design Engineering",
-      url: "/dashboard/projects/design",
+      name: "Exoskel",
+      url: "/dashboard/projects/exoskel",
       icon: Frame,
-    },
-    {
-      name: "Sales & Marketing",
-      url: "/dashboard/projects/sales",
-      icon: PieChart,
-    },
-    {
-      name: "Travel",
-      url: "/dashboard/projects/travel",
-      icon: Map,
     },
   ],
 })
