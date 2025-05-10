@@ -12,6 +12,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/shadcn/dropdown-menu"
 import { ThemeToggle } from "@/components/themes/theme-toggle"
+import { useIsMobile } from "@/lib/hooks/use-mobile"
 import { cn } from "@/lib/utils"
 import { useEffect, useState } from "react"
 
@@ -22,6 +23,7 @@ type SettingsProps = {
 export const Settings = ({ className }: SettingsProps) => {
   const { resolvedTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
+  const isMobile = useIsMobile()
 
   useEffect(() => {
     setMounted(true)
@@ -36,12 +38,16 @@ export const Settings = ({ className }: SettingsProps) => {
     ? "bg-white text-black hover:bg-white/90"
     : "bg-black text-white hover:bg-black/90"
 
+  const buttonSize = isMobile
+    ? "size-10 p-2 bottom-4 right-4"
+    : "size-12 p-3 bottom-8 right-8"
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <motion.button
           className={cn(
-            "fixed bottom-8 right-8 p-3 size-12 rounded-full shadow-lg transition-colors z-50",
+            `fixed ${buttonSize} rounded-full shadow-lg transition-colors z-50`,
             bubbleStyle,
             className
           )}
