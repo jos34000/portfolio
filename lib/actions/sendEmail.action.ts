@@ -17,7 +17,7 @@ export async function sendContactEmail({
     await sendEmail(
       "jocelynsainson@icloud.com",
       reason,
-      ContactRequestEmail({
+      await ContactRequestEmail({
         senderEmail: email,
         reason,
         message,
@@ -26,7 +26,7 @@ export async function sendContactEmail({
     await sendEmail(
       email,
       "Merci pour votre message — je vous réponds très vite !",
-      ThankYouContactEmail({ email, message, reason })
+      await ThankYouContactEmail({ email, message, reason })
     )
     return { success: true }
   } catch (error) {
