@@ -63,7 +63,7 @@ export function SignUpForm({
               </Link>
             </div>
           </div>
-          <div className="flex flex-row gap-6">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             <div className="flex flex-col gap-3">
               <Label htmlFor="firstName">{t("form.firstName")}</Label>
               <Input
