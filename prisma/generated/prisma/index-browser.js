@@ -170,41 +170,9 @@ exports.Prisma.VerificationScalarFieldEnum = {
   updatedAt: 'updatedAt'
 };
 
-exports.Prisma.AnalyticsScalarFieldEnum = {
-  id: 'id',
-  userId: 'userId',
-  path: 'path',
-  method: 'method',
-  userAgent: 'userAgent',
-  ipAddress: 'ipAddress',
-  timestamp: 'timestamp',
-  duration: 'duration'
-};
-
-exports.Prisma.OnboardingDataScalarFieldEnum = {
-  id: 'id',
-  userId: 'userId',
-  step: 'step',
-  data: 'data',
-  completedAt: 'completedAt'
-};
-
-exports.Prisma.OnboardingStatsScalarFieldEnum = {
-  id: 'id',
-  userId: 'userId',
-  completedAt: 'completedAt',
-  userAgent: 'userAgent',
-  ipAddress: 'ipAddress',
-  data: 'data'
-};
-
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
-};
-
-exports.Prisma.JsonNullValueInput = {
-  JsonNull: Prisma.JsonNull
 };
 
 exports.Prisma.QueryMode = {
@@ -217,21 +185,12 @@ exports.Prisma.NullsOrder = {
   last: 'last'
 };
 
-exports.Prisma.JsonNullValueFilter = {
-  DbNull: Prisma.DbNull,
-  JsonNull: Prisma.JsonNull,
-  AnyNull: Prisma.AnyNull
-};
-
 
 exports.Prisma.ModelName = {
   User: 'User',
   Session: 'Session',
   Account: 'Account',
-  Verification: 'Verification',
-  Analytics: 'Analytics',
-  OnboardingData: 'OnboardingData',
-  OnboardingStats: 'OnboardingStats'
+  Verification: 'Verification'
 };
 
 /**
