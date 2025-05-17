@@ -15,11 +15,11 @@
     "migrate:dev": "dotenv -e .env.development -- pnpx prisma migrate dev",
     "migrate:prod": "dotenv -e .env.production -- pnpx prisma migrate deploy",
     "vercel-build": "prisma generate && prisma migrate deploy && next build",
-    "i18n:check": "i18n-check --source en --locales messages -f i18next",
-    "postinstall": "prisma generate"
+    "i18n:check": "i18n-check --source en --locales messages -f i18next"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
+    "@prisma/adapter-neon": "^6.8.2",
     "@prisma/client": "^6.8.1",
     "@radix-ui/react-avatar": "^1.1.9",
     "@radix-ui/react-checkbox": "^1.3.1",
@@ -42,6 +42,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "concurrently": "^9.1.2",
+    "dotenv": "^16.5.0",
     "framer-motion": "^12.12.1",
     "js-cookie": "^3.0.5",
     "lucide-react": "^0.503.0",

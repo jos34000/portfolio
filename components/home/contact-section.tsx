@@ -38,7 +38,6 @@ export const Contact = () => {
     message: string
     reason: string
   }) => {
-    console.log(data)
     setIsOpen(false)
     setEmail("")
   }

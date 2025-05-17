@@ -56,12 +56,10 @@ export function LoginForm({
       if (provider === "google") setIsGoogleLoading(true)
 
       const result = await providerAction(provider)
-      console.log(result)
       if (result.success && result.session?.url) {
         window.location.href = result.session.url
       }
     } catch (error) {
-      console.log(error)
       toast.error(t("notifications.genericError"))
     } finally {
       setIsGithubLoading(false)
