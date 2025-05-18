@@ -254,10 +254,14 @@
     "validation": {
       "firstNameLength": "Your name must contain at least 2 characters",
       "lastNameLength": "Your last name must contain at least 2 characters",
-      "email": "Invalid Email.",
-      "username": "Username must contain at least 4 characters",
-      "password": "Password must contain at least 8 characters",
-      "passwordConfirmation": "Passwords didn't match"
+      "badEmail": "Invalid Email.",
+      "usernameLength": "Username must contain at least 4 characters",
+      "passwordLength": "Password must contain at least 8 characters",
+      "passwordConfirmation": "Passwords didn't match",
+      "passwordUppercase": "Password must contain at least 1 upper case.",
+      "passwordLowercase": "Password must contain at least 1 lower case.",
+      "passwordNumber": "Password must contain at least 1 number.",
+      "passwordSpecial": "Password must contain at least 1 special character."
     },
     "form": {
       "email": "Email",
@@ -270,8 +274,7 @@
         "firstName": "John",
         "lastName": "Doe",
         "username": "JohnDoe007",
-        "email": "johndoe@example.com",
-        "password": "********"
+        "email": "johndoe@example.com"
       },
       "buttons": {
         "signUp": "Sign Up",

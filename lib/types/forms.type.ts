@@ -1,7 +1,6 @@
 type SignUpPayload = {
   email: string
   password: string
-  name: string
   username: string
   firstName: string
   lastName: string

@@ -8,7 +8,7 @@ export const signUpAction = async (payload: SignUpPayload) => {
       body: {
         email: payload.email,
         password: payload.password,
-        name: payload.name,
+        name: `${payload.firstName} ${payload.lastName}`,
         username: payload.username,
         firstName: payload.firstName,
         lastName: payload.lastName,

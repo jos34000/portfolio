@@ -254,10 +254,14 @@
     "validation": {
       "firstNameLength": "Tu nombre debe tener al menos 2 caracteres",
       "lastNameLength": "Tu apellido debe tener al menos 2 caracteres",
-      "email": "Correo electrónico inválido.",
-      "username": "El nombre de usuario debe tener al menos 4 caracteres",
-      "password": "La contraseña debe tener al menos 8 caracteres",
-      "passwordConfirmation": "Las contraseñas no coinciden"
+      "badEmail": "Correo electrónico inválido.",
+      "usernameLength": "El nombre de usuario debe tener al menos 4 caracteres",
+      "passwordLength": "La contraseña debe tener al menos 8 caracteres",
+      "passwordConfirmation": "Las contraseñas no coinciden",
+      "passwordLowercase": "La contraseña debe contener al menos 1 minúscula.",
+      "passwordNumber": "La contraseña debe contener al menos 1 número.",
+      "passwordSpecial": "La contraseña debe contener al menos 1 carácter especial.",
+      "passwordUppercase": "La contraseña debe contener al menos 1 caso superior."
     },
     "form": {
       "email": "Email",
@@ -270,8 +274,7 @@
         "firstName": "Juan",
         "lastName": "Pérez",
         "username": "JuanPerez007",
-        "email": "juanperez@example.com",
-        "password": "********"
+        "email": "juanperez@example.com"
       },
       "buttons": {
         "signUp": "Registrarse",
