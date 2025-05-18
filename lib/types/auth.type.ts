@@ -6,29 +6,9 @@ type SignUpPayload = {
   lastName: string
 }
 
-type SignUpFormValues = {
-  firstName: string
-  lastName: string
-  email: string
-  username: string
-  password: string
-  passwordConfirmation: string
-  initials: string
-}
-
-type SignUpResult = {
-  success: boolean
-  error: string | null
-}
-
-type SignInPayload = {
+type loginPayload = {
   email: string
   password: string
-}
-
-type SignInResult = {
-  success: boolean
-  error: string | null
 }
 
 type Provider =

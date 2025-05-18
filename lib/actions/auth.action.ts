@@ -22,7 +22,7 @@ export const signUpAction = async (payload: SignUpPayload) => {
   }
 }
 
-export const signInAction = async (payload: SignInPayload) => {
+export const loginAction = async (payload: loginPayload) => {
   try {
     const session = await auth.api.signInEmail({
       body: { email: payload.email, password: payload.password },

@@ -224,7 +224,7 @@
     "login": "Iniciar sesión",
     "validation": {
       "email": "Por favor, introduzca una dirección de correo electrónico válida",
-      "password": "Veuillez entrer un mot de passe"
+      "password": "Ingrese una contraseña"
     },
     "notifications": {
       "success": "Connexion réussie !",

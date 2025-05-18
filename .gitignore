@@ -44,13 +44,12 @@ sonar-project.properties
 TODO.md
 
 # Playwright
-node_modules/
 /test-results/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
-.vscode/
 
 certificates
 .vscode/
 WORKFLOW.md
+/app/[locale]/test/
