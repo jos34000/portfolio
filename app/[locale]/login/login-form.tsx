@@ -47,24 +47,22 @@ export function LoginForm() {
     >
       <div className="flex flex-col gap-6">
         <div className="grid gap-3">
-          <form.AppField
-            name="email"
-            children={(field) => (
+          <form.AppField name="email">
+            {(field) => (
               <field.TextField label={t("email")} placeholder={t("email")} />
             )}
-          />
+          </form.AppField>
         </div>
         <div className="grid gap-3">
-          <form.AppField
-            name="password"
-            children={(field) => (
+          <form.AppField name="password">
+            {(field) => (
               <field.TextField
                 label={t("password")}
                 placeholder={t("password")}
                 type="password"
               />
             )}
-          />
+          </form.AppField>
         </div>
         <form.AppForm>
           <form.SubmitButton>{t("login")}</form.SubmitButton>

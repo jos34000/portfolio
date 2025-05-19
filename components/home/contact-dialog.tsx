@@ -96,22 +96,20 @@ export default function ContactDialog({
           <div className="my-6">
             {step === 1 && (
               <div>
-                <form.AppField
-                  name="message"
-                  children={(field) => (
+                <form.AppField name="message">
+                  {(field) => (
                     <field.TextareaField
                       label="Message"
                       placeholder={t("form.message.placeholder")}
                     />
                   )}
-                />
+                </form.AppField>
               </div>
             )}
             {step === 2 && (
               <div>
-                <form.AppField
-                  name="reason"
-                  children={(field) => (
+                <form.AppField name="reason">
+                  {(field) => (
                     <field.SelectField
                       label="Reason"
                       options={options}
@@ -119,7 +117,7 @@ export default function ContactDialog({
                       placeholder={t("form.reason.placeholder")}
                     />
                   )}
-                />
+                </form.AppField>
               </div>
             )}
             {step === 3 && (

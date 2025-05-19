@@ -81,74 +81,68 @@ export default function SignUpForm() {
       <div className="flex flex-col gap-6 max-w-md mx-auto">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           <div className="flex flex-col gap-3">
-            <form.AppField
-              name="firstName"
-              children={(field) => (
+            <form.AppField name="firstName">
+              {(field) => (
                 <field.TextField
                   label={t("form.firstName")}
                   placeholder={t("form.placeholders.firstName")}
                 />
               )}
-            />
+            </form.AppField>
           </div>
           <div className="flex flex-col gap-3">
-            <form.AppField
-              name="lastName"
-              children={(field) => (
+            <form.AppField name="lastName">
+              {(field) => (
                 <field.TextField
                   label={t("form.lastName")}
                   placeholder={t("form.placeholders.lastName")}
                 />
               )}
-            />
+            </form.AppField>
           </div>
         </div>
         <div className="flex flex-col gap-6">
           <div className="grid gap-3">
-            <form.AppField
-              name="username"
-              children={(field) => (
+            <form.AppField name="username">
+              {(field) => (
                 <field.TextField
                   label={t("form.username")}
                   placeholder="JohnDoe007"
                 />
               )}
-            />
+            </form.AppField>
           </div>
           <div className="grid gap-3">
-            <form.AppField
-              name="email"
-              children={(field) => (
+            <form.AppField name="email">
+              {(field) => (
                 <field.TextField
                   label={t("form.email")}
                   placeholder="johndoe@example.com"
                 />
               )}
-            />
+            </form.AppField>
           </div>
           <div className="grid gap-3">
-            <form.AppField
-              name="password"
-              children={(field) => (
+            <form.AppField name="password">
+              {(field) => (
                 <field.TextField
                   type="password"
                   label={t("form.password")}
                   placeholder="********"
                 />
               )}
-            />
+            </form.AppField>
           </div>
           <div className="grid gap-3">
-            <form.AppField
-              name="passwordConfirmation"
-              children={(field) => (
+            <form.AppField name="passwordConfirmation">
+              {(field) => (
                 <field.TextField
                   type="password"
                   label={t("form.confirmPassword")}
                   placeholder="********"
                 />
               )}
-            />
+            </form.AppField>
           </div>
           <form.AppForm>
             <form.SubmitButton>{t("form.buttons.signUp")}</form.SubmitButton>
