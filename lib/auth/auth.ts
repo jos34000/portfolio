@@ -58,7 +58,7 @@ export const auth = betterAuth({
       const device = `${parser.getOS().name} ${parser.getOS().version}`
       const browser = `${parser.getBrowser().name} ${parser.getBrowser().version}`
 
-      const baseUrl = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000"
+      const baseUrl = process.env.NEXT_PUBLIC_APP_URL
       const customVerificationUrl = `${baseUrl}/api/auth/verify-email?token=${token}&callbackURL=/login`
 
       await sendEmail(
