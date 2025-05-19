@@ -173,7 +173,11 @@
               "email": "Email",
               "message": "Message",
               "reason": "Motivo"
-            }
+            },
+            "error": {
+              "generic": "Se produjo un error al enviar su mensaje."
+            },
+            "success": "¡Mensaje enviado con éxito!"
           },
           "buttons": {
             "back": "Volver",
