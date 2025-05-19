@@ -53,3 +53,6 @@ certificates
 .vscode/
 WORKFLOW.md
 /app/[locale]/test/
+
+# prisma
+prisma/generated/

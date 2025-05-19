@@ -54,7 +54,7 @@ const importConfig = await compat.config({
 
 export default [
   {
-    ignores: [".next/*", "node_modules/*"],
+    ignores: [".next/*", "node_modules/*", "prisma/generated"],
   },
   ...nextConfig,
   ...importConfig,
