@@ -157,7 +157,7 @@
           "form": {
             "message": {
               "placeholder": "Rédigez votre demande ici & ajoutez des liens si nécessaire...",
-              "error": "Veuillez entrer un message"
+              "error": "Veuillez entrer un message de 10 charactères minimum."
             },
             "reason": {
               "placeholder": "Sélectionnez un motif",

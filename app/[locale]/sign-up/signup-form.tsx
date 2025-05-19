@@ -58,7 +58,6 @@ export default function SignUpForm() {
           username: value.username,
           password: value.password,
         })
-        console.log("Response : ", response)
 
         if (response.success) {
           toast.success(t("notifications.success"))

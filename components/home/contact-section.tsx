@@ -2,20 +2,20 @@
 
 import { useTranslations } from "next-intl"
 import { useState } from "react"
+
+import { BackgroundBeams } from "@/components/shadcn/background-beams"
+import { PlaceholdersAndVanishInput } from "@/components/shadcn/placeholders-and-vanish-input"
+import ContactDialog from "./contact-dialog"
+
+import { toast } from "sonner"
 import { z } from "zod"
 
-import { contactSchema } from "@/lib/schemas/contacting.schema"
-
-import { BackgroundBeams } from "../shadcn/background-beams"
-import { PlaceholdersAndVanishInput } from "../shadcn/placeholders-and-vanish-input"
-
-import { ContactDialog } from "./contact-dialog"
-
-export const Contact = () => {
+export function Contact() {
   const t = useTranslations("Home.sections.contact")
   const [email, setEmail] = useState("")
   const [isOpen, setIsOpen] = useState(false)
   const [error, setError] = useState("")
+  const emailValidation = z.string().email("Invalid email address")
 
   const handleInputChange = (values: string[]) => {
     setEmail(values[0])
@@ -23,23 +23,15 @@ export const Contact = () => {
 
   const handleInputSubmit = () => {
     try {
-      contactSchema.email.parse(email)
+      emailValidation.parse(email)
       setError("")
       setIsOpen(true)
     } catch (error) {
       if (error instanceof z.ZodError) {
         setError(t("errors.invalidEmail"))
+        toast.error(t("errors.invalidEmail"))
       }
     }
-  }
-
-  const handleDialogSubmit = (data: {
-    email: string
-    message: string
-    reason: string
-  }) => {
-    setIsOpen(false)
-    setEmail("")
   }
 
   return (
@@ -70,12 +62,7 @@ export const Contact = () => {
         <BackgroundBeams />
       </div>
 
-      <ContactDialog
-        isOpen={isOpen}
-        onOpenChange={setIsOpen}
-        email={email}
-        onSubmit={handleDialogSubmit}
-      />
+      <ContactDialog isOpen={isOpen} onOpenChange={setIsOpen} email={email} />
     </>
   )
 }

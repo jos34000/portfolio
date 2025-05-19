@@ -18,6 +18,7 @@ export function InputField({
         value={field.state.value}
         onChange={(e) => field.handleChange(e.target.value)}
         aria-invalid={!!error}
+        className="bg-background text-foreground"
       />
       {error && <p className="text-sm text-red-500">{error}</p>}
     </div>

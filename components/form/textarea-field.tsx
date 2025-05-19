@@ -11,7 +11,9 @@ export function TextareaField({
   const error = field.state.meta.errors.map((error) => error.message).join(", ")
   return (
     <div className="space-y-2">
-      <Label htmlFor={field.name}>{label}</Label>
+      <Label htmlFor={field.name} className="text-foreground">
+        {label}
+      </Label>
       <Textarea
         {...textareaProps}
         name={field.name}

@@ -157,7 +157,7 @@
           "form": {
             "message": {
               "placeholder": "Write your request here & add links if necessary ...",
-              "error": "Please enter a message"
+              "error": "Please enter a message with at lest 10 characters"
             },
             "reason": {
               "placeholder": "Select a reason",
@@ -173,7 +173,11 @@
               "email": "Email",
               "message": "Message",
               "reason": "Reason"
-            }
+            },
+            "error": {
+              "generic": "An error occurred while sending your message."
+            },
+            "success": "Message sent successfully!"
           },
           "buttons": {
             "back": "Back",
