@@ -1,3 +1,16 @@
+# 1.0.0 (2025-05-20)
+
+
+### Bug Fixes
+
+* **auth:** update base URL to use NEXT_PUBLIC_APP_URL consistently ([42176c6](https://github.com/jos34000/portfolio/commit/42176c6ef06f5ffb5bd03c2e573af1b42724ec1a))
+* **i18n:** missing translations for toast in contact dialog ([401be13](https://github.com/jos34000/portfolio/commit/401be132c91768a86b2040a9744842565957d73b))
+
+
+### Performance Improvements
+
+* **forms:** update forms to use Tanstack Form ([8eb2af1](https://github.com/jos34000/portfolio/commit/8eb2af18c750f980bc956953452bf571ade4f0a8))
+
 ## [1.1.0](portfolio/compare/v1.0.0...v1.1.0) (2025-05-17)
 
 
