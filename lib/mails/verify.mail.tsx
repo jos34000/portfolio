@@ -13,16 +13,6 @@ import {
 } from "@react-email/components"
 import { getTranslations } from "next-intl/server"
 
-interface VerifyEmailProps {
-  verificationUrl: string
-  userFirstname?: string
-  deviceInfo?: {
-    device: string
-    browser: string
-    ip: string
-  }
-}
-
 export default async function VerifyEmail({
   verificationUrl,
   userFirstname,

@@ -3,8 +3,8 @@ import { prismaAdapter } from "better-auth/adapters/prisma"
 import { nextCookies } from "better-auth/next-js"
 
 import { prisma } from "@/lib/db/prisma"
-import { sendEmail } from "@/lib/mails/sendEmail"
-import VerifyEmail from "@/lib/mails/verifyEmail.mail"
+import { sendEmail } from "@/lib/mails/resend"
+import VerifyEmail from "@/lib/mails/verify.mail"
 
 export const auth = betterAuth({
   database: prismaAdapter(prisma, {

@@ -109,7 +109,9 @@ pnpm dev
 
 ## 📫 Contact
 
-[Liens sociaux à venir]
+- [LinkedIn](https://www.linkedin.com/in/jocelyn-sainson-42305920b)
+- [GitHub](https://github.com/jos34000)
+- [Instagram](https://www.instagram.com/jossainson)
 
 ## 📝 Licence
 

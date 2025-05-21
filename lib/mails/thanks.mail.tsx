@@ -12,19 +12,12 @@ import {
 } from "@react-email/components"
 import { getTranslations } from "next-intl/server"
 
-interface ThankYouContactEmailProps {
-  userFirstname?: string
-  email: string
-  message: string
-  reason: string
-}
-
-export default async function ThankYouContactEmail({
+export default async function ThankYouEmail({
   userFirstname,
   email,
   message,
   reason,
-}: Readonly<ThankYouContactEmailProps>) {
+}: Readonly<ThankYouEmailProps>) {
   const icons = {
     clock:
       "https://raw.githubusercontent.com/phosphor-icons/core/main/assets/regular/clock.svg",

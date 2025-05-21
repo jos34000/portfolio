@@ -9,17 +9,11 @@ import {
 } from "@react-email/components"
 import { getTranslations } from "next-intl/server"
 
-interface ContactRequestEmailProps {
-  senderEmail: string
-  reason: string
-  message: string
-}
-
 export async function ContactRequestEmail({
-  senderEmail,
+  email,
   reason,
   message,
-}: Readonly<ContactRequestEmailProps>) {
+}: Readonly<ContactEmailProps>) {
   const t = await getTranslations("Mail.contact")
   return (
     <Html>
@@ -72,8 +66,7 @@ export async function ContactRequestEmail({
                 color: "#666666",
               }}
             >
-              <strong style={{ color: "#000000" }}>Email :</strong>{" "}
-              {senderEmail}
+              <strong style={{ color: "#000000" }}>Email :</strong> {email}
             </Text>
 
             <Text

@@ -1,32 +1,30 @@
 "use server"
 
 import ContactRequestEmail from "@/lib/mails/contact.mail"
-import { sendEmail } from "@/lib/mails/sendEmail"
-import ThankYouContactEmail from "@/lib/mails/thanks.mail"
+import { sendEmail } from "@/lib/mails/resend"
+import ThankYouEmail from "@/lib/mails/thanks.mail"
+import { getTranslations } from "next-intl/server"
 
 export async function sendContactEmail({
   email,
   reason,
   message,
-}: {
-  email: string
-  reason: string
-  message: string
-}) {
+}: ContactEmailProps) {
+  const t = await getTranslations("Mail.thanks")
   try {
     await sendEmail(
       "jocelynsainson@icloud.com",
       reason,
       await ContactRequestEmail({
-        senderEmail: email,
+        email,
         reason,
         message,
       })
     )
     await sendEmail(
       email,
-      "Merci pour votre message — je vous réponds très vite !",
-      await ThankYouContactEmail({ email, message, reason })
+      t("preview"),
+      await ThankYouEmail({ email, message, reason })
     )
     return { success: true }
   } catch (error) {

@@ -1,7 +1,7 @@
 "use client"
 
 import { useRouter } from "@/i18n/navigation"
-import { signUpAction } from "@/lib/actions/auth.action"
+import { authClient } from "@/lib/auth/auth-client"
 import { useAppForm } from "@/lib/hooks/useAppForm"
 import { useTranslations } from "next-intl"
 import { toast } from "sonner"
@@ -51,19 +51,21 @@ export default function SignUpForm() {
     },
     onSubmit: async ({ value }) => {
       try {
-        const response = await signUpAction({
+        const response = await authClient.signUp.email({
           firstName: value.firstName,
           lastName: value.lastName,
           email: value.email,
           username: value.username,
           password: value.password,
+          name: `${value.firstName} ${value.lastName}`,
+          initials: `${value.firstName.charAt(0).toUpperCase()}${value.lastName.charAt(0).toUpperCase()}`,
         })
 
-        if (response.success) {
+        if (!response.error) {
           toast.success(t("notifications.success"))
           router.push(`/verify?email=${encodeURIComponent(value.email)}`)
         } else {
-          toast.error(response.error)
+          toast.error(response.error.message)
         }
       } catch {
         toast.error(t("notifications.genericErrorSignUp"))
